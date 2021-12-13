@@ -178,3 +178,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Add banner image size
+ */
+add_image_size('banner', 1200);
