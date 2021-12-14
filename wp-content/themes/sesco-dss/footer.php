@@ -12,6 +12,19 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<div class="footer-content">
+			<div class="grid up-3">
+				<div class="grid-cell">
+					<h2>Connect with us</h2>
+				</div>
+				<div class="grid-cell">
+					<h2>Our business hours</h2>
+				</div>
+				<div class="grid-cell">
+					<h2>About us</h2>
+				</div>
+			</div>
+		</div>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sesco-dss' ) ); ?>">
 				<?php
