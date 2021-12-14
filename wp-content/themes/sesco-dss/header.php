@@ -26,24 +26,29 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'sesco-dss' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$sesco_dss_description = get_bloginfo( 'description', 'display' );
-			if ( $sesco_dss_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $sesco_dss_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<div class="grid">
+			<div class="grid-cell">
+				<?php the_custom_logo(); ?>
+			</div>
+			<div class="grid-cell">
+				<?php $args = array(
+					'post_type' => 'stores',
+				); 
+				$stores = new WP_Query($args); ?>
+				<?php if ($stores->have_posts()) : ?>
+					<div class="grid up-2">
+						<?php while ($stores->have_posts()) : $stores->the_post() ?>
+							<div class="grid-cell">
+								<p><?php the_title(); ?></p>
+								<p><?php the_field('store_address'); ?><br>
+								<?php the_field('store_email'); ?><br>
+								<?php the_field('store_phone'); ?></p>
+							</div>
+						<?php endwhile; ?>
+					</div>
+				<?php endif; wp_reset_postdata(); ?>
+			</div>
+		</div>
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sesco-dss' ); ?></button>
@@ -55,5 +60,5 @@
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		</nav>
+	</header>

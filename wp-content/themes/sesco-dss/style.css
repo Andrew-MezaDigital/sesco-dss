@@ -1012,3 +1012,14 @@ section:nth-child(even) {
 	flex: 0 0 33.33%;
 	max-width: 33.33%;
 }
+
+.menu {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.menu .menu-item {
+	flex: 0 0 auto;
+	max-width: 100%;
+}
