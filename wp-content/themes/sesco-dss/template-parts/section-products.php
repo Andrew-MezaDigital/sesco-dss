@@ -10,7 +10,7 @@ $products = new WP_Query($args); ?>
         <h2>Our Latest Equipment for Sale</h2>
       </div>
     </div>
-    <ul class="grid 4-up">
+    <ul class="grid up-4">
       <?php while ($products->have_posts()) : $products->the_post(); ?>
         <li class="grid-cell">
           <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>

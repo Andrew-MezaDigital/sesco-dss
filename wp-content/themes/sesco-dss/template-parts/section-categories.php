@@ -8,7 +8,7 @@
 <?php if (!empty($term_query) && !is_wp_error($term_query)) : ?>
   <section class="service-categories">
     <h2 class="screen-reader-text">Services</h2>
-    <ul class="grid 3-up">
+    <ul class="grid up-3">
       <?php foreach ($term_query->terms as $term) : ?>
         <?php $term_link = get_term_link($term); ?>
         <?php $excerpt = get_term_meta($term->term_id, 'category_excerpt', true ); ?>
