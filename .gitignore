@@ -4,3 +4,5 @@
 wp-content/*
 !wp-content/themes/
 wp-content/themes/sesco-dss/node_modules/
+*.css.map
+.DS_Store
