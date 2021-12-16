@@ -653,9 +653,9 @@ textarea {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
-	width: calc(100% + 40px);
+	width: calc(100% + 24px);
 	max-width: 1200px;
-	margin: 0 -20px;
+	margin: 0 -12px;
 	padding: 0;
 	list-style: none;
 }
@@ -665,7 +665,7 @@ textarea {
 .grid .cell {
 	flex: 0 0 auto;
 	margin: 0;
-	padding: 0 20px;
+	padding: 0 12px;
 }
 
 .row.va-center,
@@ -705,6 +705,22 @@ textarea {
 	flex: 1;
 }
 
+.cell.store {
+	display: inline-flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.cell.store p,
+.cell.store nav {
+	display: inline-flex;
+}
+
+.cell.store p {
+	margin: 0 0.5em 0 0;
+}
+
 .menu {
 	display: inline-flex;
 	flex-flow: row nowrap;
@@ -741,27 +757,6 @@ textarea {
 
 .top-bar a {
 	color: #fff;
-}
-
-.top-bar .store-contact {
-	display: inline-flex;
-	flex-flow: row nowrap;
-}
-
-.top-bar .store-contact-menu {
-	display: inline-flex;
-	flex-flow: row nowrap;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.top-bar .store-contact p, .top-bar .store-contact nav {
-	display: inline-flex;
-}
-
-.top-bar .store-contact p {
-	margin: 0 0.5em 0 0;
 }
 
 /*--------------------------------------------------------------

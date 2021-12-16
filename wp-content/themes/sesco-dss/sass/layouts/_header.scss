@@ -11,23 +11,4 @@
     a {
         color: #fff;
     }
-
-    .store-contact {
-        @include display(inline-flex, row nowrap);
-
-        &-menu {
-            @include display(inline-flex, row nowrap);
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        p, nav {
-            @include display(inline-flex);
-        }
-
-        p {
-            margin: 0 0.5em 0 0;
-        }
-    }
 }

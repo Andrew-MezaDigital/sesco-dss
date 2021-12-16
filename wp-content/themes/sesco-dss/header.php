@@ -35,19 +35,15 @@
 				<?php if ($stores->have_posts()) : ?>
 					<div class="row ha-end">
 						<?php while ($stores->have_posts()) : $stores->the_post() ?>
-							<div class="cell">
-								<div class="row compact va-center">
-									<div class="cell">
-										<p><?php the_title(); ?></p>
-									</div>
-									<nav class="cell">
-										<ul class="menu">
-											<li class="menu-item"><a href="tel:<?php urlencode(the_field('store_phone')); ?>" class="fas fa-phone-alt"></a></li>
-											<li class="menu-item"><a href="mailto:<?php urlencode(the_field('store_email')); ?>" class="fas fa-envelope"></a></li>
-											<li class="menu-item"><a href="<?php urlencode(the_field('store_google_maps_url')); ?>" target="_blank" class="fas fa-map-marker-alt"></a></li>
-										</ul>
-									</nav>
-								</div>						
+							<div class="store cell">
+								<p><?php the_title(); ?></p>
+								<nav>
+									<ul class="menu">
+										<li class="menu-item"><a href="tel:<?php urlencode(the_field('store_phone')); ?>" class="fas fa-phone-alt"></a></li>
+										<li class="menu-item"><a href="mailto:<?php urlencode(the_field('store_email')); ?>" class="fas fa-envelope"></a></li>
+										<li class="menu-item"><a href="<?php urlencode(the_field('store_google_maps_url')); ?>" target="_blank" class="fas fa-map-marker-alt"></a></li>
+									</ul>
+								</nav>					
 							</div>
 						<?php endwhile; ?>
 					</div>
