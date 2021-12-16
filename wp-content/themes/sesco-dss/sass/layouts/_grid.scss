@@ -1,0 +1,35 @@
+.grid {
+    @include display(flex, row wrap, flex-start, flex-start);
+    width: calc(100% + 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    &-cell {
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 20px;
+    }
+
+    &.up-4 {
+
+        .grid-cell {
+            flex: 0 0 (100% / 4);
+        }
+    }
+
+    &.up-3 {
+
+        .grid-cell {
+            flex: 0 0 (100% / 3);
+        }
+    }
+
+    &.up-2 {
+
+        .grid-cell {
+            flex: 0 0 (100% / 2);
+        }    
+    }
+}

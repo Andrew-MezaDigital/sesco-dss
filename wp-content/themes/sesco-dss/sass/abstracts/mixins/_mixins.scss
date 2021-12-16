@@ -9,3 +9,11 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+// FLEXBOX
+@mixin display( $display: flex, $flow: null, $justify-content: null, $align-items: null ) {
+    display: $display;
+    flex-flow: $flow;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
