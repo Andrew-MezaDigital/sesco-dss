@@ -18,6 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+	<script src="https://kit.fontawesome.com/c6c193bd70.js" crossorigin="anonymous"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -41,9 +42,9 @@
 									</div>
 									<nav class="cell">
 										<ul class="menu">
-											<li class="menu-item"><a href="tel:<?php urlencode(the_field('store_phone')); ?>" class="icon">C</a></li>
-											<li class="menu-item"><a href="mailto:<?php urlencode(the_field('store_email')); ?>" class="icon">M</a></li>
-											<li class="menu-item"><a href="<?php urlencode(the_field('store_google_maps_url')); ?>" target="_blank" class="icon">V</a></li>
+											<li class="menu-item"><a href="tel:<?php urlencode(the_field('store_phone')); ?>" class="fas fa-phone-alt"></a></li>
+											<li class="menu-item"><a href="mailto:<?php urlencode(the_field('store_email')); ?>" class="fas fa-envelope"></a></li>
+											<li class="menu-item"><a href="<?php urlencode(the_field('store_google_maps_url')); ?>" target="_blank" class="fas fa-map-marker-alt"></a></li>
 										</ul>
 									</nav>
 								</div>						
