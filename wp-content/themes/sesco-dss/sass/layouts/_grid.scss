@@ -5,15 +5,21 @@
     width: calc(100% + 40px);
     max-width: 1200px;
     margin: 0 -20px;
+    padding: 0;
+    list-style: none;
 
     .cell {
         flex: 0 0 auto;
         margin: 0;
-        padding: 20px;
+        padding: 0 20px;
+    }
 
-        &.no-pad {
-            padding: 0;
-        }
+    &.va-center {
+        align-items: center;
+    }
+
+    &.ha-end {
+        justify-content: flex-end;
     }
 }
 
@@ -27,27 +33,43 @@
 }
 
 .grid {
-    padding: 0;
-    list-style: none;
 
     &.up-4 {
 
-        .cell {
+        > .cell {
             flex: 0 0 (100% / 4);
         }
     }
 
     &.up-3 {
 
-        .cell {
+        > .cell {
             flex: 0 0 (100% / 3);
         }
     }
 
     &.up-2 {
 
-        .cell {
+        > .cell {
             flex: 0 0 (100% / 2);
         }    
+    }
+}
+
+.cell {
+
+    &.fill {
+        flex: 1;
+    }
+}
+
+.menu {
+    @include display(inline-flex, row nowrap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .menu-item {
+        margin: 5px;
     }
 }
