@@ -51,9 +51,10 @@
 			</div>
 		</div>
 	</div>
+
 	<header id="masthead" class="site-header">
-		<div class="row">
-			<div class="cell">
+		<div class="row ha-between va-center">
+			<div class="logo cell">
 				<?php the_custom_logo(); ?>
 			</div>
 			<div class="cell">
@@ -70,6 +71,4 @@
 				</nav>
 			</div>
 		</div>
-
-		
 	</header>

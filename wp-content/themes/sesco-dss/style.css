@@ -60,7 +60,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;1,400&display=swap");
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
@@ -391,7 +391,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: Lora, Helvetica, Arial, sans-serif;
+	font-family: "Exo 2", Helvetica, Arial, sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -481,7 +481,7 @@ a {
 --------------------------------------------- */
 body {
 	background: #fff;
-	font-family: Lora, Helvetica, Arial, sans-serif;
+	font-family: "Exo 2", Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	color: #333;
 }
@@ -552,7 +552,7 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-	color: #191970;
+	color: #2F4BA1;
 }
 
 a:focus {
@@ -680,6 +680,12 @@ textarea {
 	justify-content: flex-end;
 }
 
+.row.ha-between,
+.col.ha-between,
+.grid.ha-between {
+	justify-content: space-between;
+}
+
 .row,
 .grid {
 	flex-flow: row wrap;
@@ -719,6 +725,32 @@ textarea {
 
 .cell.store p {
 	margin: 0 0.5em 0 0;
+	white-space: nowrap;
+	line-height: 1;
+}
+
+.cell.logo {
+	position: relative;
+}
+
+.cell.logo:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transform: rotate(-45deg);
+	transform-origin: center left;
+	width: 200%;
+	height: 200%;
+	background: #FAB703;
+}
+
+.cell.logo > * {
+	position: relative;
+	z-index: 1;
 }
 
 .menu {
@@ -730,7 +762,14 @@ textarea {
 }
 
 .menu .menu-item {
-	margin: 5px;
+	margin: 1em;
+}
+
+.menu.nav-menu .menu-item {
+	font-size: 16px;
+	font-weight: 700;
+	white-space: nowrap;
+	line-height: 1;
 }
 
 #primary > section {
@@ -757,6 +796,21 @@ textarea {
 
 .top-bar a {
 	color: #fff;
+}
+
+.top-bar .menu .menu-item {
+	margin: 5px;
+}
+
+.site-header {
+	background: #FAB703;
+	background: linear-gradient(90deg, #FAB703 0%, #FAB703 40%, #f7f7f7 60%, #f7f7f7 100%);
+	position: relative;
+	overflow: hidden;
+}
+
+.site-header > .row {
+	background: #f7f7f7;
 }
 
 /*--------------------------------------------------------------

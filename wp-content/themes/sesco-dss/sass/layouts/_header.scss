@@ -11,4 +11,19 @@
     a {
         color: #fff;
     }
+
+    .menu .menu-item {
+        margin: 5px;
+    }
+}
+
+.site-header {
+    background: $accent;
+    background: linear-gradient(90deg, $accent 0%, $accent 40%, rgba(247,247,247,1) 60%, rgba(247,247,247,1) 100%);
+    position: relative;
+    overflow: hidden;
+
+    > .row {
+        background: #f7f7f7;
+    }
 }
