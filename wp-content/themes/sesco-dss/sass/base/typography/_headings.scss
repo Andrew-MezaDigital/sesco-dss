@@ -6,3 +6,17 @@ h5,
 h6 {
 	clear: both;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0 auto 0.5em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
