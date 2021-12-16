@@ -17,3 +17,30 @@
     justify-content: $justify-content;
     align-items: $align-items;
 }
+
+// PSEUDOS
+@mixin shape {
+    content: '';
+    display: block;
+}
+
+// POSITIONING
+@mixin position( $position: relative, $z-index: null, $dir: null, $xy: null, $transform: null ) {
+    position: $position;
+    z-index: $z-index;
+    @if ($dir and $xy) {
+        @each $d in $dir {
+            $i: index($dir, $d);
+            @if (length($xy) > ($i - 1)) {
+                #{$d}: #{nth($xy, $i)};
+            }
+        }
+    }
+    transform: $transform;
+}
+
+// SIZING
+@mixin size( $width, $height: $width ) {
+    width: $width;
+    height: $height;
+}
