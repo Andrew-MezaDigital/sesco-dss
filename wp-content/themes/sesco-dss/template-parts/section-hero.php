@@ -1,8 +1,8 @@
 <?php if (is_front_page()) : ?>
 
 <section class="page-hero">
-  <div class="grid">
-    <div class="grid-cell">
+  <div class="row">
+    <div class="cell">
       <h1 class="page-title screen-reader-text"><?php the_title(); ?></h1>
       <p class="page-excerpt screen-reader-text"><?php echo get_the_excerpt(); ?></p>
       <?php if (have_rows('carousel_slides')) : ?>
@@ -53,8 +53,8 @@
 <?php else : ?>
 
 <section class="page-hero" style="background-image:url('<?php echo 'the image'; ?>');">
-  <div class="grid">
-      <div class="grid-cell">
+  <div class="row">
+      <div class="cell">
           <h1 class="page-title"><?php the_title(); ?></h1>
       </div>
   </div>

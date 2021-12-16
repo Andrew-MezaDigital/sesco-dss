@@ -1,3 +1,7 @@
-#primary > section {
-    padding: 60px 0;
+#primary {
+
+    & > section{
+        @include display(flex, column nowrap, flex-start, center);
+        padding: 60px 0;
+    }
 }

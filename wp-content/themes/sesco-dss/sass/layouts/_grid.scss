@@ -1,34 +1,52 @@
+.row,
+.col,
 .grid {
-    @include display(flex, row wrap, flex-start, flex-start);
+    @include display(flex, null, flex-start, flex-start);
     width: calc(100% + 40px);
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
+    margin: 0 -20px;
 
-    &-cell {
+    .cell {
         flex: 0 0 auto;
         margin: 0;
         padding: 20px;
+
+        &.no-pad {
+            padding: 0;
+        }
     }
+}
+
+.row,
+.grid {
+    flex-flow: row wrap;
+}
+
+.col {
+    flex-flow: column wrap;
+}
+
+.grid {
+    padding: 0;
+    list-style: none;
 
     &.up-4 {
 
-        .grid-cell {
+        .cell {
             flex: 0 0 (100% / 4);
         }
     }
 
     &.up-3 {
 
-        .grid-cell {
+        .cell {
             flex: 0 0 (100% / 3);
         }
     }
 
     &.up-2 {
 
-        .grid-cell {
+        .cell {
             flex: 0 0 (100% / 2);
         }    
     }
