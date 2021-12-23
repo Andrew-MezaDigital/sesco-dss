@@ -6,9 +6,11 @@
       <h1 class="page-title screen-reader-text"><?php the_title(); ?></h1>
       <p class="page-excerpt screen-reader-text"><?php echo get_the_excerpt(); ?></p>
       <?php if (have_rows('carousel_slides')) : ?>
-        <ul class="page-hero-slides">
+        <div class="splide">
+          <div class="splide__track">
+        <ul class="splide__list">
           <?php while (have_rows('carousel_slides')) : the_row(); ?>
-            <li class="page-hero-slide">
+            <li class="splide__slide">
               <?php $slide_reference = get_sub_field('carousel_slide_reference'); ?>
               <?php if ($slide_reference) : ?>
                 <?php foreach($slide_reference as $post) : ?>
