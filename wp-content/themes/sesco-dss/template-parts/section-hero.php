@@ -31,7 +31,7 @@
                               <?php $link_url = $custom_link['url']; ?>
                               <?php $link_title = $custom_link['title']; ?>
                               <?php $link_target = $custom_link['target'] ? $custom_link['target'] : '_self'; ?>
-                              <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_html( $link_title ); ?>"><?php echo $cta_text; ?></a>
+                              <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_html( $link_title ); ?>" class="btn"><?php echo $cta_text; ?></a>
                             <?php else : ?>
                               <a href="<?php echo get_the_permalink(); ?>" target="_self" title="<?php echo esc_html( $link_title ); ?>" class="btn"><?php echo $cta_text; ?></a>
                             <?php endif; ?>
