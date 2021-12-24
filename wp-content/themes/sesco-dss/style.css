@@ -435,6 +435,16 @@ p:last-child {
 	margin-bottom: 0;
 }
 
+.grid.up-4 .img-w + h1, .grid.up-4 .img-w +
+h2, .grid.up-4 .img-w +
+h3, .grid.up-4 .img-w +
+h4, .grid.up-4 .img-w +
+h5, .grid.up-4 .img-w +
+h6, .grid.up-4 .img-w +
+p {
+	margin-top: -10px;
+}
+
 dfn,
 cite,
 em,
@@ -791,15 +801,7 @@ textarea {
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 60px 0;
-}
-
-#primary > section.page-hero {
-	padding: 0 0 30px;
-}
-
-#primary > section.no-pt {
-	padding-top: 0;
+	padding: 30px 0;
 }
 
 .top-bar,
@@ -1000,6 +1002,7 @@ a:not(:last-child) img:only-child {
 }
 
 .img-w {
+	display: flex;
 	position: relative;
 	overflow: hidden;
 	padding-top: 56.25%;
@@ -1025,6 +1028,10 @@ a:not(:last-child) img:only-child {
 	width: 100%;
 	min-height: 100%;
 	transition: transform 0.2s ease-out;
+}
+
+.grid.up-4 .img-w {
+	border-width: 3px;
 }
 
 .page-content .wp-smiley,
@@ -1312,7 +1319,7 @@ a:not(:last-child) img:only-child {
 	border-radius: 5px;
 	background-color: #fab703;
 	color: #4169e1;
-	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
 	font-size: 21px;
 	font-weight: 600;
 	white-space: nowrap;
@@ -1330,8 +1337,28 @@ a:not(:last-child) img:only-child {
 
 .btn:hover, .btn:focus {
 	transform: scale(1.1);
-	box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.1);
 	color: #4169e1;
+}
+
+.btn.secondary {
+	background-color: #4169e1;
+	color: #fafafa;
+	box-shadow: none;
+	font-size: 16px;
+}
+
+.btn.secondary a:not(.btn) {
+	color: #fafafa;
+}
+
+.btn.secondary a:not(.btn):hover, .btn.secondary a:not(.btn):focus {
+	color: #fafafa;
+	text-decoration: none;
+}
+
+.btn.secondary:hover, .btn.secondary:focus {
+	box-shadow: none;
 }
 
 /*--------------------------------------------------------------
@@ -1546,6 +1573,16 @@ a:not(:last-child) img:only-child {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+/* Spacing
+--------------------------------------------- */
+.no-pt {
+	padding-top: 0 !important;
+}
+
+.mb {
+	margin-bottom: 20px !important;
 }
 
 /*# sourceMappingURL=style.css.map */

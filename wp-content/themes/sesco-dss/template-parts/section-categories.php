@@ -15,9 +15,7 @@
         <?php $image_id = get_term_meta($term->term_id, 'category_image', true ); ?>
         <?php $image = wp_get_attachment_image($image_id, 'large'); ?>
         <li class="cell">
-          <div class="img-w">
-            <a href="<?php echo $term_link; ?>"><?php echo $image ? $image : ''; ?></a>
-          </div>
+          <a href="<?php echo $term_link; ?>" class="img-w"><?php echo $image ? $image : ''; ?></a>
           <h3><a href="<?php echo $term_link; ?>"><?php echo $term->name; ?></a></h3>
           <?php echo $excerpt ? '<p>' . $excerpt . '</p>' : ''; ?>
         </li>

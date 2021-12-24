@@ -1,6 +1,6 @@
 <?php if (is_front_page()) : ?>
 
-<section class="page-hero">
+<section class="page-hero no-pt">
   <div class="row">
     <div class="cell fill">
       <h1 class="page-title screen-reader-text"><?php the_title(); ?></h1>

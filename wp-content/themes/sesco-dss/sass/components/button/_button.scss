@@ -3,7 +3,7 @@
   padding: 0.5em 1em;
   border-radius: 5px;
   @include colors($accent, $accent-dark);
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
   font-size: 21px;
   font-weight: 600;
   white-space: nowrap;
@@ -11,7 +11,17 @@
 
   @include hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.1);
     color: $accent-dark;
+  }
+
+  &.secondary {
+    @include colors($accent-dark, $light-0);
+    box-shadow: none;
+    font-size: 16px;
+
+    @include hover {
+      box-shadow: none;
+    }
   }
 }

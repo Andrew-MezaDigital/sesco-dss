@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
+  clear: both;
 }
 
 h1,
@@ -14,9 +14,13 @@ h4,
 h5,
 h6,
 p {
-	margin: 0 auto 0.5em;
+  margin: 0 auto 0.5em;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .grid.up-4 .img-w + & {
+    margin-top: -10px;
+  }
 }

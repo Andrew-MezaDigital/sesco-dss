@@ -14,6 +14,7 @@ img {
 }
 
 .img-w {
+  @include display;
   @include position;
   overflow: hidden;
   padding-top: 56.25%;
@@ -42,6 +43,10 @@ img {
     width: 100%;
     min-height: 100%;
     transition: transform 0.2s ease-out;
+  }
+
+  .grid.up-4 & {
+    border-width: 3px;
   }
 }
 
