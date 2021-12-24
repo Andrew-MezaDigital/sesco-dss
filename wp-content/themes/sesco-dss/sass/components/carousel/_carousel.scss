@@ -4,8 +4,9 @@ $color: $accent-dark;
 .home {
   .splide__slide {
     @include position;
-    @include size(100%);
-    padding-top: 56.25%;
+    @include size(100%, calc(100vh - 200px));
+    //padding-top: 56.25%;
+    background: #000;
 
     .bar-w {
       @include position(absolute, 1, (bottom, left), (0, 0));
@@ -18,19 +19,36 @@ $color: $accent-dark;
       margin: 0 ($width * 2) 0 0;
       @include colors(rgba($accent-dark, 0.9), $light-0);
 
-      .copy {
-        padding-right: 36px;
-      }
+      // Animation
+      opacity: 0;
+      transform: translateX(-50%);
+      transition: all 0.5s ease-out;
 
       &:after {
         @include shape;
         @include position(absolute, 1);
-        right: $width;
+        right: $width * -1;
         border-top: $width/2 solid rgba($color, 0.9);
         border-right: $width/2 solid transparent;
         border-bottom: $width/2 solid transparent;
         border-left: $width/2 solid rgba($color, 0.9);
       }
+    }
+
+    .copy {
+      padding-right: 36px;
+
+      // Animation
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.2s ease-in 0.5s;
+    }
+
+    .btn {
+      // Animation
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.2s ease-in 0.7s;
     }
 
     img {
@@ -45,6 +63,29 @@ $color: $accent-dark;
       width: 100%;
       min-height: 100%;
     }
+
+    &.is-active {
+      // Animation
+      .bar {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      img {
+        animation: grow-move 5s linear 0s;
+      }
+      .copy,
+      .btn {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+
+    &.is-prev,
+    &.is-next {
+      img {
+        display: none;
+      }
+    }
   }
 
   .splide__pagination {
@@ -57,11 +98,12 @@ $color: $accent-dark;
       margin: 6px;
       border-radius: 50%;
       background: $accent-dark;
-      border: 2px solid $light-0;
+      border: 3px solid $light-0;
+      cursor: pointer;
       @include transition;
 
       &.is-active {
-        transform: scale(1.2);
+        transform: scale(1.3);
         border-color: $accent;
       }
     }

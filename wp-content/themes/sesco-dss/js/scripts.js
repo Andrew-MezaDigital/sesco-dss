@@ -5,8 +5,10 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		const splide = new Splide( '.splide', {
 			type: 'fade',
 			autoplay: true,
-            interval: 3000,
-			rewind: true
+            interval: 5000,
+			rewind: true,
+			pauseOnHover: false,
+			pauseOnFocus: false
 		} );
 	    splide.mount();
 	}
