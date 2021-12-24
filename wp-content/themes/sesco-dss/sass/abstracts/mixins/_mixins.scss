@@ -1,46 +1,94 @@
 // Center block
 @mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+  width: map-get($columns, $numberColumns) -
+    (($columns__margin * ($numberColumns - 1)) / $numberColumns);
 }
 
 // FLEXBOX
-@mixin display( $display: flex, $flow: null, $justify-content: null, $align-items: null ) {
-    display: $display;
-    flex-flow: $flow;
-    justify-content: $justify-content;
-    align-items: $align-items;
+@mixin display(
+  $display: flex,
+  $flow: null,
+  $justify-content: null,
+  $align-items: null
+) {
+  display: $display;
+  flex-flow: $flow;
+  justify-content: $justify-content;
+  align-items: $align-items;
 }
 
 // PSEUDOS
 @mixin shape {
-    content: '';
-    display: block;
+  content: "";
+  display: block;
 }
 
 // POSITIONING
-@mixin position( $position: relative, $z-index: null, $dir: null, $xy: null, $transform: null ) {
-    position: $position;
-    z-index: $z-index;
-    @if ($dir and $xy) {
-        @each $d in $dir {
-            $i: index($dir, $d);
-            @if (length($xy) > ($i - 1)) {
-                #{$d}: #{nth($xy, $i)};
-            }
-        }
+@mixin position(
+  $position: relative,
+  $z-index: null,
+  $dir: null,
+  $xy: null,
+  $transform: null
+) {
+  position: $position;
+  z-index: $z-index;
+  @if ($dir and $xy) {
+    @each $d in $dir {
+      $i: index($dir, $d);
+      @if (length($xy) > ($i - 1)) {
+        #{$d}: #{nth($xy, $i)};
+      }
     }
-    transform: $transform;
+  }
+  transform: $transform;
 }
 
 // SIZING
-@mixin size( $width, $height: $width ) {
-    width: $width;
-    height: $height;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// HOVER
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+// COLOR
+@mixin colors(
+  $bg-color,
+  $txt-color,
+  $link-color: $txt-color,
+  $link-hover-color: $link-color
+) {
+  background-color: $bg-color;
+  color: $txt-color;
+
+  a:not(.btn) {
+    color: $link-color;
+
+    @include hover {
+      color: $link-hover-color;
+
+      @if $link-color == $link-hover-color {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// TRANSITION
+@mixin transition($transition: all 0.25s ease-out) {
+  transition: $transition;
 }

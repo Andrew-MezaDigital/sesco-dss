@@ -1,0 +1,128 @@
+$width: 200px;
+$color: $accent-dark;
+
+.home {
+  .splide__slide {
+    @include position;
+    @include size(100%);
+    padding-top: 56.25%;
+
+    .bar-w {
+      @include position(absolute, 1, (bottom, left), (0, 0));
+      overflow: hidden;
+    }
+
+    .bar {
+      @include display(flex, row nowrap, space-between, center);
+      padding: 24px 36px;
+      margin: 0 ($width * 2) 0 0;
+      @include colors(rgba($accent-dark, 0.9), $light-0);
+
+      .copy {
+        padding-right: 36px;
+      }
+
+      &:after {
+        @include shape;
+        @include position(absolute, 1);
+        right: $width;
+        border-top: $width/2 solid rgba($color, 0.9);
+        border-right: $width/2 solid transparent;
+        border-bottom: $width/2 solid transparent;
+        border-left: $width/2 solid rgba($color, 0.9);
+      }
+    }
+
+    img {
+      @include position(
+        absolute,
+        null,
+        (top, left),
+        (50%, 50%),
+        translate(-50%, -50%)
+      );
+      max-width: none;
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  .splide__pagination {
+    @include position(absolute, 1, (bottom, right), (0, 0));
+    padding: 32px;
+
+    &__page {
+      @include size(24px);
+      padding: 0;
+      margin: 6px;
+      border-radius: 50%;
+      background: $accent-dark;
+      border: 2px solid $light-0;
+      @include transition;
+
+      &.is-active {
+        transform: scale(1.2);
+        border-color: $accent;
+      }
+    }
+  }
+
+  .splide__arrows {
+    @include display(flex, row nowrap, null, center);
+    @include position(
+      absolute,
+      1,
+      (top, left, right, bottom),
+      (0, 16px, 16px, 25%)
+    );
+    pointer-events: none;
+
+    .splide__arrow {
+      @include display(flex, row nowrap, null, center);
+      @include size(50%, 100%);
+      pointer-events: auto;
+      background: none;
+      border: 0;
+
+      svg {
+        fill: $light-25;
+        @include transition;
+      }
+
+      &:before {
+        @include shape;
+        @include position(absolute, -1, top, 50%, translateY(-50%));
+        @include size(72px);
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.35);
+      }
+
+      @include hover {
+        cursor: pointer;
+        svg {
+          fill: $light-0;
+        }
+      }
+
+      &--prev {
+        justify-content: flex-start;
+
+        svg {
+          transform: rotate(180deg);
+        }
+
+        &:before {
+          left: 0;
+        }
+      }
+
+      &--next {
+        justify-content: flex-end;
+
+        &:before {
+          right: 0;
+        }
+      }
+    }
+  }
+}

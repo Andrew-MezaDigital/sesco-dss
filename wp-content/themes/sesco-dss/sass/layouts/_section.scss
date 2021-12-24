@@ -1,7 +1,10 @@
 #primary {
+  & > section {
+    @include display(flex, column nowrap, flex-start, center);
+    padding: 60px 0;
 
-    & > section{
-        @include display(flex, column nowrap, flex-start, center);
-        padding: 60px 0;
+    &.page-hero {
+      padding-top: 0;
     }
+  }
 }

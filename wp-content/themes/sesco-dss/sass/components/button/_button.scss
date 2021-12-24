@@ -1,0 +1,16 @@
+.btn {
+  @include display(inline-flex, row nowrap, center, center);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  @include colors($accent, $accent-dark);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  white-space: nowrap;
+  @include transition;
+
+  @include hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.15);
+    color: $accent-dark;
+  }
+}
