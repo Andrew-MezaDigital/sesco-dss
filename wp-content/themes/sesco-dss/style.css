@@ -795,6 +795,10 @@ textarea {
 }
 
 #primary > section.page-hero {
+	padding: 0 0 30px;
+}
+
+#primary > section.no-pt {
 	padding-top: 0;
 }
 
@@ -993,6 +997,34 @@ img:last-child {
 
 a:not(:last-child) img:only-child {
 	margin-bottom: 20px;
+}
+
+.img-w {
+	position: relative;
+	overflow: hidden;
+	padding-top: 56.25%;
+	margin-bottom: 20px;
+	border: 6px solid #fab703;
+}
+
+.img-w:last-child {
+	margin-bottom: 0;
+}
+
+.img-w:hover img, .img-w:focus img {
+	transform: translate(-50%, -50%) scale(1.1);
+}
+
+.img-w img {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: none;
+	width: 100%;
+	min-height: 100%;
+	transition: transform 0.2s ease-out;
 }
 
 .page-content .wp-smiley,

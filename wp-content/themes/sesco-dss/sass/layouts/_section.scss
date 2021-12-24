@@ -6,6 +6,10 @@
     padding: 60px 0;
 
     &.page-hero {
+      padding: 0 0 30px;
+    }
+
+    &.no-pt {
       padding-top: 0;
     }
   }
