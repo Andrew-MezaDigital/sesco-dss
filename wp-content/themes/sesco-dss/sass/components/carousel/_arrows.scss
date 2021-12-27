@@ -1,0 +1,58 @@
+.splide__arrows {
+  @include display(flex, row nowrap, space-between, center);
+  @include position(
+    absolute,
+    1,
+    (top, left, right, bottom),
+    (0, 16px, 16px, 25%)
+  );
+  pointer-events: none;
+
+  .splide__arrow {
+    @include display(flex, row nowrap, null, center);
+    @include size(104px, 100%);
+    pointer-events: auto;
+    background: none;
+    border: 0;
+
+    svg {
+      fill: $light-25;
+      @include transition;
+    }
+
+    &:before {
+      @include shape;
+      @include position(absolute, -1, top, 50%, translateY(-50%));
+      @include size(72px);
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    @include hover {
+      cursor: pointer;
+      svg {
+        fill: $light-0;
+      }
+    }
+
+    &--prev {
+      justify-content: flex-start;
+
+      svg {
+        transform: rotate(180deg);
+      }
+
+      &:before {
+        left: 0;
+      }
+    }
+
+    &--next {
+      justify-content: flex-end;
+
+      &:before {
+        right: 0;
+      }
+    }
+  }
+}

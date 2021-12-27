@@ -19,22 +19,18 @@
                       <?php $subhead = get_sub_field('carousel_slide_subheading') ? get_sub_field('carousel_slide_subheading') : get_the_excerpt(); ?>
                       <?php $custom_img = get_sub_field('carousel_slide_image'); ?>
                       <?php $cta_text = get_sub_field('carousel_slide_cta'); ?>
+                      <?php $custom_link = get_sub_field('carousel_slide_link'); ?>
+                      <?php $link_url = $custom_link ? $custom_link['url'] : get_the_permalink(); ?>
+                      <?php $link_title = $custom_link ? $custom_link['title'] : get_the_title(); ?>
+                      <?php $link_target = $custom_link ? $custom_link['target'] : '_self'; ?>
                       <div class="bar-w">
                         <div class="bar">
                           <div class="copy">
-                            <h2><?php echo $title; ?></h2>
+                            <h2><a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo $title; ?></a></h2>
                             <?php echo $subhead ? '<p>' . $subhead . '</p>' : ''; ?>
                           </div>
                           <?php if ($cta_text) : ?>
-                            <?php $custom_link = get_sub_field('carousel_slide_link'); ?>
-                            <?php if ($custom_link) : ?>
-                              <?php $link_url = $custom_link['url']; ?>
-                              <?php $link_title = $custom_link['title']; ?>
-                              <?php $link_target = $custom_link['target'] ? $custom_link['target'] : '_self'; ?>
-                              <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_html( $link_title ); ?>" class="btn"><?php echo $cta_text; ?></a>
-                            <?php else : ?>
-                              <a href="<?php echo get_the_permalink(); ?>" target="_self" title="<?php echo esc_html( $link_title ); ?>" class="btn"><?php echo $cta_text; ?></a>
-                            <?php endif; ?>
+                            <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_html( $link_title ); ?>" class="btn"><?php echo $cta_text; ?></a>
                           <?php endif; ?>
                         </div>
                       </div>
@@ -42,9 +38,13 @@
                         <?php $src = $custom_img['sizes']['banner']; ?>
                         <?php $alt = $custom_img['alt']; ?>
                         <!-- Need to generate srcset for custom images -->
-                        <img src="<?php echo esc_url($src); ?>" class="attachment-banner size-banner wp-post-image" alt="<?php echo esc_attr($alt); ?>" loading="lazy" srcset="" sizes="" />
+                        <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" class="img-w">
+                          <img src="<?php echo esc_url($src); ?>" class="attachment-banner size-banner wp-post-image" alt="<?php echo esc_attr($alt); ?>" loading="lazy" srcset="" sizes="" />
+                        </a>
                       <?php elseif (get_the_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('banner'); ?>
+                        <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" class="img-w">
+                          <?php the_post_thumbnail('banner'); ?>
+                        </a>
                       <?php else : ?>
                         <p class="help-text">Please add an image to this homepage slide through the content reference's featured image or using the custom image field for the slide.</p>
                       <?php endif; ?>
