@@ -1,120 +1,100 @@
 .row,
 .col,
 .grid {
-    @include display(flex, null, flex-start, flex-start);
-    width: calc(100% + 24px);
-    max-width: 1200px;
-    margin: 0 -12px;
-    padding: 0;
-    list-style: none;
+  @include display(flex, null, flex-start, flex-start);
+  width: calc(100% + 24px);
+  max-width: 1200px;
+  margin: 0 -12px;
+  padding: 0;
+  list-style: none;
 
-    .cell {
-        flex: 0 0 auto;
-        margin: 0;
-        padding: 0 12px;
-    }
+  .cell {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0 12px;
+  }
 
-    &.va-center {
-        align-items: center;
-    }
+  &.va-center {
+    align-items: center;
+  }
 
-    &.ha-end {
-        justify-content: flex-end;
-    }
+  &.ha-end {
+    justify-content: flex-end;
+  }
 
-    &.ha-between {
-        justify-content: space-between;
-    }
+  &.ha-between {
+    justify-content: space-between;
+  }
 }
 
 .row,
 .grid {
-    flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .col {
-    flex-flow: column wrap;
+  flex-flow: column wrap;
 }
 
 .grid {
-
-    &.up-4 {
-
-        > .cell {
-            flex: 0 0 (100% / 4);
-        }
+  &.up-4 {
+    > .cell {
+      flex: 0 0 (100% / 4);
     }
+  }
 
-    &.up-3 {
-
-        > .cell {
-            flex: 0 0 (100% / 3);
-        }
+  &.up-3 {
+    > .cell {
+      flex: 0 0 (100% / 3);
     }
+  }
 
-    &.up-2 {
-
-        > .cell {
-            flex: 0 0 (100% / 2);
-        }    
+  &.up-2 {
+    > .cell {
+      flex: 0 0 (100% / 2);
     }
+  }
 }
 
 .cell {
+  &.fill {
+    flex: 1;
+  }
 
-    &.fill {
-        flex: 1;
+  &.store {
+    @include display(inline-flex, row nowrap, flex-start, center);
+
+    p,
+    nav {
+      @include display(inline-flex);
     }
 
-    &.store {
-        @include display(inline-flex, row nowrap, flex-start, center);
+    p {
+      margin: 0 0.5em 0 0;
+      white-space: nowrap;
+      line-height: 1;
+    }
+  }
 
-        p,
-        nav {
-            @include display(inline-flex);
-        }
+  &.logo {
+    @include position;
 
-        p {
-            margin: 0 0.5em 0 0;
-            white-space: nowrap;
-            line-height: 1;
-        }
+    &:before {
+      @include shape;
+      @include position(
+        absolute,
+        null,
+        (top, left, bottom, right),
+        (0, 0, 0, 0),
+        rotate(-45deg)
+      );
+      transform-origin: center left;
+      @include size(200%);
+      background: $accent;
     }
 
-    &.logo {
-        @include position;
-
-        &:before {
-            @include shape;
-            @include position(absolute, null, (top, left, bottom, right), (0, 0, 0, 0), rotate(-45deg));
-            transform-origin: center left;
-            @include size(200%);
-            background: $accent;
-        }
-
-        > * {
-            @include position(relative, 1);
-        }
+    > * {
+      @include position(relative, 1);
     }
-}
-
-.menu {
-    @include display(inline-flex, row nowrap);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    .menu-item {
-        margin: 1em;
-    }
-
-    &.nav-menu {
-        
-        .menu-item {
-            font-size: 16px;
-            font-weight: 700;
-            white-space: nowrap;
-            line-height: 1;
-        }
-    }
+  }
 }

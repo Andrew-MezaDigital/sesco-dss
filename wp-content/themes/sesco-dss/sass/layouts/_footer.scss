@@ -1,0 +1,48 @@
+.site-footer {
+  margin-top: 30px;
+
+  .footer-content,
+  .site-info {
+    @include display(flex, column nowrap, flex-start, center);
+  }
+  .footer-content {
+    padding: 30px 0;
+    @include colors($dark-10, $light-0);
+
+    .store {
+      @include display(block);
+    }
+
+    h2 {
+      font-size: 21px;
+      color: $light-10;
+    }
+
+    table,
+    p {
+      color: $light-25;
+    }
+  }
+  .site-info {
+    padding: 15px 0;
+    @include colors($dark-0, $light-50);
+
+    p {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .credit {
+      font-size: 12px;
+
+      a {
+        text-decoration: underline;
+
+        @include hover {
+          color: $light-25;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

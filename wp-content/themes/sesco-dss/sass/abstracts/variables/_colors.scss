@@ -22,4 +22,8 @@ $color__border-abbr: #666;
 $accent: #fab703;
 $accent-dark: #4169e1;
 $light-0: #fafafa;
+$light-10: darken($light-0, 10%);
 $light-25: darken($light-0, 25%);
+$light-50: darken($light-0, 50%);
+$dark-0: #1f1f1f;
+$dark-10: lighten($dark-0, 10%);

@@ -1,0 +1,27 @@
+#menu-social-menu {
+  width: calc(100% + 10px);
+  margin: 0 -5px;
+  .menu-item {
+    @include display(flex, row nowrap, center, center);
+    @include position;
+    @include size(48px);
+    margin: 0 5px;
+    padding: 0.5em;
+    border-radius: 4px;
+    background: $dark-0;
+    font-size: 24px;
+    color: $accent;
+    transition: all 0.3s ease-out;
+
+    @include hover {
+      color: $light-0;
+    }
+
+    a {
+      @include display(block);
+      @include position(absolute, 1, (top, left, right, bottom), (0, 0, 0, 0));
+      font-size: 0px;
+      color: transparent;
+    }
+  }
+}

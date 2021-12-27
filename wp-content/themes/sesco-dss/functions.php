@@ -181,6 +181,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Add banner image size
+ * Add additional banner image sizes
  */
 add_image_size('banner', 1200);
+
+/**
+ * Register additional menus
+ */
+add_action( 'after_setup_theme', 'register_social_menu' );
+ 
+function register_social_menu() {
+    register_nav_menu( 'social', __( 'Social Menu', 'theme-text-domain' ) );
+}
