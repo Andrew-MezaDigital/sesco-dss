@@ -17,7 +17,7 @@
 				<div class="cell">
 					<h2>
 						Connect with Us
-						<?php echo is_user_logged_in() ? '<a href="http://localhost:8888/sesco-dss/wp-admin/nav-menus.php?action=edit&menu=10" class="post-edit-link">Edit this menu</a>' : ''; ?>
+						<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=10" class="post-edit-link">Edit this menu</a>' : ''; ?>
 					</h2>
 					<?php wp_nav_menu( array( 'menu' => 'Social Menu' )); ?>
 				</div>
@@ -50,7 +50,7 @@
 				<div class="cell">
 					<h2>
 						About Us
-						<?php echo is_user_logged_in() ? '<a href="http://localhost:8888/sesco-dss/wp-admin/customize.php" class="post-edit-link">Edit this content</a>' : ''; ?>
+						<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit this content</a>' : ''; ?>
 					</h2>
 					<p class="site-description"><?php bloginfo('description', 'display'); ?></p>
 				</div>

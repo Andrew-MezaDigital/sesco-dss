@@ -56,7 +56,7 @@
 		<div class="row ha-between va-center">
 			<div class="logo cell">
 				<?php the_custom_logo(); ?>
-				<?php echo is_user_logged_in() ? '<a href="http://localhost:8888/sesco-dss/wp-admin/customize.php" class="post-edit-link">Edit this logo</a>' : ''; ?>
+				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit this logo</a>' : ''; ?>
 			</div>
 			<div class="nav cell">
 				<nav id="site-navigation" class="main-navigation">
@@ -70,7 +70,7 @@
 					);
 					?>
 				</nav>
-				<?php echo is_user_logged_in() ? '<a href="http://localhost:8888/sesco-dss/wp-admin/nav-menus.php?action=edit&menu=8" class="post-edit-link">Edit this menu</a>' : ''; ?>
+				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=8" class="post-edit-link">Edit this menu</a>' : ''; ?>
 			</div>
 		</div>
 	</header>
