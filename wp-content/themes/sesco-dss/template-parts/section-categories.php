@@ -16,7 +16,10 @@
         <?php $image = wp_get_attachment_image($image_id, 'large'); ?>
         <li class="cell">
           <a href="<?php echo $term_link; ?>" class="img-w"><?php echo $image ? $image : ''; ?></a>
-          <h3><a href="<?php echo $term_link; ?>"><?php echo $term->name; ?></a></h3>
+          <h3>
+            <a href="<?php echo $term_link; ?>"><?php echo $term->name; ?></a>
+            <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+          </h3>
           <?php echo $excerpt ? '<p>' . $excerpt . '</p>' : ''; ?>
         </li>
       <?php endforeach; ?>

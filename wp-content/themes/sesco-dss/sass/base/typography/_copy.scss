@@ -53,3 +53,19 @@ a {
 .subhead {
 	font-size: 18px;
 }
+
+.post-edit-link {
+	@include display(inline-block);
+	vertical-align: middle;
+	padding: 0 0 0 .5em;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+	text-decoration: underline;
+
+	@include hover {
+		text-decoration: underline;
+	}
+}

@@ -34,7 +34,10 @@ $services = new WP_Query($args); ?>
               <div class="img-w"><?php the_post_thumbnail(); ?></div>
             </div>
             <div class="cell fill">
-              <h3><?php the_title(); ?></h3>
+              <h3>
+                <?php the_title(); ?>
+                <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+              </h3>
               <?php the_field('service_description'); ?>
              </div>
           </div>

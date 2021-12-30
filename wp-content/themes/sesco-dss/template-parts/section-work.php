@@ -17,7 +17,10 @@ $work = new WP_Query($args); ?>
       <?php while ($work->have_posts()) : $work->the_post(); ?>
         <li class="cell">
           <a href="<?php the_permalink(); ?>" class="img-w"><?php the_post_thumbnail(); ?></a>
-          <h3 class="line-break"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+          <h3 class="line-break">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+          </h3>
           <?php the_excerpt(); ?>
         </li>
       <?php endwhile; ?>

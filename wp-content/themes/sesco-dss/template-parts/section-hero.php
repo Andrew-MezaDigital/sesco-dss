@@ -26,7 +26,10 @@
                       <div class="bar-w">
                         <div class="bar">
                           <div class="copy">
-                            <h2><a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo $title; ?></a></h2>
+                            <h2>
+                              <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo $title; ?></a>
+                              <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+                            </h2>
                             <?php echo $subhead ? '<p>' . $subhead . '</p>' : ''; ?>
                           </div>
                           <?php if ($cta_text) : ?>
@@ -70,7 +73,10 @@
   <div class="row">
       <div class="cell lg-50">
           <div class="bar">
-            <h1 class="page-title"><?php echo $term->name . '&nbsp;Services'; ?></h1>
+            <h1 class="page-title">
+              <?php echo $term->name . '&nbsp;Services'; ?>
+              <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+            </h1>
             <?php echo $excerpt ? '<p class="subhead">' . $excerpt . '</p>' : '' ?>
           </div>
       </div>

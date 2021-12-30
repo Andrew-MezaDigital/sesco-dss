@@ -17,7 +17,10 @@ $products = new WP_Query($args); ?>
       <?php while ($products->have_posts()) : $products->the_post(); ?>
         <li class="cell">
           <a href="<?php the_permalink(); ?>" class="img-w"><?php the_post_thumbnail(); ?></a>
-          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+          <h3>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+          </h3>
           <p>$<?php the_field('product_price'); ?></p>
         </li>
       <?php endwhile; ?>
