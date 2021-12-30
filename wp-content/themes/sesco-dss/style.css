@@ -761,6 +761,10 @@ textarea {
 	flex: 0 0 50%;
 }
 
+.cell.auto {
+	flex: 0 0 auto;
+}
+
 .cell.fill {
 	flex: 1;
 }
