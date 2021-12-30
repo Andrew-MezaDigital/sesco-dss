@@ -1,6 +1,6 @@
 <?php $term_query = new WP_Term_Query( array( 
     'taxonomy' => 'services',
-    'orderby' => 'name',
+    'orderby' => 'count',
     'order' => 'ASC',
     'fields' => 'all',
     'hide_empty' => false,

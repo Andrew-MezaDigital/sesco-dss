@@ -1,6 +1,8 @@
 <?php $term = get_queried_object(); ?>
 <?php $args = array(
   'post_type' => 'service',
+  'orderby' => 'name',
+  'order' => 'ASC',
   'tax_query' => array(
     array (
         'taxonomy' => 'services',

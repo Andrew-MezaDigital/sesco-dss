@@ -1,5 +1,7 @@
 <?php $args = array(
   'post_type' => 'work',
+  'orderby' => 'date',
+  'order' => 'DESC'
 ); 
 $work = new WP_Query($args); ?>
 

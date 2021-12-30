@@ -1,5 +1,7 @@
 <?php $args = array(
   'post_type' => 'products',
+  'orderby' => 'date',
+  'order' => 'DESC'
 ); 
 $products = new WP_Query($args); ?>
 
