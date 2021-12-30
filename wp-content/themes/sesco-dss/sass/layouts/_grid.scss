@@ -92,6 +92,7 @@
   }
 
   &.logo {
+    @include display(flex, row nowrap, flex-start, center);
     @include position;
 
     &:before {
@@ -108,8 +109,16 @@
       background: $accent;
     }
 
+    .custom-logo {
+      margin: 0;
+    }
+
     > * {
       @include position(relative, 1);
     }
+  }
+
+  &.nav {
+    @include display(flex, row nowrap, flex-start, center);
   }
 }

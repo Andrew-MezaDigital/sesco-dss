@@ -792,6 +792,10 @@ textarea {
 }
 
 .cell.logo {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
 	position: relative;
 }
 
@@ -810,9 +814,20 @@ textarea {
 	background: #fab703;
 }
 
+.cell.logo .custom-logo {
+	margin: 0;
+}
+
 .cell.logo > * {
 	position: relative;
 	z-index: 1;
+}
+
+.cell.nav {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 #primary {

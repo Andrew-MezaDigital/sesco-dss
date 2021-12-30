@@ -15,7 +15,10 @@
 		<div class="footer-content">
 			<div class="grid up-4">
 				<div class="cell">
-					<h2>Connect with Us</h2>
+					<h2>
+						Connect with Us
+						<?php echo is_user_logged_in() ? '<a href="http://localhost:8888/sesco-dss/wp-admin/nav-menus.php?action=edit&menu=10" class="post-edit-link">Edit this menu</a>' : ''; ?>
+					</h2>
 					<?php wp_nav_menu( array( 'menu' => 'Social Menu' )); ?>
 				</div>
 				<?php $args = array(
@@ -25,7 +28,10 @@
 				<?php if ($stores->have_posts()) : ?>
 					<?php while ($stores->have_posts()) : $stores->the_post() ?>
 						<div class="store cell">
-							<h2><?php the_title(); ?></h2>
+							<h2>
+								<?php the_title(); ?>
+								<?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+							</h2>
 							<?php if (have_rows('store_hours')) : ?>
 								<table class="store-hours">
 									<tbody>
@@ -42,7 +48,10 @@
 					<?php endwhile; ?>
 				<?php endif; wp_reset_postdata(); ?>
 				<div class="cell">
-					<h2>About Us</h2>
+					<h2>
+						About Us
+						<?php echo is_user_logged_in() ? '<a href="http://localhost:8888/sesco-dss/wp-admin/customize.php" class="post-edit-link">Edit this content</a>' : ''; ?>
+					</h2>
 					<p class="site-description"><?php bloginfo('description', 'display'); ?></p>
 				</div>
 			</div>
