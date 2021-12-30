@@ -14,7 +14,8 @@ h4,
 h5,
 h6,
 p {
-  margin: 0 auto 0.5em;
+  max-width: 800px;
+  margin: 0 0 0.5em;
 
   &:last-child {
     margin-bottom: 0;
@@ -24,3 +25,5 @@ p {
     margin-top: -10px;
   }
 }
+
+

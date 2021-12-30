@@ -9,7 +9,7 @@
   list-style: none;
 
   .cell {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     margin: 0;
     padding: 0 12px;
   }
@@ -37,6 +37,12 @@
 }
 
 .grid {
+  &[class*=" up-"] {
+
+    > .cell {
+      padding: 12px 18px;
+    }
+  }
   &.up-4 {
     > .cell {
       flex: 0 0 (100% / 4);
@@ -57,8 +63,17 @@
 }
 
 .cell {
+
   &.fill {
     flex: 1;
+  }
+
+  &.lg-33 {
+    flex: 0 0 (100% / 3);
+  }
+
+  &.lg-50 {
+    flex: 0 0 (100% / 2);
   }
 
   &.store {

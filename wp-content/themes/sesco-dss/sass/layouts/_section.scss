@@ -7,7 +7,7 @@
 
     &.page-hero {
       @include position;
-      padding: 60px 0;
+      padding: 45px 0;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -22,11 +22,14 @@
         @include position(relative, 1);
       }
 
-      .page-title {
-        margin: -60px 0;
-        padding: 60px;
-        background: rgba($accent-dark, 0.85);
-        color: $light-0;
+      .bar {
+        margin: -45px 0;
+        padding: 45px;
+        @include colors(rgba($accent-dark, 0.85), $light-0);
+      }
+
+      + section {
+        padding-top: 45px;
       }
     }
   }

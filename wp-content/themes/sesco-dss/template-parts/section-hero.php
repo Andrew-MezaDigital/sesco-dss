@@ -65,10 +65,14 @@
 <!-- Taxonomy term archive pages -->
 <?php $term = get_queried_object(); ?>
 <?php $image = get_field('category_image', $term); ?>
+<?php $excerpt = get_field('category_excerpt', $term); ?>
 <section class="page-hero" style="background-image:url('<?php echo $image['url']; ?>');">
   <div class="row">
-      <div class="cell">
-          <h1 class="page-title"><?php echo $term->name; ?></h1>
+      <div class="cell lg-50">
+          <div class="bar">
+            <h1 class="page-title"><?php echo $term->name . '&nbsp;Services'; ?></h1>
+            <?php echo $excerpt ? '<p class="subhead">' . $excerpt . '</p>' : '' ?>
+          </div>
       </div>
   </div>
 </section>
