@@ -78,7 +78,7 @@
             <div class="bar">
               <h1 class="page-title">
                 <?php echo $term->name . '&nbsp;Services'; ?>
-                <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+                <?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/term.php?taxonomy=' . $term->taxonomy .'&tag_ID=' . $term->term_id . '" class="post-edit-link">Edit this content</a>' : ''; ?>
               </h1>
               <?php echo $excerpt ? '<p class="subhead">' . $excerpt . '</p>' : '' ?>
             </div>
