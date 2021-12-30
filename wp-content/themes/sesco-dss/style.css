@@ -794,6 +794,37 @@ textarea {
 	padding: 30px 0;
 }
 
+#primary > section.page-hero {
+	position: relative;
+	padding: 60px 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#primary > section.page-hero:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.15);
+}
+
+#primary > section.page-hero > * {
+	position: relative;
+	z-index: 1;
+}
+
+#primary > section.page-hero .page-title {
+	margin: -60px 0;
+	padding: 60px;
+	background: rgba(65, 105, 225, 0.85);
+	color: #fafafa;
+}
+
 .top-bar,
 .site-header {
 	display: flex;

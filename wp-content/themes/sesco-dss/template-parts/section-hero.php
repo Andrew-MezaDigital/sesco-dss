@@ -62,10 +62,13 @@
 
 <?php else : ?>
 
-<section class="page-hero" style="background-image:url('<?php echo 'the image'; ?>');">
+<!-- Taxonomy term archive pages -->
+<?php $term = get_queried_object(); ?>
+<?php $image = get_field('category_image', $term); ?>
+<section class="page-hero" style="background-image:url('<?php echo $image['url']; ?>');">
   <div class="row">
       <div class="cell">
-          <h1 class="page-title"><?php the_title(); ?></h1>
+          <h1 class="page-title"><?php echo $term->name; ?></h1>
       </div>
   </div>
 </section>
