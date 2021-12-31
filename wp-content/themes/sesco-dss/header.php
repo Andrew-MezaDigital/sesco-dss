@@ -35,7 +35,7 @@
 				<?php if ($stores->have_posts()) : ?>
 					<div class="row ha-end">
 						<?php while ($stores->have_posts()) : $stores->the_post() ?>
-							<div class="store cell">
+							<div class="store cell auto">
 								<p><?php the_title(); ?></p>
 								<nav>
 									<ul class="menu">
@@ -54,11 +54,11 @@
 
 	<header id="masthead" class="site-header">
 		<div class="row ha-between va-center">
-			<div class="logo cell">
+			<div class="logo cell auto">
 				<?php the_custom_logo(); ?>
 				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit this logo</a>' : ''; ?>
 			</div>
-			<div class="nav cell">
+			<div class="nav cell auto">
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sesco-dss' ); ?></button>
 					<?php
