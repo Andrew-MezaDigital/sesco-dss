@@ -12,7 +12,7 @@
       background-position: center;
       background-repeat: no-repeat;
 
-      &:after {
+      body:not(.home) &:after {
         @include shape;
         @include position(absolute, null, (top, left, right, bottom), (0, 0, 0, 0));
         background: rgba(0,0,0, 0.15);
@@ -26,6 +26,11 @@
         margin: -45px 0;
         padding: 45px;
         @include colors(rgba($accent-dark, 0.85), $light-0);
+
+        body.home & {
+          margin: 0;
+          padding: 30px;
+        }
       }
 
       + section {

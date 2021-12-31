@@ -1,5 +1,4 @@
-$width: 200px;
-$color: $accent-dark;
+$width: 100px;
 
 .home {
   .splide__slide {
@@ -9,7 +8,6 @@ $color: $accent-dark;
 
     .bar-w {
       @include position(absolute, 2, (bottom, left), (0, 0));
-      overflow: hidden;
     }
 
     .bar {
@@ -22,16 +20,6 @@ $color: $accent-dark;
       opacity: 0;
       transform: translateX(-50%);
       transition: all 0.5s ease-out;
-
-      &:after {
-        @include shape;
-        @include position(absolute, 1);
-        right: $width * -1;
-        border-top: $width/2 solid rgba($color, 0.9);
-        border-right: $width/2 solid transparent;
-        border-bottom: $width/2 solid transparent;
-        border-left: $width/2 solid rgba($color, 0.9);
-      }
     }
 
     .copy {
