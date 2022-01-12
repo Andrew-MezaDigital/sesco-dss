@@ -1334,6 +1334,7 @@ a:not(:last-child) img:only-child {
 	position: relative;
 	width: 100%;
 	height: calc(100vh - 200px);
+	max-height: 650px;
 	background: #000;
 }
 

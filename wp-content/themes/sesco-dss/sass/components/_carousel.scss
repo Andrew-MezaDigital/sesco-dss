@@ -4,6 +4,7 @@ $width: 100px;
   .splide__slide {
     @include position;
     @include size(100%, calc(100vh - 200px));
+    max-height: 650px;
     background: #000;
 
     .bar-w {
