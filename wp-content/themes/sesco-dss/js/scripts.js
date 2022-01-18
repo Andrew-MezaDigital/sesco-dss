@@ -15,4 +15,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	if ( document.querySelector( '.list-work' ) ) {
 		var mixWork = mixitup('.list-work' );
 	}
+	if ( document.querySelector( '.glightbox' ) ) {
+		const lightbox = GLightbox({});
+	}
 } );
