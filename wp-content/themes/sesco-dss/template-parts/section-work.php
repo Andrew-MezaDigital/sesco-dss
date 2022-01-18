@@ -27,7 +27,7 @@
           <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this content</a>' : ''; ?>
         </div>
       </div>
-      <ul class="grid up-4">
+      <ul class="list-work grid up-4">
         <?php while ($work->have_posts()) : $work->the_post(); ?>
           <li id="work-<?php echo get_the_ID(); ?>" class="cell">
             <?php $work_item_url = $work_url . '#work-' . get_the_ID(); ?>
@@ -64,10 +64,22 @@
             <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this content</a>' : ''; ?>
           </h2>
         </div>
+        <div class="cell auto">
+          <!-- Make buttons dynamic -->
+          <button type="button" data-filter="all">All</button>
+          <button type="button" data-filter=".fredericksburg-store">Fredericksburg Store</button>
+          <button type="button" data-filter=".fairfax-store">Fairfax Store</button>
+        </div>
       </div>
-      <ul class="grid up-4">
+      <ul class="list-work grid up-4">
         <?php while ($work->have_posts()) : $work->the_post(); ?>
-          <li id="work-<?php echo get_the_ID(); ?>" class="cell">
+          <?php $stores = get_field('work_store'); ?>
+          <?php if ($stores) : ?>
+            <?php foreach($stores as $store) : ?>
+              <?php $store_class = classify(get_the_title($store->ID)); ?>
+            <?php endforeach; ?>
+          <?php endif; ?>
+          <li id="work-<?php echo get_the_ID(); ?>" class="mix <?php echo $store_class; ?> cell">
             <?php $work_item_url = $work_url . '#work-' . get_the_ID(); ?>
             <!-- Add lightbox functionality -->
             <div class="img-w"><?php the_post_thumbnail(); ?></div>

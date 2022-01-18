@@ -5,11 +5,14 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		const splide = new Splide( '.splide', {
 			type: 'fade',
 			autoplay: true,
-            interval: 5000,
+			interval: 5000,
 			rewind: true,
 			pauseOnHover: false,
-			pauseOnFocus: false
+			pauseOnFocus: false,
 		} );
 	    splide.mount();
+	}
+	if ( document.querySelector( '.list-work' ) ) {
+		var mixWork = mixitup('.list-work' );
 	}
 } );
