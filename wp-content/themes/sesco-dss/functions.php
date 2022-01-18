@@ -194,3 +194,7 @@ add_action( 'after_setup_theme', 'register_social_menu' );
 function register_social_menu() {
     register_nav_menu( 'social', __( 'Social Menu', 'theme-text-domain' ) );
 }
+
+function classify($string) {
+	return strtolower(str_replace(" ", "-", $string));
+}
