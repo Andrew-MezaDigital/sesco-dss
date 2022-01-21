@@ -1,6 +1,7 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 document.addEventListener( 'DOMContentLoaded', function() {
-	// Setup splide carousel
+	if ( document.querySelector( '.glightbox' ) ) {
+		const lightbox = GLightbox( {} );
+	}
 	if ( document.querySelector( '.splide' ) ) {
 		const splide = new Splide( '.splide', {
 			type: 'fade',
@@ -10,12 +11,17 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			pauseOnHover: false,
 			pauseOnFocus: false,
 		} );
-	    splide.mount();
+		splide.mount();
 	}
-	if ( document.querySelector( '.list-work' ) ) {
-		var mixWork = mixitup('.list-work' );
-	}
-	if ( document.querySelector( '.glightbox' ) ) {
-		const lightbox = GLightbox({});
+
+	if ( document.querySelector( '.filterable' ) ) {
+		const selectFilter = document.querySelector( '.filter' );
+		const mixer = mixitup( '.filterable' );
+		if ( selectFilter ) {
+			selectFilter.addEventListener( 'change', function() {
+				var selector = selectFilter.value;
+				mixer.filter( selector );
+			} );
+		}
 	}
 } );
