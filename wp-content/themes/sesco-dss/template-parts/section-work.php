@@ -51,6 +51,7 @@
     'order' => 'DESC'
   ); 
   $work = new WP_Query($args);
+  $services = new WP_Query(array('post_type' => 'service'));
   $work_title = get_field('section_work_header');
   $edit_page_link = get_edit_post_link(get_the_ID());
   ?>
@@ -64,31 +65,50 @@
             <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this content</a>' : ''; ?>
           </h2>
         </div>
-        <div class="cell auto">
-          <!-- Make buttons dynamic -->
-          <button type="button" data-filter="all">All</button>
-          <button type="button" data-filter=".fredericksburg-store">Fredericksburg Store</button>
-          <button type="button" data-filter=".fairfax-store">Fairfax Store</button>
-        </div>
+        <?php if ($services->have_posts()) : ?>
+          <div class="cell auto">
+            <select class="filter">
+              <option value="all">All Services</option>
+              <?php while ($services->have_posts()) : $services->the_post(); ?>
+                <?php if (wp_count_posts('service')) : ?>
+                  <option value=".<?php echo classify(get_the_title()); ?>"><?php the_title(); ?></option>
+                <?php endif; ?>
+              <?php endwhile; wp_reset_postdata(); ?>
+            </select>
+          </div>
+        <?php endif; ?>
       </div>
-      <ul class="list-work grid up-4">
+      <ul class="filterable grid up-4">
         <?php while ($work->have_posts()) : $work->the_post(); ?>
-          <?php $stores = get_field('work_store'); ?>
-          <?php if ($stores) : ?>
-            <?php foreach($stores as $store) : ?>
-              <?php $store_class = classify(get_the_title($store->ID)); ?>
+          <?php $services = get_field('work_services'); ?>
+          <?php if ($services) : ?>
+            <?php foreach ($services as $service) : ?>
+              <?php $service_classes .= ' ' . classify(get_the_title($service->ID)); ?>
             <?php endforeach; ?>
           <?php endif; ?>
-          <li id="work-<?php echo get_the_ID(); ?>" class="mix <?php echo $store_class; ?> cell">
+          <li id="work-<?php echo get_the_ID(); ?>" class="mix<?php echo $service_classes; ?> cell">
             <?php $work_item_url = $work_url . '#work-' . get_the_ID(); ?>
-            <!-- Add lightbox functionality -->
-            <div class="img-w"><?php the_post_thumbnail(); ?></div>
+            <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox img-w" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
+              <?php // Setup srcset ?>
+              <?php the_post_thumbnail('medium'); ?>
+            </a>
+            <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
+              <?php if ($services) : ?>
+                <ul class="work-services">
+                  <?php foreach ($services as $service) : ?>
+                    <?php $service_url = '#service-' . $service->ID; ?>
+                    <li><?php echo get_the_title($service->ID) ?></li>
+                  <?php endforeach; ?>
+                </ul>
+              <?php endif; ?>
+              <?php the_excerpt(); ?>
+            </div>
             <h3 class="line-break">
               <?php the_title(); ?>
               <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
             </h3>
-            <?php the_excerpt(); ?>
           </li>
+          <?php $service_classes = ''; ?>
         <?php endwhile; ?>
       </ul>
     </section>
