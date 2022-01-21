@@ -30,7 +30,7 @@ $services = new WP_Query($args); ?>
     </div>
     <ul class="grid up-2">
       <?php while ($services->have_posts()) : $services->the_post(); ?>
-        <li class="cell">
+        <li id="service-<?php echo get_the_ID(); ?>" class="cell">
           <div class="row nowrap">
             <div class="cell lg-33">
               <div class="img-w"><?php the_post_thumbnail(); ?></div>
