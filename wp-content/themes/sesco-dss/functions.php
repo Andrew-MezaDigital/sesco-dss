@@ -196,6 +196,9 @@ function register_social_menu() {
     register_nav_menu( 'social', __( 'Social Menu', 'theme-text-domain' ) );
 }
 
+/**
+ * Convert strings to CSS classes
+ */
 function classify($string) {
-	return strtolower(str_replace(" ", "-", $string));
+	return strtolower( str_replace( " ", "-", preg_replace('/[^\da-z ]/i', '', $string) ) );
 }
