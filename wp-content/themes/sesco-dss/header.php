@@ -46,6 +46,9 @@
 								</nav>					
 							</div>
 						<?php endwhile; ?>
+						<div class="cell auto">
+							<a href="<?php echo site_url() . '/upload-files'; ?>" title="Submit a Project">Upload Files</a>
+						</div>
 					</div>
 				<?php endif; wp_reset_postdata(); ?>
 			</div>
