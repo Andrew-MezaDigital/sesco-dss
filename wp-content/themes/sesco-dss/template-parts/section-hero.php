@@ -66,9 +66,8 @@
     </div>
   </section>
 
-<?php else : ?>
+<?php elseif (is_tax()) : ?>
 
-  <!-- Taxonomy term archive pages -->
   <?php $term = get_queried_object(); ?>
   <?php $image = get_field('category_image', $term); ?>
   <?php $excerpt = get_field('category_excerpt', $term); ?>
@@ -81,6 +80,22 @@
                 <?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/term.php?taxonomy=' . $term->taxonomy .'&tag_ID=' . $term->term_id . '" class="post-edit-link">Edit this content</a>' : ''; ?>
               </h1>
               <?php echo $excerpt ? '<p class="subhead">' . $excerpt . '</p>' : '' ?>
+            </div>
+        </div>
+    </div>
+  </section>
+
+<?php else : ?>
+
+  <section class="page-hero" style="background-image:url('<?php echo get_the_post_thumbnail_url($post, 'banner'); ?>');">
+    <div class="row">
+        <div class="cell lg-50">
+            <div class="bar">
+              <h1 class="page-title">
+                <?php the_title(); ?>
+                <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+              </h1>
+              <?php echo has_excerpt() ? '<p class="subhead">' . get_the_excerpt() . '</p>' : '' ?>
             </div>
         </div>
     </div>
