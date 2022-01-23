@@ -188,6 +188,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 add_image_size('banner', 1200);
 
 /**
+ * Add support for page excerpts
+ */
+add_post_type_support( 'page', 'excerpt' );
+
+/**
  * Register additional menus
  */
 add_action( 'after_setup_theme', 'register_social_menu' );
