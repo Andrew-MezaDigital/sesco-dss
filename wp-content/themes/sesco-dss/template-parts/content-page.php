@@ -9,46 +9,32 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<?php get_template_part( 'template-parts/section', 'hero'); ?>
 
-	<?php sesco_dss_post_thumbnail(); ?>
+<section class="entry-content">
+	<div class="row ha-center">
+		<div class="cell auto">
+			<?php the_content(); ?>
+		</div>
+	</div>
+</section>
 
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sesco-dss' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'sesco-dss' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+<?php $stores = new WP_Query(array('post_type' => 'stores')); ?>
+<?php if ($stores->have_posts()) : ?>
+	<section class="stores-info">
+		<div class="row">
+			<h2 class="screen-reader-text">Our Stores</h2>
+			<?php while ($stores->have_posts()) : $stores->the_post(); ?>
+				<div class="cell fill">
+					<h3><?php the_title(); ?></h3>
+					<ul class="store-info">
+						<li><?php the_field('store_phone'); ?></li>
+						<li><?php the_field('store_email'); ?></li>
+						<li>
+					</ul>
+					<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=<?php echo urlencode(get_field('store_address')); ?>&key=AIzaSyDx4NdBfDH3awgzkVFLMEAPbE5Gge3IgtU"></iframe>
+				</div>
+			<?php endwhile; wp_reset_postdata(); ?>
+		</div>
+	</section>
+<?php endif; ?>
