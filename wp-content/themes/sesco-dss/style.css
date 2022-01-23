@@ -423,7 +423,7 @@ h5,
 h6,
 p {
 	max-width: 800px;
-	margin: 0 0 0.65em;
+	margin: 0 0 0.5em;
 }
 
 h1:last-child,
@@ -444,6 +444,44 @@ h5, .grid.up-4 .img-w +
 h6, .grid.up-4 .img-w +
 p {
 	margin-top: -10px;
+}
+
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6 {
+	margin-top: 1em;
+}
+
+h1 {
+	font-size: 4.8rem;
+	line-height: 1.25;
+}
+
+h2 {
+	font-size: 3.6rem;
+	line-height: 1.3;
+}
+
+h3 {
+	font-size: 2.8rem;
+	line-height: 1.35;
+}
+
+h4 {
+	font-size: 2.2rem;
+	line-height: 1.4;
+}
+
+h5 {
+	font-size: 2rem;
+	line-height: 1.45;
+}
+
+h6 {
+	font-size: 1.8rem;
+	line-height: 1.5;
 }
 
 dfn,
@@ -520,9 +558,14 @@ a {
 
 /* Elements
 --------------------------------------------- */
+html {
+	font-size: 62.5%;
+}
+
 body {
 	background: #fff;
 	font-family: "Exo 2", Helvetica, Arial, sans-serif;
+	font-size: 1.8rem;
 	line-height: 1.5;
 	color: #333;
 }
@@ -566,6 +609,7 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+	margin: 0 auto 1.2rem;
 }
 
 img {
@@ -578,13 +622,14 @@ figure {
 }
 
 table {
+	border-spacing: unset;
 	margin: 0 0 1.5em;
 	width: 100%;
 }
 
 table th,
 table td {
-	padding: 2px;
+	padding: 0.3rem 0;
 }
 
 table th {
@@ -1233,6 +1278,10 @@ a:not(:last-child) img:only-child {
 	padding-top: 56.25%;
 	margin-bottom: 20px;
 	border: 6px solid #fab703;
+}
+
+.img-w.slim {
+	padding-top: 42.85714%;
 }
 
 .splide .img-w {

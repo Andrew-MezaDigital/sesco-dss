@@ -1,6 +1,11 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   background: $color__background-body; // Fallback for when there is no custom background color defined.
   font-family: $font__main;
+  font-size: $font__font-size-body;
   line-height: $font__line-height-body;
   color: #333;
 }

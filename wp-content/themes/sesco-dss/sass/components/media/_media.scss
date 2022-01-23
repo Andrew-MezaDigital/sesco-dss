@@ -21,6 +21,10 @@ img {
   margin-bottom: 20px;
   border: 6px solid $accent;
 
+  &.slim {
+    padding-top: ( 9 / 21 ) * 100%;
+  }
+
   .splide & {
     border: 0;
   }
