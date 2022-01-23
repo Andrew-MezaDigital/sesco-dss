@@ -33,7 +33,7 @@
 				); 
 				$stores = new WP_Query($args); ?>
 				<?php if ($stores->have_posts()) : ?>
-					<div class="row ha-end">
+					<div class="row ha-end va-center">
 						<?php while ($stores->have_posts()) : $stores->the_post() ?>
 							<div class="store cell auto">
 								<p><?php the_title(); ?></p>
