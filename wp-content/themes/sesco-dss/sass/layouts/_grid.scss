@@ -25,6 +25,17 @@
   &.ha-between {
     justify-content: space-between;
   }
+
+  &.ha-center {
+    justify-content: center;
+  }
+
+  &.form {
+
+    > .cell {
+      padding: 6px 18px;
+    }
+  }
 }
 
 .row,
@@ -40,7 +51,7 @@
   &[class*=" up-"] {
 
     > .cell {
-      padding: 12px 18px;
+      padding: 18px 12px;
     }
   }
   &.up-4 {
@@ -78,6 +89,14 @@
 
   &.lg-50 {
     flex: 0 0 (100% / 2);
+  }
+
+  &.lg-100 {
+    flex: 0 0 100%;
+  }
+
+  &.pad-y {
+    padding: 18px 12px;
   }
 
   &.store {

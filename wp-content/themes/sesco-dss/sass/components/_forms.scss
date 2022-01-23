@@ -1,0 +1,45 @@
+.wpcf7-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 1.3em 0;
+
+    .wpcf7-textarea {
+        height: 6em;
+        resize: vertical;
+    }
+
+    div[data-class="wpcf7cf_group"] {
+        width: 100%;
+        padding: 6px 18px;
+    }
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 3px 6px;
+    border-radius: 3px;
+    line-height: 1.5;
+}
+
+select {
+    padding: 6px;
+}
+
+label {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 600;
+
+    .required {
+        display: inline-block;
+        padding-left: .25em;
+        font-weight: 600;
+        color: red;
+    }
+}
