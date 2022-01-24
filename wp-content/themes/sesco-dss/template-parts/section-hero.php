@@ -19,24 +19,23 @@
                         <?php $title = get_sub_field('carousel_slide_heading') ? get_sub_field('carousel_slide_heading') : get_the_title(); ?>
                         <?php $subhead = get_sub_field('carousel_slide_subheading') ? get_sub_field('carousel_slide_subheading') : get_the_excerpt(); ?>
                         <?php $custom_img = get_sub_field('carousel_slide_image'); ?>
-                        <?php $cta_text = get_sub_field('carousel_slide_cta'); ?>
-                        <?php $custom_link = get_sub_field('carousel_slide_link'); ?>
-                        <?php $link_url = $custom_link ? $custom_link['url'] : get_the_permalink(); ?>
-                        <?php $link_title = $custom_link ? $custom_link['title'] : get_the_title(); ?>
-                        <?php $link_target = $custom_link ? $custom_link['target'] : '_self'; ?>
+                        <?php $link = get_sub_field('carousel_slide_link'); ?>
+                        <?php $link_url = $link['url']; ?>
+                        <?php $link_title = $link['title'] ? $link['title'] : get_the_title(); ?>
+                        <?php $link_target = $link['target'] ? $link['target'] : '_self'; ?>
                         <div class="bar-w">
                           <div class="bar">
                             <div class="copy">
                               <h2>
                                 <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo $title; ?></a>
-                                <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+                                <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
                               </h2>
                               <?php echo $subhead ? '<p>' . $subhead . '</p>' : ''; ?>
                             </div>
-                            <?php if ($cta_text) : ?>
-                              <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_html( $link_title ); ?>" class="btn"><?php echo $cta_text; ?></a>
+                            <?php if ($link_title) : ?>
+                              <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_html( $link_title ); ?>" class="btn"><?php echo $link_title; ?></a>
                               <!-- Need to update to on-page link to repeater content -->
-                              <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this slide</a>' : ''; ?>
+                              <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
                             <?php endif; ?>
                           </div>
                         </div>

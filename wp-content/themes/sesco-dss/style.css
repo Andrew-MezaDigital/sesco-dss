@@ -1598,7 +1598,7 @@ a:not(:last-child) img:only-child {
 }
 
 .home .splide__arrows .splide__arrow--prev:before {
-	left: 0;
+	left: -0.5rem;
 }
 
 .home .splide__arrows .splide__arrow--next {
@@ -1606,7 +1606,7 @@ a:not(:last-child) img:only-child {
 }
 
 .home .splide__arrows .splide__arrow--next:before {
-	right: 0;
+	right: -0.5rem;
 }
 
 /* Glightbox
