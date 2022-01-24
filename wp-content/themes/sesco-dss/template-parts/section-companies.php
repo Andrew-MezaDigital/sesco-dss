@@ -13,7 +13,7 @@
             <?php the_field('section_companies_headline', $term); ?>
             <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
           </h2>
-          <?php echo get_field('section_companies_subheadline', $term) ? '<p class="subhead">' . get_field('section_companies_subheadline', $term) . '</p>' : ''; ?>
+          <?php echo get_field('section_companies_subheadline', $term) ? '<p class="subhead ba-center">' . get_field('section_companies_subheadline', $term) . '</p>' : ''; ?>
           <?php if (have_rows('section_companies_companies', $term)) : ?>
             <div class="logos">
               <div class="splide__track">
@@ -50,7 +50,7 @@
             <?php the_field('section_companies_headline'); ?>
             <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
           </h2>
-          <?php echo get_field('section_companies_subheadline') ? '<p class="subhead">' . get_field('section_companies_subheadline') . '</p>' : ''; ?>
+          <?php echo get_field('section_companies_subheadline') ? '<p class="subhead ba-center">' . get_field('section_companies_subheadline') . '</p>' : ''; ?>
           <?php if (have_rows('section_companies_companies')) : ?>
             <div class="logos">
               <div class="splide__track">
