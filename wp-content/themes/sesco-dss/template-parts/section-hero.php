@@ -68,16 +68,20 @@
 
 <?php elseif (is_tax()) : ?>
 
-  <?php $term = get_queried_object(); ?>
-  <?php $image = get_field('category_image', $term); ?>
-  <?php $excerpt = get_field('category_excerpt', $term); ?>
+  <?php 
+    $term = get_queried_object();
+    $term_id = $term->term_id;
+    $term_tax = get_term($term_id)->taxonomy;
+    $image = get_field('category_image', $term);
+    $excerpt = get_field('category_excerpt', $term);
+  ?>
   <section class="page-hero" style="background-image:url('<?php echo $image['url']; ?>');">
     <div class="row">
         <div class="cell lg-50">
             <div class="bar">
               <h1 class="page-title">
                 <?php echo $term->name . '&nbsp;Services'; ?>
-                <?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/term.php?taxonomy=' . $term->taxonomy .'&tag_ID=' . $term->term_id . '" class="post-edit-link">Edit this content</a>' : ''; ?>
+                <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
               </h1>
               <?php echo $excerpt ? '<p class="subhead">' . $excerpt . '</p>' : '' ?>
             </div>
@@ -93,7 +97,7 @@
             <div class="bar">
               <h1 class="page-title">
                 <?php the_title(); ?>
-                <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+                <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
               </h1>
               <?php echo has_excerpt() ? '<p class="subhead">' . get_the_excerpt() . '</p>' : '' ?>
             </div>

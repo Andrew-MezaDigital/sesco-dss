@@ -11,22 +11,22 @@
     )
   ),
 ); 
-$services = new WP_Query($args); ?>
+$services = new WP_Query($args);
+$term = get_queried_object();
+$title = get_field('section_services_headline', $term);
+$term_id = $term->term_id;
+$term_tax = get_term($term_id)->taxonomy;
+?>
 
 <?php if ($services->have_posts()) : ?>
   <section id="services">
     <div class="row mb ha-between va-center">
       <div class="cell">
-        <h2>Our Services List</h2>
-        <?php if (!is_front_page()) : ?>
-          <?php the_content(); ?>
-        <?php endif; ?>
+        <h2>
+          <?php echo $title ? $title : 'Our Services List'; ?>
+          <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
+        </h2>
       </div>
-      <?php if (is_front_page()) : ?>
-        <div class="cell">
-          <a href="/services" class="btn secondary">See all services&nbsp;&raquo;</a>
-        </div>
-      <?php endif; ?>
     </div>
     <ul class="grid up-2">
       <?php while ($services->have_posts()) : $services->the_post(); ?>
@@ -39,7 +39,7 @@ $services = new WP_Query($args); ?>
             <div class="cell fill">
               <h3>
                 <?php the_title(); ?>
-                <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+                <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
               </h3>
               <?php the_field('service_description'); ?>
               <?php if ($link) : ?>

@@ -18,7 +18,7 @@
           <a href="<?php echo $term_link; ?>" class="img-w"><?php echo $image ? $image : ''; ?></a>
           <h3>
             <a href="<?php echo $term_link; ?>"><?php echo $term->name; ?></a>
-            <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+            <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
           </h3>
           <?php echo $excerpt ? '<p>' . $excerpt . '</p>' : ''; ?>
         </li>

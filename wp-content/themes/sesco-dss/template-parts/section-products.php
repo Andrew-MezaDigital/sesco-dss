@@ -1,16 +1,14 @@
 <?php if (is_front_page()) : ?>
-
-  <?php $args = array(
-    'post_type' => 'products',
-    'orderby' => 'date',
-    'order' => 'DESC'
-  ); 
-  $products = new WP_Query($args);
-  $products_page_url = site_url() . get_field('section_products_url');
-  $products_section_url = $products_page_url . '#latest-equipment-for-sale';
-  $products_cta = get_field('section_products_cta');
-  $products_title = get_field('section_products_header');
-  $edit_homepage_link = get_edit_post_link(get_the_ID());
+  <?php
+    $link = get_field('section_products_link');
+    $title = get_field('section_products_headline');
+    $edit_page_link = get_edit_post_link(get_the_ID());
+    $args = array(
+      'post_type' => 'products',
+      'orderby' => 'date',
+      'order' => 'DESC'
+    ); 
+    $products = new WP_Query($args);
   ?>
 
   <?php if ($products->have_posts()) : ?>
@@ -18,14 +16,20 @@
       <div class="row mb ha-between va-center">
         <div class="cell auto">
           <h2>
-            <a href="<?php echo $products_section_url; ?>"><?php echo $products_title ? $products_title : 'Latest Equipment for Sale'; ?></a>
-            <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this content</a>' : ''; ?>
+            <?php if ($link) : ?>
+              <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>"><?php echo $title ? $title : 'Our Latest Work Samples'; ?></a>
+            <?php else : ?>
+              <?php echo $title ? $title : 'Latest Equipment for Sale'; ?>
+            <?php endif; ?>
+            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
           </h2>
         </div>
-        <div class="cell auto">
-          <a href="<?php echo $products_section_url; ?>" class="btn secondary"><?php echo $products_cta ? $products_cta : 'More for sale'; ?>&nbsp;&raquo;</a>
-          <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this content</a>' : ''; ?>
-        </div>
+        <?php if ($link) : ?>
+          <div class="cell auto">
+            <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>" class="btn secondary"><?php echo $link['title'] ? $link['title'] : 'View more'; ?>&nbsp;&raquo;</a>
+            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
+          </div>
+        <?php endif; ?>
       </div>
       <ul class="grid up-4">
         <?php while ($products->have_posts()) : $products->the_post(); ?>
@@ -34,7 +38,7 @@
             <a href="<?php echo $products_item_url; ?>" class="img-w"><?php the_post_thumbnail(); ?></a>
             <h3>
               <a href="<?php echo $products_item_url; ?>"><?php the_title(); ?></a>
-              <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+              <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
             </h3>
             <p>$<?php the_field('product_price'); ?></p>
           </li>
@@ -51,12 +55,11 @@
     'order' => 'DESC'
   ); 
   $products = new WP_Query($args);
-  $products_page_url = site_url() . get_field('section_products_url');
-  $products_section_url = $products_page_url . '#latest-equipment-for-sale';
-  $products_cta = get_field('section_products_cta');
-  $products_title = get_field('section_products_header');
-  $edit_homepage_link = get_edit_post_link(get_the_ID());
   $stores = new WP_Query(array('post_type' => 'stores'));
+  $term = get_queried_object();
+  $title = get_field('section_products_headline', $term);
+  $term_id = $term->term_id;
+  $term_tax = get_term($term_id)->taxonomy;
   ?>
 
   <?php if ($products->have_posts()) : ?>
@@ -64,8 +67,8 @@
       <div class="row mb ha-between va-center">
         <div class="cell auto">
           <h2>
-            <?php echo $products_title ? $products_title : 'Latest Equipment for Sale'; ?>
-            <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this content</a>' : ''; ?>
+            <?php echo $title ? $title : 'Latest Equipment for Sale'; ?>
+            <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
           </h2>
         </div>
         <?php if ($stores->have_posts()) : ?>
@@ -102,7 +105,7 @@
             </div>
             <h3>
               <?php the_title(); ?>
-              <?php echo is_user_logged_in() ? edit_post_link('Edit this content') : ''; ?>
+              <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
             </h3>
             <p>$<?php the_field('product_price'); ?></p>
             <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
