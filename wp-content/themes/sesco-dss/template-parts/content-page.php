@@ -39,7 +39,7 @@
 						</div>
 					<?php endif; ?>
 					<div class="row">
-						<div class="cell fill">
+						<div class="cell auto">
 							<?php if (have_rows('store_hours')) : ?>
 								<h4>Business Hours</h4>
 								<table class="store-hours">
@@ -56,11 +56,11 @@
 						</div>
 						<div class="cell auto">
 							<h4>Phone</h4>
-							<p class="line-break"><a href="tel:<?php the_field('store_phone'); ?>" title="Call the <?php echo get_the_title(); ?>"><span class="fas fa-phone-alt"></span>Call us</a></p>
+							<p class="line-break"><a href="tel:<?php the_field('store_phone'); ?>" title="Call the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-phone-alt"></span>Call us</a></p>
 						</div>
 						<div class="cell auto">
 							<h4>Email</h4>
-							<p class="line-break"><a href="mailto:<?php the_field('store_email'); ?>" title="Email the <?php echo get_the_title(); ?>"><span class="fas fa-envelope"></span>Email us</a></p>
+							<p class="line-break"><a href="mailto:<?php the_field('store_email'); ?>" title="Email the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-envelope"></span>Email us</a></p>
 						</div>
 					</div>
 				</div>

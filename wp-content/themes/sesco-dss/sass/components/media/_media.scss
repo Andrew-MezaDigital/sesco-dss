@@ -65,6 +65,14 @@ img {
   }
 }
 
+.has-icon {
+  @include display(inline-flex, row nowrap, null, center);
+
+  .fas {
+    padding-right: 0.5em;
+  }
+}
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {

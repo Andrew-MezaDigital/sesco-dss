@@ -633,7 +633,11 @@ table {
 
 table th,
 table td {
-	padding: 0.3rem 0;
+	padding: 0.15em 0;
+}
+
+table th {
+	padding-right: 0.75em;
 }
 
 table th {
@@ -1316,6 +1320,16 @@ a:not(:last-child) img:only-child {
 
 .grid.up-4 .img-w {
 	border-width: 3px;
+}
+
+.has-icon {
+	display: inline-flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.has-icon .fas {
+	padding-right: 0.5em;
 }
 
 .page-content .wp-smiley,

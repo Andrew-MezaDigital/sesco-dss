@@ -100,7 +100,7 @@
             </a>
             <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
               <p>$<?php the_field('product_price'); ?></p>
-              <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
+              <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
               <?php the_field('product_description'); ?>
             </div>
             <h3>
@@ -108,7 +108,7 @@
               <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
             </h3>
             <p>$<?php the_field('product_price'); ?></p>
-            <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
+            <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
           </li>
         <?php endwhile; ?>
       </ul>
