@@ -415,6 +415,29 @@ h6 {
 	clear: both;
 }
 
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: inherit;
+}
+
+h1 a:hover, h1 a:focus,
+h2 a:hover,
+h2 a:focus,
+h3 a:hover,
+h3 a:focus,
+h4 a:hover,
+h4 a:focus,
+h5 a:hover,
+h5 a:focus,
+h6 a:hover,
+h6 a:focus {
+	color: inherit;
+}
+
 h1,
 h2,
 h3,
@@ -532,10 +555,6 @@ big {
 	font-size: 125%;
 }
 
-a {
-	text-decoration: none;
-}
-
 .subhead {
 	font-size: 18px;
 }
@@ -648,10 +667,7 @@ table th {
 --------------------------------------------- */
 a {
 	color: #4169e1;
-}
-
-a:visited {
-	color: #800080;
+	text-decoration: none;
 }
 
 a:hover, a:focus, a:active {
@@ -981,6 +997,10 @@ body.home #primary > section.page-hero .bar {
 	background: #363636;
 	font-size: 12px;
 	color: #fff;
+}
+
+.top-bar > .row {
+	height: 100%;
 }
 
 .top-bar a {
@@ -2537,22 +2557,13 @@ iframe.wait-autoplay {
 	align-items: center;
 	padding: 0.5em 1em;
 	border-radius: 5px;
-	background-color: #fab703;
-	color: #4169e1;
+	background: #fab703;
 	box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
 	font-size: 21px;
 	font-weight: 600;
 	white-space: nowrap;
+	color: #393939;
 	transition: all 0.25s ease-out;
-}
-
-.btn a:not(.btn) {
-	color: #4169e1;
-}
-
-.btn a:not(.btn):hover, .btn a:not(.btn):focus {
-	color: #4169e1;
-	text-decoration: none;
 }
 
 .btn:hover, .btn:focus {
@@ -2562,23 +2573,26 @@ iframe.wait-autoplay {
 }
 
 .btn.secondary {
-	background-color: #4169e1;
+	background: #4169e1;
 	color: #fafafa;
 	box-shadow: none;
-	font-size: 16px;
-}
-
-.btn.secondary a:not(.btn) {
-	color: #fafafa;
-}
-
-.btn.secondary a:not(.btn):hover, .btn.secondary a:not(.btn):focus {
-	color: #fafafa;
-	text-decoration: none;
 }
 
 .btn.secondary:hover, .btn.secondary:focus {
 	box-shadow: none;
+}
+
+.btn.btn-sm {
+	font-size: 16px;
+}
+
+.btn.menu-item {
+	padding: 0.5em 1em;
+	box-shadow: none;
+}
+
+.btn.menu-item a {
+	color: #393939;
 }
 
 /* Menus
@@ -2586,12 +2600,16 @@ iframe.wait-autoplay {
 .menu {
 	display: inline-flex;
 	flex-flow: row nowrap;
+	align-items: stretch;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
 .menu .menu-item {
+	display: inline-flex;
+	flex-flow: row nowrap;
+	align-items: center;
 	margin: 1em;
 }
 
@@ -2599,7 +2617,6 @@ iframe.wait-autoplay {
 	font-size: 16px;
 	font-weight: 700;
 	white-space: nowrap;
-	line-height: 1;
 }
 
 .menu.vertical {
@@ -2914,6 +2931,11 @@ label .required {
 --------------------------------------------- */
 .bg-light {
 	background: #F8F8F8;
+}
+
+.bg-primary {
+	background: #fab703;
+	background: linear-gradient(45deg, #fab703 0%, rgba(250, 183, 3, 0.8) 50%, #fab703 100%);
 }
 
 /*# sourceMappingURL=style.css.map */

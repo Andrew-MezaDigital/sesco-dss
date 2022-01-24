@@ -1,10 +1,11 @@
 .menu {
-  @include display(inline-flex, row nowrap);
+  @include display(inline-flex, row nowrap, null, stretch);
   margin: 0;
   padding: 0;
   list-style: none;
 
   .menu-item {
+    @include display(inline-flex, row nowrap, null, center);
     margin: 1em;
   }
 
@@ -13,7 +14,6 @@
       font-size: 16px;
       font-weight: 700;
       white-space: nowrap;
-      line-height: 1;
     }
   }
 

@@ -5,6 +5,14 @@ h4,
 h5,
 h6 {
   clear: both;
+
+  a {
+    color: inherit;
+
+    @include hover {
+      color: inherit;
+    }
+  }
 }
 
 h1,

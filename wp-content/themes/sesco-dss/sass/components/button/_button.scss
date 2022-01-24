@@ -2,11 +2,12 @@
   @include display(inline-flex, row nowrap, center, center);
   padding: 0.5em 1em;
   border-radius: 5px;
-  @include colors($accent, $accent-dark);
+  background: $accent;
   box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
   font-size: 21px;
   font-weight: 600;
   white-space: nowrap;
+  color: $dark-10;
   @include transition;
 
   @include hover {
@@ -16,12 +17,25 @@
   }
 
   &.secondary {
-    @include colors($accent-dark, $light-0);
+    background: $accent-dark;
+    color: $light-0;
     box-shadow: none;
-    font-size: 16px;
 
     @include hover {
       box-shadow: none;
+    }
+  }
+
+  &.btn-sm {
+    font-size: 16px;
+  }
+
+  &.menu-item {
+    padding: 0.5em 1em;
+    box-shadow: none;
+
+    a {
+      color: $dark-10;
     }
   }
 }

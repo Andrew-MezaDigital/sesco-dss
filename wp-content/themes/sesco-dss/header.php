@@ -26,7 +26,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'sesco-dss' ); ?></a>
 	<div class="top-bar">
-		<div class="row">
+		<div class="row va-center">
 			<div class="cell fill">
 				<?php $args = array(
 					'post_type' => 'stores',
