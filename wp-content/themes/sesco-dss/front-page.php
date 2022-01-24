@@ -13,6 +13,7 @@ get_header();
 			get_template_part( 'template-parts/section', 'categories');
 			get_template_part( 'template-parts/section', 'work');
 			get_template_part( 'template-parts/section', 'products');
+			get_template_part( 'template-parts/section', 'cta');
 		?>
 
 	</main>

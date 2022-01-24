@@ -12,6 +12,7 @@ get_header();
 			get_template_part( 'template-parts/section', 'hero');
 			get_template_part( 'template-parts/section', 'services');
 			get_template_part( 'template-parts/section', 'work');
+			get_template_part( 'template-parts/section', 'cta');
 		?>
 
 	</main>
