@@ -22,18 +22,25 @@ input[type="date"],
 select,
 textarea {
     width: 100%;
-    padding: 3px 6px;
+    padding: 0.35em 0.7em;
     border-radius: 3px;
-    line-height: 1.5;
+    font-size: $font__font-size-body;
+    line-height: $font__line-height-body;
 }
 
 select {
     padding: 6px;
 }
 
+input[type="file"],
+input[type="submit"] {
+    font-size: $font__font-size-body;
+    line-height: $font__line-height-body;
+}
+
 label {
-    font-size: 1.2rem;
-    line-height: 1.5;
+    font-size: $font__font-size-body;
+    line-height: 2;
     font-weight: 600;
 
     .required {

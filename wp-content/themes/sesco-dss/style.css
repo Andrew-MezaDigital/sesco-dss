@@ -2623,8 +2623,9 @@ input[type="date"],
 select,
 textarea {
 	width: 100%;
-	padding: 3px 6px;
+	padding: 0.35em 0.7em;
 	border-radius: 3px;
+	font-size: 1.8rem;
 	line-height: 1.5;
 }
 
@@ -2632,9 +2633,15 @@ select {
 	padding: 6px;
 }
 
-label {
-	font-size: 1.2rem;
+input[type="file"],
+input[type="submit"] {
+	font-size: 1.8rem;
 	line-height: 1.5;
+}
+
+label {
+	font-size: 1.8rem;
+	line-height: 2;
 	font-weight: 600;
 }
 
