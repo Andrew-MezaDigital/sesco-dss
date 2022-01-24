@@ -13,7 +13,7 @@
   ?>
 
   <?php if ($work->have_posts()) : ?>
-    <section id="latest-work">
+    <section id="latest-work" class="bg-light">
       <div class="row mb ha-between va-center">
         <div class="cell auto">
           <h2>
@@ -35,14 +35,18 @@
       <ul class="list-work grid up-4">
         <?php while ($work->have_posts()) : $work->the_post(); ?>
           <li id="work-<?php echo get_the_ID(); ?>" class="cell">
-            <div class="img-w">
-              <?php the_post_thumbnail(); ?>
+            <div class="card">
+              <div class="img-w">
+                <?php the_post_thumbnail(); ?>
+              </div>
+              <div class="card-copy">
+                <h3 class="card-title">
+                  <?php the_title(); ?>
+                  <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
+                </h3>
+                <?php the_excerpt(); ?>
+              </div>
             </div>
-            <h3 class="line-break">
-              <?php the_title(); ?>
-              <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-            </h3>
-            <?php the_excerpt(); ?>
           </li>
         <?php endwhile; ?>
       </ul>
@@ -65,7 +69,7 @@
   ?>
 
   <?php if ($work->have_posts()) : ?>
-    <section id="latest-work">
+    <section id="latest-work" class="bg-light">
       <div class="row mb ha-between va-center">
         <div class="cell auto">
           <h2>
@@ -95,25 +99,29 @@
             <?php endforeach; ?>
           <?php endif; ?>
           <li id="work-<?php echo get_the_ID(); ?>" class="mix<?php echo $service_classes; ?> cell">
-            <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox img-w" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
-              <?php // Setup srcset ?>
-              <?php the_post_thumbnail('medium'); ?>
-            </a>
-            <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
-              <?php if ($services) : ?>
-                <ul class="work-services">
-                  <?php foreach ($services as $service) : ?>
-                    <?php $service_url = '#service-' . $service->ID; ?>
-                    <li><?php echo get_the_title($service->ID) ?></li>
-                  <?php endforeach; ?>
-                </ul>
-              <?php endif; ?>
-              <?php the_excerpt(); ?>
+            <div class="card">
+              <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox img-w" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
+                <?php // Setup srcset ?>
+                <?php the_post_thumbnail('medium'); ?>
+              </a>
+              <div class="card-copy">
+                <h3 class="card-title">
+                  <?php the_title(); ?>
+                  <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
+                </h3>
+                <?php the_excerpt(); ?>
+                <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
+                  <?php if ($services) : ?>
+                    <ul class="work-services">
+                      <?php foreach ($services as $service) : ?>
+                        <?php $service_url = '#service-' . $service->ID; ?>
+                        <li><?php echo get_the_title($service->ID) ?></li>
+                      <?php endforeach; ?>
+                    </ul>
+                  <?php endif; ?>
+                </div>
+              </div>
             </div>
-            <h3 class="line-break">
-              <?php the_title(); ?>
-              <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-            </h3>
           </li>
           <?php $service_classes = ''; ?>
         <?php endwhile; ?>

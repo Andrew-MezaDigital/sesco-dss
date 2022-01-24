@@ -12,7 +12,7 @@
   ?>
 
   <?php if ($products->have_posts()) : ?>
-    <section id="latest-equipment-for-sale">
+    <section id="latest-equipment-for-sale" class="bg-light">
       <div class="row mb ha-between va-center">
         <div class="cell auto">
           <h2>
@@ -35,12 +35,18 @@
         <?php while ($products->have_posts()) : $products->the_post(); ?>
         <?php $products_item_url = $products_page_url . '#equipment-' . get_the_ID(); ?>
           <li id="equipment-<?php echo get_the_ID(); ?>" class="cell">
-            <a href="<?php echo $products_item_url; ?>" class="img-w"><?php the_post_thumbnail(); ?></a>
-            <h3>
-              <a href="<?php echo $products_item_url; ?>"><?php the_title(); ?></a>
-              <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-            </h3>
-            <p>$<?php the_field('product_price'); ?></p>
+            <div class="card">
+              <div class="img-w">
+                <?php the_post_thumbnail(); ?>
+              </div>
+              <div class="card-copy">
+                <h3 class="card-title">
+                  <?php the_title(); ?>
+                  <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
+                </h3>
+                <p>$<?php the_field('product_price'); ?></p>
+              </div>
+            </div>
           </li>
         <?php endwhile; ?>
       </ul>
@@ -63,7 +69,7 @@
   ?>
 
   <?php if ($products->have_posts()) : ?>
-    <section id="latest-equipment-for-sale">
+    <section id="latest-equipment-for-sale" class="bg-light">
       <div class="row mb ha-between va-center">
         <div class="cell auto">
           <h2>
@@ -94,21 +100,25 @@
             <?php endforeach; ?>
           <?php endif; ?>
           <li id="equipment-<?php echo get_the_ID(); ?>" class="mix <?php echo $store_class; ?> cell">
-            <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox img-w" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
-              <?php // Setup srcset ?>
-              <?php the_post_thumbnail('medium'); ?>
-            </a>
-            <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
-              <p>$<?php the_field('product_price'); ?></p>
-              <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
-              <?php the_field('product_description'); ?>
-            </div>
-            <h3>
-              <?php the_title(); ?>
-              <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-            </h3>
-            <p>$<?php the_field('product_price'); ?></p>
-            <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
+            <div class="card">
+              <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox img-w" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
+                <?php // Setup srcset ?>
+                <?php the_post_thumbnail('medium'); ?>
+              </a>
+              <div class="card-copy">
+                <h3 class="card-title">
+                  <?php the_title(); ?>
+                  <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
+                </h3>
+                <p>$<?php the_field('product_price'); ?></p>
+                <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
+                <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
+                  <p>$<?php the_field('product_price'); ?></p>
+                  <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
+                  <?php the_field('product_description'); ?>
+                </div>
+              </div>
+            </div> 
           </li>
         <?php endwhile; ?>
       </ul>

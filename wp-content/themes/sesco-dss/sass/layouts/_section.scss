@@ -3,11 +3,10 @@
 
   & > section {
     @include display(flex, column nowrap, flex-start, center);
-    padding: 30px 0;
+    padding: 4.5rem 0;
 
     &.page-hero {
       @include position;
-      padding: 45px 0;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -23,13 +22,13 @@
       }
 
       .bar {
-        margin: -45px 0;
-        padding: 45px;
+        margin: -4.5rem 0;
+        padding: 4.5rem;
         @include colors(rgba($accent-dark, 0.85), $light-0);
 
         body.home & {
           margin: 0;
-          padding: 30px;
+          padding: 4.5rem;
         }
       }
     }

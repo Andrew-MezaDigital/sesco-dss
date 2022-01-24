@@ -455,17 +455,17 @@ p + h6 {
 }
 
 h1 {
-	font-size: 4.8rem;
+	font-size: 4rem;
 	line-height: 1.25;
 }
 
 h2 {
-	font-size: 3.6rem;
+	font-size: 3.2rem;
 	line-height: 1.3;
 }
 
 h3 {
-	font-size: 2.8rem;
+	font-size: 2.6rem;
 	line-height: 1.35;
 }
 
@@ -916,12 +916,11 @@ textarea {
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 30px 0;
+	padding: 4.5rem 0;
 }
 
 #primary > section.page-hero {
 	position: relative;
-	padding: 45px 0;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -944,8 +943,8 @@ body:not(.home) #primary > section.page-hero:after {
 }
 
 #primary > section.page-hero .bar {
-	margin: -45px 0;
-	padding: 45px;
+	margin: -4.5rem 0;
+	padding: 4.5rem;
 	background-color: rgba(65, 105, 225, 0.85);
 	color: #fafafa;
 }
@@ -961,7 +960,7 @@ body:not(.home) #primary > section.page-hero:after {
 
 body.home #primary > section.page-hero .bar {
 	margin: 0;
-	padding: 30px;
+	padding: 4.5rem;
 }
 
 .top-bar,
@@ -1003,10 +1002,6 @@ body.home #primary > section.page-hero .bar {
 
 .site-header > .row {
 	background: #f7f7f7;
-}
-
-.site-footer {
-	margin-top: 30px;
 }
 
 .site-footer .footer-content,
@@ -2666,6 +2661,22 @@ label .required {
 	color: red;
 }
 
+/* Cards
+--------------------------------------------- */
+.card .img-w {
+	margin: 0;
+}
+
+.card .card-copy {
+	padding: 1.5rem;
+	background: #fff;
+}
+
+.card .card-title {
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -2897,6 +2908,12 @@ label .required {
 
 .mb {
 	margin-bottom: 20px !important;
+}
+
+/* Background
+--------------------------------------------- */
+.bg-light {
+	background: #F8F8F8;
 }
 
 /*# sourceMappingURL=style.css.map */
