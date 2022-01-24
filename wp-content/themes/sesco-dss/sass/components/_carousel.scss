@@ -1,10 +1,12 @@
 $width: 100px;
 
 .home {
-  .splide__slide {
+
+  .splide .splide__slide {
+    background: #000;
+
     @include position;
     @include size(100%, calc(100vh - 200px));
-    background: #000;
 
     .bar-w {
       @include position(absolute, 2, (bottom, left), (0, 0));

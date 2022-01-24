@@ -54,6 +54,10 @@ a {
 	font-size: 18px;
 }
 
+.ta-center {
+	text-align: center;
+}
+
 .post-edit-link {
 	@include display(inline-block);
 	vertical-align: middle;

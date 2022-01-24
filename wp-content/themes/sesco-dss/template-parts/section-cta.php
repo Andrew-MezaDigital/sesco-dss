@@ -9,7 +9,7 @@
     <section class="page-cta">
       <div class="row ha-center">
         <div class="cell auto">
-          <h2 class="page-title">
+          <h2>
             <?php the_field('section_cta_headline', $term); ?>
             <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
           </h2>
@@ -30,7 +30,7 @@
     <section class="page-cta">
       <div class="row ha-center">
         <div class="cell auto">
-          <h2 class="page-title">
+          <h2>
             <?php the_field('section_cta_headline'); ?>
             <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
           </h2>

@@ -1,7 +1,7 @@
 <?php if (is_front_page()) : ?>
 
   <?php $edit_homepage_link = get_edit_post_link($post->ID); ?>
-  <section class="page-hero no-pt">
+  <section class="page-hero no-pt no-pb">
     <div class="row">
       <div class="cell fill">
         <h1 class="page-title screen-reader-text"><?php the_title(); ?></h1>

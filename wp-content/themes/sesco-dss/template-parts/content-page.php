@@ -9,7 +9,10 @@
 
 ?>
 
-<?php get_template_part( 'template-parts/section', 'hero'); ?>
+<?php 
+	get_template_part( 'template-parts/section', 'hero');
+	get_template_part( 'template-parts/section', 'companies');
+?>
 
 <section class="entry-content">
 	<div class="row ha-center">
@@ -63,3 +66,5 @@
 		</div>
 	</section>
 <?php endif; ?>
+
+<?php get_template_part( 'template-parts/section', 'cta'); ?>
