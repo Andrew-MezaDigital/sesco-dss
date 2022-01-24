@@ -5,6 +5,8 @@
     $edit_page_link = get_edit_post_link(get_the_ID());
     $args = array(
       'post_type' => 'products',
+      'meta_key' => 'product_featured',
+	    'meta_value' => true,
       'orderby' => 'date',
       'order' => 'DESC'
     ); 

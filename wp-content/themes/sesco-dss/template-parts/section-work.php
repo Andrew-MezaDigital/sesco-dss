@@ -2,6 +2,8 @@
 
   <?php $args = array(
     'post_type' => 'work',
+    'meta_key' => 'work_featured',
+	  'meta_value' => true,
     'orderby' => 'date',
     'order' => 'DESC',
     'posts_per_page' => 4

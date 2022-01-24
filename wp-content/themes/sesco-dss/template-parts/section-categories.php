@@ -1,7 +1,7 @@
 <?php $term_query = new WP_Term_Query( array( 
     'taxonomy' => 'services',
-    'orderby' => 'count',
-    'order' => 'ASC',
+    'orderby' => 'date',
+    'order' => 'DESC',
     'fields' => 'all',
     'hide_empty' => false,
 ) ); ?>
