@@ -1236,7 +1236,7 @@ body.home #primary > section.page-hero .bar {
 }
 
 #menu-social-menu .menu-item:hover, #menu-social-menu .menu-item:focus {
-	color: #fafafa;
+	color: #4169e1;
 }
 
 #menu-social-menu .menu-item a {
@@ -1249,6 +1249,7 @@ body.home #primary > section.page-hero .bar {
 	bottom: 0;
 	font-size: 0px;
 	color: transparent;
+	border: 0;
 }
 
 /* Posts and pages
@@ -2621,8 +2622,9 @@ iframe.wait-autoplay {
 
 .btn:hover, .btn:focus {
 	transform: scale(1.1);
+	background: #4169e1;
 	box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.1);
-	color: #4169e1;
+	color: #fff;
 }
 
 .btn.secondary {
@@ -2646,6 +2648,11 @@ iframe.wait-autoplay {
 
 .btn.menu-item a {
 	color: #393939;
+	transition: all .2s ease-out;
+}
+
+.btn.menu-item:hover a, .btn.menu-item:focus a {
+	color: #fff;
 }
 
 /* Menus

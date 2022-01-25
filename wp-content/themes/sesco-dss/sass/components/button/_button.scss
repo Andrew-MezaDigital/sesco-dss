@@ -12,8 +12,9 @@
 
   @include hover {
     transform: scale(1.1);
+    background: $accent-dark;
     box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.1);
-    color: $accent-dark;
+    color: #fff;
   }
 
   &.secondary {
@@ -36,6 +37,13 @@
 
     a {
       color: $dark-10;
+      transition: all .2s ease-out;
+    }
+
+    @include hover {
+      a {
+        color: #fff;
+      }
     }
   }
 }
