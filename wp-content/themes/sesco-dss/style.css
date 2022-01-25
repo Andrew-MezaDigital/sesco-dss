@@ -1033,7 +1033,7 @@ body.home #primary > section.page-hero .bar {
 }
 
 .site-footer .footer-content {
-	padding: 30px 0;
+	padding: 3rem 0;
 	background-color: #393939;
 	color: #fafafa;
 }
@@ -1052,17 +1052,18 @@ body.home #primary > section.page-hero .bar {
 }
 
 .site-footer .footer-content h2 {
-	font-size: 21px;
+	font-size: 2.1rem;
 	color: #e1e1e1;
 }
 
 .site-footer .footer-content table,
 .site-footer .footer-content p {
+	font-size: 1.6rem;
 	color: #bababa;
 }
 
 .site-footer .site-info {
-	padding: 15px 0;
+	padding: 1.5rem 0;
 	background-color: #1f1f1f;
 	color: #7b7b7b;
 }
@@ -1080,11 +1081,11 @@ body.home #primary > section.page-hero .bar {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .site-footer .site-info .credit {
-	font-size: 12px;
+	font-size: 1.2rem;
 }
 
 .site-footer .site-info .credit a {

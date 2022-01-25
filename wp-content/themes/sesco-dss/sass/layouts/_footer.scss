@@ -5,7 +5,7 @@
     @include display(flex, column nowrap, flex-start, center);
   }
   .footer-content {
-    padding: 30px 0;
+    padding: 3rem 0;
     @include colors($dark-10, $light-0);
 
     .store {
@@ -13,28 +13,29 @@
     }
 
     h2 {
-      font-size: 21px;
+      font-size: 2.1rem;
       color: $light-10;
     }
 
     table,
     p {
+      font-size: 1.6rem;
       color: $light-25;
     }
   }
   .site-info {
-    padding: 15px 0;
+    padding: 1.5rem 0;
     @include colors($dark-0, $light-50);
 
     p {
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      font-size: 14px;
+      font-size: 1.4rem;
     }
 
     .credit {
-      font-size: 12px;
+      font-size: 1.2rem;
 
       a {
         text-decoration: underline;
