@@ -140,13 +140,13 @@ add_action( 'widgets_init', 'sesco_dss_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sesco_dss_scripts() {
-	wp_enqueue_style( 'sesco-dss-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'sesco-dss-style', get_stylesheet_uri(), array(), false);
 	wp_style_add_data( 'sesco-dss-style', 'rtl', 'replace' );
 	wp_enqueue_script( 'mixitup', get_template_directory_uri() . '/js/mixitup.min.js', array(), null, true );
 	wp_enqueue_script( 'glightbox', get_template_directory_uri() . '/js/glightbox.min.js', array(), null, true );
 	wp_enqueue_script( 'splide', get_template_directory_uri() . '/js/splide.min.js', array(), null, true );
-	wp_enqueue_script( 'sesco-dss-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', 'splide', null, true );
+	wp_enqueue_script( 'sesco-dss-navigation', get_template_directory_uri() . '/js/navigation.js', array(), null, true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', 'splide', false, true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
