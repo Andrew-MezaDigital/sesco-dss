@@ -487,6 +487,11 @@ h2 {
 	line-height: 1.3;
 }
 
+h2.alt {
+	font-weight: 600;
+	color: #4169e1;
+}
+
 h3 {
 	font-size: 2.6rem;
 	line-height: 1.35;
@@ -1309,10 +1314,6 @@ a:not(:last-child) img:only-child {
 
 .img-w:last-child {
 	margin-bottom: 0;
-}
-
-.img-w:hover img, .img-w:focus img {
-	transform: translate(-50%, -50%) scale(1.1);
 }
 
 .img-w img {
@@ -2706,6 +2707,13 @@ label .required {
 
 /* Cards
 --------------------------------------------- */
+.card {
+	transform: scale(0.95);
+	border: 0.4rem solid #fab703;
+	box-shadow: 0rem 0rem 0.8rem 0.2rem rgba(0, 0, 0, 0.15);
+	transition: all 0.35s ease-out;
+}
+
 .card .img-w {
 	margin: 0;
 }
@@ -2718,6 +2726,38 @@ label .required {
 .card .card-title {
 	font-size: 2rem;
 	line-height: 1.5;
+	transition: all .2s ease-out;
+}
+
+.card .card-title a {
+	transition: all .2s ease-out;
+}
+
+.card.card-lg .card-copy {
+	padding: 3rem;
+}
+
+.card.card-lg .card-title {
+	font-size: 2.6rem;
+}
+
+.card:hover, .card:focus {
+	transform: scale(1);
+	box-shadow: 0rem 0rem 1.6rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .card-title a, .card:focus .card-title a {
+	color: #4169e1;
+}
+
+.cards {
+	align-items: stretch;
+}
+
+.cards > .cell {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
 }
 
 /*--------------------------------------------------------------

@@ -33,12 +33,6 @@ img {
     margin-bottom: 0;
   }
 
-  @include hover {
-    img {
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-  }
-
   img {
     @include position(
       absolute,

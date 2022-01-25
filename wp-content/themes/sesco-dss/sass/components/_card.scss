@@ -1,6 +1,12 @@
 .card {
+    transform: scale(0.95);
+    border: 0.4rem solid $accent;
+    box-shadow: 0rem 0rem 0.8rem 0.2rem rgba(0,0,0,0.15);
+    transition: all 0.35s ease-out;
+
     .img-w {
         margin: 0;
+        
     }
     .card-copy {
         padding: 1.5rem;
@@ -9,5 +15,36 @@
     .card-title {
         font-size: 2rem;
         line-height: 1.5;
+        transition: all .2s ease-out;
+
+        a {
+            transition: all .2s ease-out;
+        }
+    }
+
+    &.card-lg {
+        .card-copy {
+            padding: 3rem;
+        }
+        .card-title {
+            font-size: 2.6rem;
+        }
+    }
+
+    @include hover {
+        transform: scale(1);
+        box-shadow: 0rem 0rem 1.6rem 0.4rem rgba(0,0,0,0.1);
+
+        .card-title a {
+            color: $accent-dark;
+        }
+    }
+}
+
+.cards {
+    align-items: stretch;
+
+    > .cell {
+        @include display(flex, row nowrap, null, stretch);
     }
 }

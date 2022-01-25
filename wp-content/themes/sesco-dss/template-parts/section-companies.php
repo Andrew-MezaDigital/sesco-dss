@@ -46,7 +46,7 @@
     <section class="companies">
       <div class="row ha-center">
         <div class="cell lg-100 ta-center">
-          <h2 class="ba-center">
+          <h2 class="alt ba-center">
             <?php the_field('section_companies_headline'); ?>
             <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
           </h2>
