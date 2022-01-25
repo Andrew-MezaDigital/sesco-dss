@@ -8,7 +8,8 @@
       'meta_key' => 'product_featured',
 	    'meta_value' => true,
       'orderby' => 'date',
-      'order' => 'DESC'
+      'order' => 'DESC',
+      'posts_per_page' => 4
     ); 
     $products = new WP_Query($args);
   ?>
@@ -62,7 +63,8 @@
   <?php $args = array(
     'post_type' => 'products',
     'orderby' => 'date',
-    'order' => 'DESC'
+    'order' => 'DESC',
+    'posts_per_page' => -1
   ); 
   $products = new WP_Query($args);
   $stores = new WP_Query(array('post_type' => 'stores'));

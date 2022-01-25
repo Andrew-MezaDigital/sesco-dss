@@ -61,7 +61,8 @@
   <?php $args = array(
     'post_type' => 'work',
     'orderby' => 'date',
-    'order' => 'DESC'
+    'order' => 'DESC',
+    'posts_per_page' => -1
   ); 
   $work = new WP_Query($args);
   $services = new WP_Query(array('post_type' => 'service'));
