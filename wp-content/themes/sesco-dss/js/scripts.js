@@ -6,6 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		const splide = new Splide( '.splide', {
 			type: 'fade',
 			autoplay: true,
+			arrows: false,
 			interval: 5000,
 			rewind: true,
 			pauseOnHover: false,

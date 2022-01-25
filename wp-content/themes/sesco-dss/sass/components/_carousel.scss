@@ -2,15 +2,32 @@ $width: 100px;
 
 .home {
 
-  .splide .splide__slide {
-    background: #000;
+  .splide {
+    width: 100%;
+  }
 
+  .splide .splide__slide {
+    @include display(flex, row nowrap, null, center);
     @include position;
     @include size(100%);
-    max-height: calc(100vh - 20rem);
+    max-height: 60vh;
+    background: #000;
 
-    .bar-w {
-      @include position(absolute, 2, (bottom, left), (0, 0));
+    .img-w {
+      flex: 1;
+    }
+
+    .callout {
+      flex: 0 0 (100% / 3);
+      align-self: stretch;
+      @include display(flex, column nowrap, center, flex-start);
+      padding: 2.4rem 3.6rem;
+      @include colors($accent-dark, $light-0);
+      background: linear-gradient(180deg, rgba($accent-dark,0.8) 0%, rgba($accent-dark,1) 50%, rgba($accent-dark,0.8) 100%);
+
+      .copy {
+        margin-bottom: 2rem;
+      }
     }
 
     .bar {
@@ -49,8 +66,8 @@ $width: 100px;
         (50%, 50%),
         translate(-50%, -50%)
       );
+      width: auto;
       max-width: none;
-      width: 100%;
       min-height: 100%;
     }
 
