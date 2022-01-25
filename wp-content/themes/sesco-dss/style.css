@@ -1439,7 +1439,8 @@ a:not(:last-child) img:only-child {
 	background: #000;
 	position: relative;
 	width: 100%;
-	height: calc(100vh - 200px);
+	height: 100%;
+	max-height: calc(100vh - 20rem);
 }
 
 .home .splide .splide__slide .bar-w {

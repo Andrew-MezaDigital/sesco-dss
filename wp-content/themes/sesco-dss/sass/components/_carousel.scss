@@ -6,7 +6,8 @@ $width: 100px;
     background: #000;
 
     @include position;
-    @include size(100%, calc(100vh - 200px));
+    @include size(100%);
+    max-height: calc(100vh - 20rem);
 
     .bar-w {
       @include position(absolute, 2, (bottom, left), (0, 0));
