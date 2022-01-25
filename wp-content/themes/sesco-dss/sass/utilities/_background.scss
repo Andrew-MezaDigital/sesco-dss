@@ -6,3 +6,7 @@
     background: $accent;
     background: linear-gradient(45deg, rgba($accent,1) 0%, rgba($accent,0.8) 50%, rgba($accent,1) 100%);
 }
+
+.bg-secondary {
+    @include colors($accent-dark, $light-0);
+}

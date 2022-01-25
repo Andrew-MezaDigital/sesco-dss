@@ -1,5 +1,7 @@
 .card {
+    width: 100%;
     transform: scale(0.95);
+    @include colors($light-0, $dark-0);
     border: 0.4rem solid $accent;
     box-shadow: 0rem 0rem 0.8rem 0.2rem rgba(0,0,0,0.15);
     transition: all 0.35s ease-out;

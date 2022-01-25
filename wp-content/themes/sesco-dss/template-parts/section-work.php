@@ -15,9 +15,9 @@
   ?>
 
   <?php if ($work->have_posts()) : ?>
-    <section id="latest-work" class="bg-light">
+    <section id="latest-work" class="bg-secondary">
       <div class="row mb ha-between va-center">
-        <div class="cell auto">
+        <div class="cell fill">
           <h2>
             <?php if ($link) : ?>
               <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>"><?php echo $title ? $title : 'Our Latest Work Samples'; ?></a>
@@ -27,14 +27,8 @@
             <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
           </h2>
         </div>
-        <?php if ($link) : ?>
-          <div class="cell auto">
-            <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>" class="btn btn-sm secondary"><?php echo $link['title'] ? $link['title'] : 'View more'; ?>&nbsp;&raquo;</a>
-            <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
-          </div>
-        <?php endif; ?>
       </div>
-      <ul class="list-work grid up-4">
+      <ul class="list-work cards grid up-4">
         <?php while ($work->have_posts()) : $work->the_post(); ?>
           <li id="work-<?php echo get_the_ID(); ?>" class="cell">
             <div class="card">
@@ -46,12 +40,19 @@
                   <?php the_title(); ?>
                   <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
                 </h3>
-                <?php the_excerpt(); ?>
               </div>
             </div>
           </li>
         <?php endwhile; ?>
       </ul>
+      <?php if ($link) : ?>
+        <div class="row ha-end">
+          <div class="cell auto">
+            <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>"><?php echo $link['title'] ? $link['title'] : 'View more'; ?>&nbsp;&raquo;</a>
+            <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
+          </div>
+        </div>
+      <?php endif; ?>
     </section>
   <?php endif; wp_reset_postdata(); ?>
 

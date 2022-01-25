@@ -14,9 +14,9 @@
   ?>
 
   <?php if ($products->have_posts()) : ?>
-    <section id="latest-equipment-for-sale" class="bg-light">
+    <section id="latest-equipment-for-sale" class="bg-secondary">
       <div class="row mb ha-between va-center">
-        <div class="cell auto">
+        <div class="cell fill">
           <h2>
             <?php if ($link) : ?>
               <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>"><?php echo $title ? $title : 'Our Latest Work Samples'; ?></a>
@@ -26,12 +26,6 @@
             <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
           </h2>
         </div>
-        <?php if ($link) : ?>
-          <div class="cell auto">
-            <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>" class="btn btn-sm secondary"><?php echo $link['title'] ? $link['title'] : 'View more'; ?>&nbsp;&raquo;</a>
-            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
-          </div>
-        <?php endif; ?>
       </div>
       <ul class="grid up-4">
         <?php while ($products->have_posts()) : $products->the_post(); ?>
@@ -52,6 +46,14 @@
           </li>
         <?php endwhile; ?>
       </ul>
+      <?php if ($link) : ?>
+        <div class="row ha-end">
+          <div class="cell auto">
+            <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>"><?php echo $link['title'] ? $link['title'] : 'View more'; ?>&nbsp;&raquo;</a>
+            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
+          </div>
+        </div>
+      <?php endif; ?>
     </section>
   <?php endif; wp_reset_postdata(); ?>
 

@@ -8,6 +8,7 @@ h6 {
 
   a {
     color: inherit;
+    border-color: transparent !important;
 
     @include hover {
       color: inherit;
