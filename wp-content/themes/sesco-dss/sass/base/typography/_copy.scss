@@ -58,6 +58,7 @@ big {
 	@include display(inline-block);
 	vertical-align: middle;
 	padding: 0 0 0 .5em;
+	border: 0 !important;
 	font-size: 12px;
 	font-weight: 600;
 	text-transform: uppercase;
