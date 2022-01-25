@@ -6,7 +6,7 @@
     'hide_empty' => false,
 ) ); ?>
 <?php if (!empty($term_query) && !is_wp_error($term_query)) : ?>
-  <section id="services" class="no-pt">
+  <section id="services">
     <h2 class="screen-reader-text">Services</h2>
     <ul class="grid up-3">
       <?php foreach ($term_query->terms as $term) : ?>
