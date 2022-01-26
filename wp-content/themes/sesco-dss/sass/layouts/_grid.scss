@@ -146,7 +146,7 @@
         rotate(-45deg)
       );
       transform-origin: center left;
-      @include size(220%);
+      @include size(200px, 150px);
       background: $accent;
     }
 

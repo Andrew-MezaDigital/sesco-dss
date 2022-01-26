@@ -35,7 +35,7 @@ $term_tax = get_term($term_id)->taxonomy;
           <div class="row va-center">
             <div class="cell lg-33">
               <div class="img-w square">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail('thumbnail'); ?>
               </div>
             </div>
             <div class="cell fill">
