@@ -75,7 +75,7 @@
   ?>
 
   <?php if ($products->have_posts()) : ?>
-    <section id="latest-equipment-for-sale" class="bg-light">
+    <section id="latest-equipment-for-sale" class="bg-secondary">
       <div class="row mb ha-between va-center">
         <div class="cell auto">
           <h2>
@@ -94,7 +94,7 @@
           </div>
         <?php endif; ?>
       </div>
-      <ul class="filterable grid up-4">
+      <ul class="filterable cards grid up-4">
         <?php while ($products->have_posts()) : $products->the_post(); ?>
           <?php $products_item_url = $products_page_url . '#equipment-' . get_the_ID(); ?>
           <?php $stores = get_field('product_store'); ?>
@@ -106,7 +106,7 @@
             <?php endforeach; ?>
           <?php endif; ?>
           <li id="equipment-<?php echo get_the_ID(); ?>" class="mix <?php echo $store_class; ?> cell">
-            <div class="card">
+            <div class="card no-hover">
               <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox img-w" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
                 <?php // Setup srcset ?>
                 <?php the_post_thumbnail('medium'); ?>

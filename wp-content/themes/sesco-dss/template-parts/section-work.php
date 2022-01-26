@@ -31,7 +31,7 @@
       <ul class="list-work cards grid up-4">
         <?php while ($work->have_posts()) : $work->the_post(); ?>
           <li id="work-<?php echo get_the_ID(); ?>" class="cell">
-            <div class="card">
+            <div class="card no-hover">
               <div class="img-w">
                 <?php the_post_thumbnail(); ?>
               </div>
@@ -73,7 +73,7 @@
   ?>
 
   <?php if ($work->have_posts()) : ?>
-    <section id="latest-work" class="bg-light">
+    <section id="latest-work" class="bg-secondary">
       <div class="row mb ha-between va-center">
         <div class="cell auto">
           <h2>
@@ -94,7 +94,7 @@
           </div>
         <?php endif; ?>
       </div>
-      <ul class="filterable grid up-4">
+      <ul class="filterable cards grid up-4">
         <?php while ($work->have_posts()) : $work->the_post(); ?>
           <?php $services = get_field('work_services'); ?>
           <?php if ($services) : ?>
@@ -113,7 +113,6 @@
                   <?php the_title(); ?>
                   <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
                 </h3>
-                <?php the_excerpt(); ?>
                 <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
                   <?php if ($services) : ?>
                     <ul class="work-services">
