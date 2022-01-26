@@ -12,8 +12,14 @@ get_header();
 			get_template_part( 'template-parts/section', 'hero');
 			get_template_part( 'template-parts/section', 'categories');
 			get_template_part( 'template-parts/section', 'companies');
-			get_template_part( 'template-parts/section', 'work');
-			get_template_part( 'template-parts/section', 'products');
+		?>
+		<section id="latest" class="bg-secondary">
+			<?php
+				get_template_part( 'template-parts/section', 'work');
+				get_template_part( 'template-parts/section', 'products');
+			?>
+		</section>
+		<?php 
 			get_template_part( 'template-parts/section', 'cta');
 		?>
 

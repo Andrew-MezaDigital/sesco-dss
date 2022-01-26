@@ -73,6 +73,10 @@
       @include colors($accent-dark, $light-0);
       @include position(relative, 1);
       box-shadow: inset 0px 2px 10px 5px rgba(0, 0, 0, 0.26);
+
+      .card {
+        @include colors($light-0, $dark-0, $accent-dark);
+      }
     }
   }
 }

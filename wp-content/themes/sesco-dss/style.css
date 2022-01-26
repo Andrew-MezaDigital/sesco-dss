@@ -1079,6 +1079,23 @@ body.home #primary > section.page-hero .bar {
 	border-bottom-color: transparent;
 }
 
+#primary > section.bg-secondary .card {
+	background-color: #fafafa;
+	color: #1f1f1f;
+}
+
+#primary > section.bg-secondary .card a:not(.btn):not(.img-w) {
+	display: inline-block;
+	padding: 0.1em 0;
+	border-bottom: 0.1rem solid transparent;
+	color: #4169e1;
+}
+
+#primary > section.bg-secondary .card a:not(.btn):not(.img-w):hover, #primary > section.bg-secondary .card a:not(.btn):not(.img-w):focus {
+	color: #4169e1;
+	border-bottom-color: transparent;
+}
+
 .top-bar,
 .site-header {
 	display: flex;

@@ -15,7 +15,6 @@
   ?>
 
   <?php if ($products->have_posts()) : ?>
-    <section id="latest-equipment-for-sale" class="bg-secondary">
       <div class="row mb ha-between va-center">
         <div class="cell fill">
           <h2>
@@ -55,7 +54,6 @@
           </div>
         </div>
       <?php endif; ?>
-    </section>
   <?php endif; wp_reset_postdata(); ?>
 
 <?php else : ?>
