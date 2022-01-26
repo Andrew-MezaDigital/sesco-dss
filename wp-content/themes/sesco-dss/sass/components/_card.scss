@@ -1,7 +1,7 @@
 .card {
     width: 100%;
     transform: scale(0.95);
-    @include colors($light-0, $dark-0);
+    @include colors($light-0, $dark-0, $dark-0, $accent-dark);
     border: 0.4rem solid $accent;
     box-shadow: 0rem 0rem 0.8rem 0.2rem rgba(0,0,0,0.15);
     transition: all 0.35s ease-out;
@@ -32,12 +32,14 @@
         }
     }
 
-    @include hover {
-        transform: scale(1);
-        box-shadow: 0rem 0rem 1.6rem 0.4rem rgba(0,0,0,0.1);
-
-        .card-title a {
-            color: $accent-dark;
+    &:not(.no-hover) {
+        @include hover {
+            transform: scale(1);
+            box-shadow: 0rem 0rem 1.6rem 0.4rem rgba(0,0,0,0.1);
+    
+            .card-title a {
+                color: $accent-dark;
+            }
         }
     }
 }

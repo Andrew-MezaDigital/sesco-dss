@@ -22,7 +22,7 @@
                     <?php $logo = get_sub_field('company_logo', $term); ?>
                     <?php if (!empty($logo)) : ?>
                       <li class="splide__slide">
-                        <div class="img-w">
+                        <div class="img-w has-logo">
                           <img src="<?php echo esc_url($logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo" />
                         </div>
                         <h3 class="screen-reader-text"><?php echo get_sub_field('company_name', $term); ?></h3>
@@ -59,7 +59,7 @@
                     <?php $logo = get_sub_field('company_logo'); ?>
                     <?php if (!empty($logo)) : ?>
                       <li class="splide__slide">
-                        <div class="img-w">
+                        <div class="img-w has-logo">
                           <img src="<?php echo esc_url($logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo" />
                         </div>
                         <h3 class="screen-reader-text"><?php echo get_sub_field('company_name'); ?></h3>

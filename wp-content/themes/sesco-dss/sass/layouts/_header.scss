@@ -2,13 +2,14 @@
 .site-header {
   @include display(flex, column nowrap, flex-start, center);
   @include position(fixed, 10, (left, right), (0, 0));
+  padding: 0 3.6rem;
 }
 
 .top-bar {
   top: 0;
   height: 30px;
   background: #363636;
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #fff;
 
   > .row {
@@ -27,7 +28,6 @@
 .site-header {
   top: 30px;
   height: 70px;
-  padding: 0 3.6rem;
   background: $accent;
   background: linear-gradient(
     90deg,

@@ -23,10 +23,17 @@ img {
   overflow: hidden;
   padding-top: 56.25%;
   margin-bottom: 20px;
-  //border: 6px solid $accent;
+
+  &:not(.has-logo) {
+    background: #000;
+  }
 
   &.slim {
     padding-top: ( 9 / 21 ) * 100%;
+  }
+
+  &.square {
+    padding-top: 100%;
   }
 
   .splide & {
@@ -45,9 +52,9 @@ img {
       (50%, 50%),
       translate(-50%, -50%)
     );
+    width: auto;
     max-width: none;
-    width: 100%;
-    min-height: 100%;
+    max-height: 100%;
     transition: transform 0.2s ease-out;
 
     &.logo {

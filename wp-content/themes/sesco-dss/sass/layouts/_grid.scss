@@ -2,16 +2,26 @@
 .col,
 .grid {
   @include display(flex, null, flex-start, flex-start);
-  width: calc(100% + 24px);
-  max-width: 1200px;
-  margin: 0 -12px;
+  width: calc(100% + 2.4rem);
+  max-width: 120rem;
+  margin: 0 -1.2rem;
   padding: 0;
   list-style: none;
 
   .cell {
     flex: 1 0 auto;
     margin: 0;
-    padding: 0 12px;
+    padding: 0 1.2rem;
+  }
+
+  &.no-pad {
+    > .cell {
+      padding: 0;
+    }
+  }
+
+  &.expand {
+    max-width: calc(100% + 2.4rem);
   }
 
   &.va-center {
@@ -30,10 +40,14 @@
     justify-content: center;
   }
 
+  &.ha-stretch {
+    justify-content: stretch;
+  }
+
   &.form {
 
     > .cell {
-      padding: 6px 18px;
+      padding: 0.6rem 1.8rem;
     }
   }
 }
@@ -51,7 +65,7 @@
   &[class*=" up-"] {
 
     > .cell {
-      padding: 18px 12px;
+      padding: 1.8rem 1.2rem;
     }
   }
   &.up-4 {
@@ -83,6 +97,10 @@
     flex: 1;
   }
 
+  &.stretch {
+    align-self: stretch;
+  }
+
   &.lg-33 {
     flex: 0 0 (100% / 3);
   }
@@ -96,7 +114,7 @@
   }
 
   &.pad-y {
-    padding: 18px 12px;
+    padding: 1.8rem 1.2rem\;
   }
 
   &.store {
