@@ -5,7 +5,7 @@
     @include display(flex, column nowrap, flex-start, center);
   }
   .footer-content {
-    padding: 3rem 0;
+    padding: 3rem 3.6rem;
     @include colors($dark-10, $light-0);
 
     .store {
@@ -24,7 +24,7 @@
     }
   }
   .site-info {
-    padding: 1.5rem 0;
+    padding: 1.5rem 3.6rem;
     @include colors($dark-0, $light-50);
 
     p {

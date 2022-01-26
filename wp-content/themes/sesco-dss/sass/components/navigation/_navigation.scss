@@ -2,6 +2,21 @@
 	display: block;
 	width: 100%;
 
+	.menu-toggle {
+		background: none;
+		border: 0;
+		cursor: pointer;
+		transition: all .2s ease-out;
+
+		.fas {
+			padding-left: 0.5em;
+		}
+
+		@include hover {
+			background: $accent;
+		}
+	}
+
 	ul {
 		display: none;
 		list-style: none;
@@ -75,12 +90,45 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media #{$md-down} {
+	.menu-primary-menu-container {
+		@include position(absolute, 0, (top, left), (70px, 0));
+		width: 100%;
+		background: $dark-10;
+		box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 0.5);
+		color: $light-0;
 
-	.menu-toggle {
-		display: none;
+		#primary-menu {
+			@include display(none, column nowrap, flex-start, center);
+			@media #{$md-up} {
+				flex-flow: row wrap;
+				justify-content: center;
+			}
+
+			li.menu-item:not(.btn) > a {
+				color: $light-0;
+				transition: all .2s ease-out;
+	
+				@include hover  {
+					color: $accent;
+				}
+			}
+		}
+
+		.main-navigation.toggled & #primary-menu {
+			@include display;
+		}
 	}
+	
 
+}
+@media #{$lg-up} {
+	.menu-toggle {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 37.5em) {
 	.main-navigation ul {
 		display: flex;
 	}

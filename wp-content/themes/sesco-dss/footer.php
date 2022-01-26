@@ -13,14 +13,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="footer-content">
-			<div class="grid up-4">
-				<div class="cell">
-					<h2>
-						Connect with Us
-						<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=10" class="post-edit-link">Edit this</a>' : ''; ?>
-					</h2>
-					<?php wp_nav_menu( array( 'menu' => 'Social Menu' )); ?>
-				</div>
+			<div class="grid ha-around up-1 up-2-sm up-4-lg">
 				<?php $args = array(
 					'post_type' => 'stores',
 				); 
@@ -36,6 +29,10 @@
 								<table class="store-hours">
 									<tbody>
 										<?php while (have_rows('store_hours')) : the_row(); ?>
+											<?php $curr_open_time = get_sub_field('store_hours_open'); ?>
+											<?php $curr_close_time = get_sub_field('store_hours_close'); ?>
+											<?php if ($curr_open_time == $last_open_time); ?> 
+												<?php count
 											<tr>
 												<th><?php the_sub_field('store_hours_day'); ?></th>
 												<td><?php echo get_sub_field('store_hours_open') . " - " . get_sub_field('store_hours_close'); ?></td>
@@ -47,6 +44,13 @@
 						</div>
 					<?php endwhile; ?>
 				<?php endif; wp_reset_postdata(); ?>
+				<div class="cell">
+					<h2>
+						Connect with Us
+						<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=10" class="post-edit-link">Edit this</a>' : ''; ?>
+					</h2>
+					<?php wp_nav_menu( array( 'menu' => 'Social Menu' )); ?>
+				</div>
 				<div class="cell">
 					<h2>
 						About Us

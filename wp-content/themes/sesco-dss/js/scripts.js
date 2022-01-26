@@ -1,4 +1,5 @@
 document.addEventListener( 'DOMContentLoaded', function() {
+	document.querySelector( 'body' ).classList.remove( 'preload' );
 	if ( document.querySelector( '.glightbox' ) ) {
 		const lightbox = GLightbox( {} );
 	}
@@ -21,10 +22,24 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			arrows: false,
 			pagination: false,
 			interval: 1500,
-			perPage: 5,
+			perPage: 6,
 			perMove: 1,
 			pauseOnHover: false,
 			pauseOnFocus: false,
+			breakpoints: {
+				576: {
+					perPage: 2,
+				},
+				768: {
+					perPage: 3,
+				},
+				1200: {
+					perPage: 4,
+				},
+				1440: {
+					perPage: 5,
+				},
+			},
 		} );
 		splide.mount();
 	}

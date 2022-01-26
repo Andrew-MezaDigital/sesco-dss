@@ -20,35 +20,29 @@ $term_tax = get_term($term_id)->taxonomy;
 
 <?php if ($services->have_posts()) : ?>
   <section id="services">
-    <div class="row mb ha-between va-center">
+    <div class="row expand mb ha-between va-center">
       <div class="cell">
-        <h2>
+        <h2 class="alt">
           <?php echo $title ? $title : 'Our Services List'; ?>
           <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
         </h2>
       </div>
     </div>
-    <ul class="grid up-2">
+    <ul class="grid expand up-1 up-2-sm up-3-xl">
       <?php while ($services->have_posts()) : $services->the_post(); ?>
         <?php $link = get_field('service_link'); ?>
         <li id="service-<?php echo get_the_ID(); ?>" class="cell">
-          <div class="row va-center">
-            <div class="cell lg-33">
-              <div class="img-w square">
-                <?php the_post_thumbnail('thumbnail'); ?>
-              </div>
-            </div>
-            <div class="cell fill">
-              <h3>
-                <?php the_title(); ?>
-                <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-              </h3>
-              <?php the_field('service_description'); ?>
-              <?php if ($link) : ?>
-                <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>"><?php echo esc_html($link['title']); ?></a>
-              <?php endif; ?>
-            </div>
+          <div class="img-w service">
+            <?php the_post_thumbnail('medium'); ?>
           </div>
+          <h3 class="alt">
+            <?php the_title(); ?>
+            <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
+          </h3>
+          <?php the_field('service_description'); ?>
+          <?php if ($link) : ?>
+            <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>"><?php echo esc_html($link['title']); ?></a>
+          <?php endif; ?>
         </li>
       <?php endwhile; ?>
     </ul>

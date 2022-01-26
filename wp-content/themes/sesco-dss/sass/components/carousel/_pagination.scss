@@ -1,5 +1,13 @@
 .splide__pagination {
-  @include position(absolute, 1, (bottom, right), (0, 0));
+  @include position(absolute, 1);
+  @media #{$md-down} {
+    top: 0;
+    left: 0;
+  }
+  @media #{$lg-up} {
+    bottom: 0;
+    right: 0;
+  }
   padding: 3.6rem;
 
   &__page {

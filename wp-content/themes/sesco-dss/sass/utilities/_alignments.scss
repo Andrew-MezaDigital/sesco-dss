@@ -30,3 +30,13 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.ta-center {
+	text-align: center;
+}
+
+@media #{$md-up} {
+	.ta-left-md {
+		text-align: left;
+	}
+}

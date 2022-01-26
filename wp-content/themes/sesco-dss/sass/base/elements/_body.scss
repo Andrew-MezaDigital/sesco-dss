@@ -8,4 +8,8 @@ body {
   font-size: $font__font-size-body;
   line-height: $font__line-height-body;
   color: #333;
+
+  &.preload * {
+    transition: none !important;
+  }
 }

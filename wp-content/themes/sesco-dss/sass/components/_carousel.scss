@@ -13,15 +13,25 @@ $width: 100px;
     background: #000;
 
     .cnt {
-      @include display(flex, row nowrap, null, center);
+      @include display(flex, row wrap, null, center);
       width: 100%;
-      max-height: 40vh;
       overflow: hidden;
+      @media #{$lg-up} {
+        flex-flow: row-reverse nowrap;
+        max-height: 50rem;
+      }
 
       .callout {
-        flex: 0 0 (100% / 3);
-        align-self: stretch;
+        flex: 0 0 100%;
+        @media #{$lg-up} {
+          flex: 0 0 (100% / 2);
+        }
+        @media #{$xl-up} {
+          flex: 0 0 (100% / 3);
+        }
         @include display(flex, column nowrap, center, flex-start);
+        align-self: stretch;
+        min-height: 45rem;
 
         .copy {
           margin-bottom: 2rem;
@@ -29,7 +39,14 @@ $width: 100px;
       }
 
       .img-w {
-        flex: 1;
+        flex: 0 0 100%;
+        @media #{$lg-up} {
+          flex: 0 0 (100% / 2);
+        }
+        @media #{$xl-up} {
+          flex: 0 0 (100% / 3 * 2);
+        }
+        margin: 0;
       }
     }
 
@@ -67,9 +84,6 @@ $width: 100px;
         (50%, 50%),
         translate(-50%, -50%)
       );
-      width: auto;
-      max-width: none;
-      min-height: 100%;
     }
 
     &.is-active {

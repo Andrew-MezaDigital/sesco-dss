@@ -34,6 +34,20 @@ img {
 
   &.square {
     padding-top: 100%;
+    @media #{$md-up} {
+      &-md {
+        padding-top: 100%;
+      }
+    }
+  }
+
+  &.video {
+    padding-top: 56.25%;
+    @media #{$lg-up} {
+      &-lg {
+        padding-top: 56.25%;
+      }
+    }
   }
 
   .splide & {

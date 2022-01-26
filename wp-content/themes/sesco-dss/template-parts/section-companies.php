@@ -7,9 +7,9 @@
     <?php $term_tax = get_term($term_id)->taxonomy; ?>
 
     <section class="companies">
-      <div class="row ha-center">
+      <div class="row expand ha-center">
         <div class="cell lg-100 ta-center">
-          <h2 class="ba-center">
+          <h2 class="alt ba-center">
             <?php the_field('section_companies_headline', $term); ?>
             <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
           </h2>
@@ -44,7 +44,7 @@
   <?php if (get_field('section_companies_show')) : ?>
 
     <section class="companies">
-      <div class="row ha-center">
+      <div class="row expand ha-center">
         <div class="cell lg-100 ta-center">
           <h2 class="alt ba-center">
             <?php the_field('section_companies_headline'); ?>
