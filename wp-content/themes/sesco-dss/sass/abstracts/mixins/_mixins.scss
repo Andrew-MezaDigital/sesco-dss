@@ -75,7 +75,6 @@
     padding: 0.1em 0;
     border-bottom: 0.1rem solid transparent;
     color: $link-color;
-    transition: border 0.2s ease-out;
 
     @if $link-color == $txt-color {
       border-bottom-color: $link-color;

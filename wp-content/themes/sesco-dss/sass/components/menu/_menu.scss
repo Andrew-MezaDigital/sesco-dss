@@ -7,6 +7,10 @@
   .menu-item {
     @include display(inline-flex, row nowrap, null, center);
     margin: 1em;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &.nav-menu {

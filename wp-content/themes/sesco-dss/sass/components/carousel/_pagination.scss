@@ -1,6 +1,6 @@
 .splide__pagination {
   @include position(absolute, 1, (bottom, right), (0, 0));
-  padding: 32px;
+  padding: 3.6rem;
 
   &__page {
     @include size(24px);

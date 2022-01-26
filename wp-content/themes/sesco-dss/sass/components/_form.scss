@@ -50,3 +50,24 @@ label {
         color: red;
     }
 }
+
+.wpcf7 form.wpcf7-form {
+    .wpcf7-response-output {
+        padding: 0;
+        text-align: center;
+        border: 0;
+    }
+
+    &.invalid .wpcf7-response-output,
+    &.error .wpcf7-response-output {
+        color: red;
+    }
+
+    &.spam .wpcf7-response-output {
+        color: orange;
+    }
+
+    &.success .wpcf7-response-output {
+        color: green;
+    }
+}

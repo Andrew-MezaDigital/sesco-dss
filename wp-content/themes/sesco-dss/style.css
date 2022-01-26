@@ -675,6 +675,7 @@ table th {
 a {
 	color: #4169e1;
 	text-decoration: none;
+	transition: all .2s ease-out;
 }
 
 a:hover, a:focus, a:active {
@@ -909,8 +910,8 @@ textarea {
 	right: 0;
 	transform: rotate(-45deg);
 	transform-origin: center left;
-	width: 200%;
-	height: 200%;
+	width: 220%;
+	height: 220%;
 	background: #fab703;
 }
 
@@ -977,7 +978,6 @@ body:not(.home) #primary > section.page-hero:after {
 	padding: 0.1em 0;
 	border-bottom: 0.1rem solid transparent;
 	color: #fafafa;
-	transition: border 0.2s ease-out;
 	border-bottom-color: #fafafa;
 }
 
@@ -1026,6 +1026,7 @@ body.home #primary > section.page-hero .bar {
 .site-header {
 	top: 30px;
 	height: 70px;
+	padding: 0 3.6rem;
 	background: #fab703;
 	background: linear-gradient(90deg, #fab703 0%, #fab703 40%, #f7f7f7 60%, #f7f7f7 100%);
 	overflow: hidden;
@@ -1033,6 +1034,7 @@ body.home #primary > section.page-hero .bar {
 }
 
 .site-header > .row {
+	max-width: none;
 	background: #f7f7f7;
 }
 
@@ -1055,7 +1057,6 @@ body.home #primary > section.page-hero .bar {
 	padding: 0.1em 0;
 	border-bottom: 0.1rem solid transparent;
 	color: #fafafa;
-	transition: border 0.2s ease-out;
 	border-bottom-color: #fafafa;
 }
 
@@ -1090,7 +1091,6 @@ body.home #primary > section.page-hero .bar {
 	padding: 0.1em 0;
 	border-bottom: 0.1rem solid transparent;
 	color: #7b7b7b;
-	transition: border 0.2s ease-out;
 	border-bottom-color: #7b7b7b;
 }
 
@@ -1314,6 +1314,10 @@ a:not(:last-child) img:only-child {
 	margin-bottom: 20px;
 }
 
+img.custom-logo {
+	width: 6rem;
+}
+
 .img-w {
 	display: flex;
 	position: relative;
@@ -1491,7 +1495,6 @@ a:not(:last-child) img:only-child {
 	padding: 0.1em 0;
 	border-bottom: 0.1rem solid transparent;
 	color: #fafafa;
-	transition: border 0.2s ease-out;
 	border-bottom-color: #fafafa;
 }
 
@@ -1523,7 +1526,6 @@ a:not(:last-child) img:only-child {
 	padding: 0.1em 0;
 	border-bottom: 0.1rem solid transparent;
 	color: #fafafa;
-	transition: border 0.2s ease-out;
 	border-bottom-color: #fafafa;
 }
 
@@ -1579,7 +1581,7 @@ a:not(:last-child) img:only-child {
 	z-index: 1;
 	bottom: 0;
 	right: 0;
-	padding: 32px;
+	padding: 3.6rem;
 }
 
 .home .splide__pagination__page {
@@ -2674,6 +2676,10 @@ iframe.wait-autoplay {
 	margin: 1em;
 }
 
+.menu .menu-item:last-child {
+	margin-right: 0;
+}
+
 .menu.nav-menu .menu-item {
 	font-size: 16px;
 	font-weight: 700;
@@ -2739,6 +2745,25 @@ label .required {
 	color: red;
 }
 
+.wpcf7 form.wpcf7-form .wpcf7-response-output {
+	padding: 0;
+	text-align: center;
+	border: 0;
+}
+
+.wpcf7 form.wpcf7-form.invalid .wpcf7-response-output,
+.wpcf7 form.wpcf7-form.error .wpcf7-response-output {
+	color: red;
+}
+
+.wpcf7 form.wpcf7-form.spam .wpcf7-response-output {
+	color: orange;
+}
+
+.wpcf7 form.wpcf7-form.success .wpcf7-response-output {
+	color: green;
+}
+
 /* Cards
 --------------------------------------------- */
 .card {
@@ -2756,7 +2781,6 @@ label .required {
 	padding: 0.1em 0;
 	border-bottom: 0.1rem solid transparent;
 	color: #1f1f1f;
-	transition: border 0.2s ease-out;
 	border-bottom-color: #1f1f1f;
 }
 
@@ -2771,7 +2795,6 @@ label .required {
 
 .card .card-copy {
 	padding: 1.5rem;
-	background: #fff;
 }
 
 .card .card-title {
@@ -3065,7 +3088,6 @@ label .required {
 	padding: 0.1em 0;
 	border-bottom: 0.1rem solid transparent;
 	color: #fafafa;
-	transition: border 0.2s ease-out;
 	border-bottom-color: #fafafa;
 }
 
