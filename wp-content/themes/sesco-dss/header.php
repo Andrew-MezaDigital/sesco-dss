@@ -26,14 +26,14 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'sesco-dss' ); ?></a>
 	<div class="top-bar">
-		<div class="row va-center">
+		<div class="row expand no-pad va-center">
 			<div class="cell fill">
 				<?php $args = array(
 					'post_type' => 'stores',
 				); 
 				$stores = new WP_Query($args); ?>
 				<?php if ($stores->have_posts()) : ?>
-					<div class="row ha-end va-center">
+					<div class="row expand ha-end va-center">
 						<?php while ($stores->have_posts()) : $stores->the_post() ?>
 							<div class="store cell auto">
 								<p><?php the_title(); ?></p>
@@ -56,7 +56,7 @@
 	</div>
 
 	<header id="masthead" class="site-header">
-		<div class="row ha-between va-center">
+		<div class="row expand ha-between va-center no-pad">
 			<div class="logo cell auto">
 				<?php the_custom_logo(); ?>
 				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit this</a>' : ''; ?>
