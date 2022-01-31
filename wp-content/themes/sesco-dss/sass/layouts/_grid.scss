@@ -2,16 +2,32 @@
 .col,
 .grid {
   @include display(flex, null, flex-start, flex-start);
-  width: calc(100% + 24px);
-  max-width: 1200px;
-  margin: 0 -12px;
+  width: calc(100% + 2.4rem);
+  max-width: 120rem;
+  margin: 0 -1.2rem;
   padding: 0;
   list-style: none;
 
   .cell {
     flex: 1 0 auto;
     margin: 0;
-    padding: 0 12px;
+    padding: 0 1.2rem;
+  }
+
+  &.no-pad {
+    > .cell {
+      padding: 0;
+    }
+  }
+
+  &.pad-y {
+    > .cell {
+      padding: 1.8rem 1.2rem;
+    }
+  }
+
+  &.expand {
+    max-width: calc(100% + 2.4rem);
   }
 
   &.va-center {
@@ -25,6 +41,27 @@
   &.ha-between {
     justify-content: space-between;
   }
+
+  &.ha-center {
+    justify-content: center;
+  }
+
+  &.ha-around {
+    justify-content: space-around;
+  }
+
+  @media #{$sm-up} {
+    &.ha-end-sm {
+      justify-content: flex-end;
+    }
+  }
+
+  &.form {
+
+    > .cell {
+      padding: 0.6rem 1.8rem;
+    }
+  }
 }
 
 .row,
@@ -37,27 +74,100 @@
 }
 
 .grid {
+
   &[class*=" up-"] {
-
     > .cell {
-      padding: 12px 18px;
-    }
-  }
-  &.up-4 {
-    > .cell {
-      flex: 0 0 (100% / 4);
+      padding: 1.8rem 1.2rem;
     }
   }
 
-  &.up-3 {
+  &.up-1 {
     > .cell {
-      flex: 0 0 (100% / 3);
+      flex: 0 0 100%;
     }
   }
 
   &.up-2 {
     > .cell {
       flex: 0 0 (100% / 2);
+      max-width: (100% / 2);
+    }
+    @media #{$sm-up} {
+      &-sm {
+        > .cell {
+          flex: 0 0 (100% / 2);
+          max-width: (100% / 2);
+        }
+      }
+    }
+    @media #{$md-up} {
+      &-md {
+        > .cell {
+          flex: 0 0 (100% / 2);
+          max-width: (100% / 2);
+        }
+      }
+    }
+  }
+
+  &.up-3 {
+    > .cell {
+      flex: 0 0 (100% / 3);
+      max-width: (100% / 3);
+    }
+    @media #{$lg-up} {
+      &-lg {
+        > .cell {
+          flex: 0 0 (100% / 3);
+          max-width: (100% / 3);
+        }
+      }
+    }
+    @media #{$xl-up} {
+      &-xl {
+        > .cell {
+          flex: 0 0 (100% / 3);
+          max-width: (100% / 3);
+        }
+      }
+    }
+  }
+
+  &.up-4 {
+    > .cell {
+      flex: 0 0 (100% / 4);
+      max-width: (100% / 4);
+    }
+    @media #{$lg-up} {
+      &-lg {
+        > .cell {
+          flex: 0 0 (100% / 4);
+          max-width: (100% / 4);
+        }
+      }
+    }
+    @media #{$xl-up} {
+      &-xl {
+        > .cell {
+          flex: 0 0 (100% / 4);
+          max-width: (100% / 4);
+        }
+      }
+    }
+  }
+
+  &.up-5 {
+    > .cell {
+      flex: 0 0 (100% / 5);
+      max-width: (100% / 5);
+    }
+    @media #{$xxl-up} {
+      &-xxl {
+        > .cell {
+          flex: 0 0 (100% / 5);
+          max-width: (100% / 5);
+        }
+      }
     }
   }
 }
@@ -72,12 +182,68 @@
     flex: 1;
   }
 
-  &.lg-33 {
-    flex: 0 0 (100% / 3);
+  &.stretch {
+    align-self: stretch;
   }
 
-  &.lg-50 {
-    flex: 0 0 (100% / 2);
+  &.xs-100 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  &.lg-25 {
+    flex: 0 0 (100% / 4);
+  }
+
+  @media #{$sm-up} {
+    &.sm-50 {
+      flex: 0 0 (100% / 2);
+      max-width: (100% / 2);
+    }
+  }
+
+  @media #{$md-up} {
+    &.md-50 {
+      flex: 0 0 (100% / 2);
+      max-width: (100% / 2);
+    }
+  }
+
+  @media #{$lg-up} {
+    &.lg-100 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media #{$lg-up} {
+    &.lg-50 {
+      flex: 0 0 (100% / 2);
+      max-width: (100% / 2);
+    }
+  }
+
+  @media #{$lg-up} {
+    &.lg-33 {
+      flex: 0 0 (100% / 3);
+    }
+  }
+
+  @media #{$xl-up} {
+    &.xl-33 {
+      flex: 0 0 (100% / 3);
+    }
+  }
+
+  @media #{$xxl-up} {
+    &.xxl-50 {
+      flex: 0 0 (100% / 2);
+      max-width: (100% / 2);
+    }
+  }
+  
+  &.pad-y {
+    padding: 1.8rem 1.2rem;
   }
 
   &.store {
@@ -97,7 +263,9 @@
 
   &.logo {
     @include display(flex, row nowrap, flex-start, center);
+    height: 70px;
     @include position;
+    overflow: hidden;
 
     &:before {
       @include shape;
@@ -109,7 +277,7 @@
         rotate(-45deg)
       );
       transform-origin: center left;
-      @include size(200%);
+      @include size(200px, 150px);
       background: $accent;
     }
 

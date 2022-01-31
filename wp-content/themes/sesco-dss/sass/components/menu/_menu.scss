@@ -1,19 +1,26 @@
 .menu {
-  @include display(inline-flex, row nowrap);
+  @include display(inline-flex, row nowrap, null, stretch);
   margin: 0;
   padding: 0;
   list-style: none;
 
   .menu-item {
-    margin: 1em;
+    @include display(inline-flex, row nowrap, null, center);
+    margin: 1.2rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &.nav-menu {
     .menu-item {
-      font-size: 16px;
+      font-size: 1.8rem;
+      @media #{$md-up} {
+        font-size: 1.6rem;
+      }
       font-weight: 700;
       white-space: nowrap;
-      line-height: 1;
     }
   }
 

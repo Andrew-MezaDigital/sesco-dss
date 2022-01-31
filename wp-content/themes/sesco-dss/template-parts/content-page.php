@@ -9,46 +9,65 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<?php 
+	get_template_part( 'template-parts/section', 'hero');
+	get_template_part( 'template-parts/section', 'companies');
+?>
 
-	<?php sesco_dss_post_thumbnail(); ?>
+<section class="entry-content">
+	<div class="row expand ha-between pad-y">
+		<div class="cell xs-100 lg-50">
+			<?php the_content(); ?>
+		</div>
+		<div class="cell xs-100 lg-50">
+			<?php $stores = new WP_Query(array('post_type' => 'stores')); ?>
+			<?php if ($stores->have_posts()) : ?>
+				<div class="stores-info callout">
+					<h2>Our Stores</h2>
+					<div class="row expand pad-y">
+						<?php while ($stores->have_posts()) : $stores->the_post(); ?>
+							<?php $store_photo = get_field('store_photo'); ?>
+							<div class="cell xs-100 md-50 lg-100 xxl-50">
+								<h3><?php the_title(); ?></h3>
+								<iframe width="600" height="250" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=<?php echo urlencode(get_field('store_address')); ?>&key=AIzaSyDx4NdBfDH3awgzkVFLMEAPbE5Gge3IgtU"></iframe>
+								<?php if (has_post_thumbnail()) : ?>
+									<h4>Store Front</h4>
+									<div class="img-w slim">
+										<?php the_post_thumbnail(); ?>
+									</div>
+								<?php endif; ?>
+								<div class="row expand">
+									<div class="cell xs-100">
+										<?php if (have_rows('store_hours')) : ?>
+											<h4>Business Hours</h4>
+											<table class="store-hours">
+												<tbody>
+													<?php while (have_rows('store_hours')) : the_row(); ?>
+														<tr>
+															<th><?php the_sub_field('store_hours_day'); ?></th>
+															<td><?php echo get_sub_field('store_hours_open') . " - " . get_sub_field('store_hours_close'); ?></td>
+														</tr>
+													<?php endwhile; ?>
+												</tbody>
+											</table>
+										<?php endif; ?>
+									</div>
+									<div class="cell fill">
+										<h4>Phone</h4>
+										<p class="line-break"><a href="tel:<?php the_field('store_phone'); ?>" title="Call the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-phone-alt"></span>Call us</a></p>
+									</div>
+									<div class="cell fill">
+										<h4>Email</h4>
+										<p class="line-break"><a href="mailto:<?php the_field('store_email'); ?>" title="Email the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-envelope"></span>Email us</a></p>
+									</div>
+								</div>
+							</div>
+						<?php endwhile; wp_reset_postdata(); ?>
+					</div>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</section>
 
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sesco-dss' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'sesco-dss' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+<?php get_template_part( 'template-parts/section', 'cta'); ?>

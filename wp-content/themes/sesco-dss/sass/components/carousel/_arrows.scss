@@ -43,7 +43,7 @@
       }
 
       &:before {
-        left: 0;
+        left: -0.5rem;
       }
     }
 
@@ -51,7 +51,7 @@
       justify-content: flex-end;
 
       &:before {
-        right: 0;
+        right: -0.5rem;
       }
     }
   }

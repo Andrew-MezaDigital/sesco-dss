@@ -1,0 +1,77 @@
+.wpcf7-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 1.3em 0;
+
+    .wpcf7-textarea {
+        height: 6em;
+        resize: vertical;
+    }
+
+    div[data-class="wpcf7cf_group"] {
+        width: 100%;
+        padding: 0.6rem 1.6rem;
+    }
+
+    .wpcf7-list-item {
+        margin: 0;
+    }
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.35em 0.7em;
+    border-radius: 3px;
+    font-size: $font__font-size-body;
+    line-height: $font__line-height-body;
+}
+
+select {
+    padding: 6px;
+}
+
+input[type="file"],
+input[type="submit"] {
+    font-size: $font__font-size-body;
+    line-height: $font__line-height-body;
+}
+
+label {
+    font-size: $font__font-size-body;
+    line-height: 2;
+    font-weight: 600;
+
+    .required {
+        display: inline-block;
+        padding-left: .25em;
+        font-weight: 600;
+        color: red;
+    }
+}
+
+.wpcf7 form.wpcf7-form {
+    .wpcf7-response-output {
+        padding: 0;
+        text-align: center;
+        border: 0;
+    }
+
+    &.invalid .wpcf7-response-output,
+    &.error .wpcf7-response-output {
+        color: red;
+    }
+
+    &.spam .wpcf7-response-output {
+        color: orange;
+    }
+
+    &.success .wpcf7-response-output {
+        color: green;
+    }
+}

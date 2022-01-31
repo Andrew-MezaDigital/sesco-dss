@@ -1,0 +1,62 @@
+.card {
+    width: 100%;
+    max-width: 45rem;
+    margin: 0 auto;
+    @include colors($light-0, $dark-0, $dark-0, $accent-dark);
+    border: 0.3rem solid $accent;
+    border-radius: 5px;
+    box-shadow: 0rem 0rem 0.8rem 0.2rem rgba(0,0,0,0.15);
+    transition: all 0.35s ease-out;
+
+    .img-w {
+        margin: 0;
+        
+    }
+    .card-copy {
+        padding: 1.5rem;
+    }
+    .card-title {
+        font-size: 2rem;
+        line-height: 1.5;
+        transition: all .2s ease-out;
+
+        a {
+            transition: all .2s ease-out;
+        }
+    }
+
+    &.card-lg {
+        border-width: 0.6rem;
+
+        .card-copy {
+            padding: 3rem;
+        }
+        .card-title {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            @media #{$sm-up} {
+                font-size: 2.6rem;
+                line-height: 1.35;
+            }
+        }
+    }
+
+    &:not(.no-hover) {
+        @include hover {
+            transform: scale(1.05);
+            box-shadow: 0rem 0rem 1.6rem 0.4rem rgba(0,0,0,0.1);
+    
+            .card-title a {
+                color: $accent-dark;
+            }
+        }
+    }
+}
+
+.cards {
+    align-items: stretch;
+
+    > .cell {
+        @include display(flex, row nowrap, null, stretch);
+    }
+}

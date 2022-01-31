@@ -1,0 +1,8 @@
+.bg-light {
+    background: #F8F8F8;
+}
+
+.bg-primary {
+    background: $accent;
+    background: linear-gradient(45deg, rgba($accent,1) 0%, rgba($accent,0.8) 50%, rgba($accent,1) 100%);
+}

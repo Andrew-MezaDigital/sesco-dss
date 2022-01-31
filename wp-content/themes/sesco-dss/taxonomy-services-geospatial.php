@@ -11,7 +11,9 @@ get_header();
         <?php
 			get_template_part( 'template-parts/section', 'hero');
 			get_template_part( 'template-parts/section', 'services');
+			get_template_part( 'template-parts/section', 'companies');
 			get_template_part( 'template-parts/section', 'products');
+			get_template_part( 'template-parts/section', 'cta');
 		?>
 
 	</main>

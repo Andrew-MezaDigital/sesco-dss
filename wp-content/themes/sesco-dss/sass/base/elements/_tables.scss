@@ -1,13 +1,22 @@
 table {
+  border-spacing: unset;
   margin: 0 0 1.5em;
   width: 100%;
 
   th,
   td {
-    padding: 2px;
+    padding: 0.15em 0;
+  }
+
+  th {
+    padding-right: 0.75em;
   }
 
   th {
     text-align: left;
+  }
+
+  &.store-hours {
+    width: auto;
   }
 }

@@ -2,14 +2,22 @@
 .site-header {
   @include display(flex, column nowrap, flex-start, center);
   @include position(fixed, 10, (left, right), (0, 0));
+  padding: 0 3.6rem;
 }
 
 .top-bar {
   top: 0;
-  height: 30px;
+  height: 60px;
+  @media #{$sm-up} {
+    height: 30px;
+  }
   background: #363636;
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #fff;
+
+  > .row {
+    height: 100%;
+  }
 
   a {
     color: #fff;
@@ -21,7 +29,10 @@
 }
 
 .site-header {
-  top: 30px;
+  top: 60px;
+  @media #{$sm-up} {
+    top: 30px;
+  }
   height: 70px;
   background: $accent;
   background: linear-gradient(
@@ -31,10 +42,11 @@
     rgba(247, 247, 247, 1) 60%,
     rgba(247, 247, 247, 1) 100%
   );
-  overflow: hidden;
   box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.26);
 
   > .row {
+    height: 100%;
+    max-width: none;
     background: #f7f7f7;
   }
 }

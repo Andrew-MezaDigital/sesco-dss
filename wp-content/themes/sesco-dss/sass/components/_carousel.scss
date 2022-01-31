@@ -1,14 +1,53 @@
 $width: 100px;
 
 .home {
-  .splide__slide {
+
+  .splide {
+    width: 100%;
+  }
+
+  .splide .splide__slide {
+    @include display(flex, row nowrap, null, stretch);
     @include position;
-    @include size(100%, calc(100vh - 200px));
-    max-height: 650px;
+    @include size(100%);
     background: #000;
 
-    .bar-w {
-      @include position(absolute, 2, (bottom, left), (0, 0));
+    .cnt {
+      @include display(flex, row wrap, null, center);
+      width: 100%;
+      overflow: hidden;
+      @media #{$lg-up} {
+        flex-flow: row-reverse nowrap;
+        max-height: 50rem;
+      }
+
+      .callout {
+        flex: 0 0 100%;
+        @media #{$lg-up} {
+          flex: 0 0 (100% / 2);
+        }
+        @media #{$xl-up} {
+          flex: 0 0 (100% / 3);
+        }
+        @include display(flex, column nowrap, center, flex-start);
+        align-self: stretch;
+        min-height: 45rem;
+
+        .copy {
+          margin-bottom: 2rem;
+        }
+      }
+
+      .img-w {
+        flex: 0 0 100%;
+        @media #{$lg-up} {
+          flex: 0 0 (100% / 2);
+        }
+        @media #{$xl-up} {
+          flex: 0 0 (100% / 3 * 2);
+        }
+        margin: 0;
+      }
     }
 
     .bar {
@@ -24,8 +63,6 @@ $width: 100px;
     }
 
     .copy {
-      padding-right: 36px;
-
       // Animation
       opacity: 0;
       transform: translateX(-20px);
@@ -47,9 +84,6 @@ $width: 100px;
         (50%, 50%),
         translate(-50%, -50%)
       );
-      max-width: none;
-      width: 100%;
-      min-height: 100%;
     }
 
     &.is-active {

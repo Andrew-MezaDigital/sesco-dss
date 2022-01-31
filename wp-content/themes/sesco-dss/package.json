@@ -19,6 +19,8 @@
   "devDependencies": {
     "@wordpress/scripts": "^12.1.0",
     "dir-archiver": "^1.1.1",
+    "glightbox": "^3.1.0",
+    "mixitup": "^3.3.1",
     "node-sass": "^4.14.1",
     "rtlcss": "^2.5.0"
   },

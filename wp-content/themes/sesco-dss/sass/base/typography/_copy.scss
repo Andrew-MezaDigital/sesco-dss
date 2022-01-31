@@ -46,18 +46,19 @@ big {
 	font-size: 125%;
 }
 
-a {
-	text-decoration: none;
-}
-
 .subhead {
 	font-size: 18px;
+}
+
+.ta-center {
+	text-align: center;
 }
 
 .post-edit-link {
 	@include display(inline-block);
 	vertical-align: middle;
 	padding: 0 0 0 .5em;
+	border: 0 !important;
 	font-size: 12px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -68,4 +69,11 @@ a {
 	@include hover {
 		text-decoration: underline;
 	}
+}
+
+.helper {
+	font-size: 1.4rem;
+	line-height: 1.5;
+	font-weight: 400;
+	font-style: italic;
 }
