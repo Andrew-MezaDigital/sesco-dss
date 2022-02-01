@@ -3,10 +3,10 @@
     max-width: 45rem;
     margin: 0 auto;
     @include colors($light-0, $dark-0, $dark-0, $accent-dark);
-    border: 0.3rem solid $accent;
-    border-radius: 5px;
-    box-shadow: 0rem 0rem 0.8rem 0.2rem rgba(0,0,0,0.15);
-    transition: all 0.35s ease-out;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0rem 0rem 0.8rem 0.2rem rgba(0,0,0,0.35);
+    transition: all 0.2s ease-out;
 
     .img-w {
         margin: 0;
@@ -26,7 +26,7 @@
     }
 
     &.card-lg {
-        border-width: 0.6rem;
+        border: 0.6rem solid $accent;
 
         .card-copy {
             padding: 3rem;
@@ -46,8 +46,11 @@
             transform: scale(1.05);
             box-shadow: 0rem 0rem 1.6rem 0.4rem rgba(0,0,0,0.1);
     
-            .card-title a {
+            .card-title {
                 color: $accent-dark;
+            }
+            .card-copy {
+                color: $dark-0;
             }
         }
     }
@@ -57,6 +60,6 @@
     align-items: stretch;
 
     > .cell {
-        @include display(flex, row nowrap, null, stretch);
+        @include display(flex, row wrap, null, stretch);
     }
 }

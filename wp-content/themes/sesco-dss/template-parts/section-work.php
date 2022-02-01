@@ -40,29 +40,15 @@
       <ul class="cards grid up-1 up-2-sm up-3-lg up-4-xl expand">
         <?php while ($work->have_posts()) : $work->the_post(); ?>
           <li id="work-<?php echo get_the_ID(); ?>" class="cell">
-            <div class="card">
-              <?php if ($link) : ?>
-                <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>" class="img-w">
-                  <?php the_post_thumbnail(); ?>
-                </a>
-              <?php else: ?>
-                <div class="img-w">
-                  <?php the_post_thumbnail(); ?>
-                </div>
-              <?php endif; ?>
-              <div class="card-copy">
-                <h3 class="card-title">
-                  <?php if ($link) : ?>
-                    <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>">
-                      <?php the_title(); ?>
-                    </a>
-                  <?php else : ?>
-                    <?php the_title(); ?>
-                  <?php endif; ?>
-                  <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-                </h3>
+            <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>" class="card">
+              <div class="img-w">
+                <?php the_post_thumbnail(); ?>
               </div>
-            </div>
+              <div class="card-copy">
+                <h3 class="card-title"><?php the_title(); ?></h3>
+              </div>
+            </a>
+            <?php echo is_user_logged_in() ? edit_post_link('Edit this work') : ''; ?>
           </li>
         <?php endwhile; ?>
       </ul>
@@ -123,16 +109,13 @@
             <?php endforeach; ?>
           <?php endif; ?>
           <li id="work-<?php echo get_the_ID(); ?>" class="mix<?php echo $service_classes; ?> cell">
-            <div class="card">
-              <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox img-w" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
+            <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox card" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
+              <div class="img-w">
                 <?php // Setup srcset ?>
                 <?php the_post_thumbnail('medium'); ?>
-              </a>
+              </div>
               <div class="card-copy">
-                <h3 class="card-title">
-                  <?php the_title(); ?>
-                  <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-                </h3>
+                <h3 class="card-title"><?php the_title(); ?></h3>
                 <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
                   <?php if ($services) : ?>
                     <ul class="work-services">
@@ -144,7 +127,8 @@
                   <?php endif; ?>
                 </div>
               </div>
-            </div>
+            </a>
+            <?php echo is_user_logged_in() ? edit_post_link('Edit this work') : ''; ?>
           </li>
           <?php $service_classes = ''; ?>
         <?php endwhile; ?>

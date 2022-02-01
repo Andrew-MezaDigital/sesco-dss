@@ -18,18 +18,16 @@
           $image = wp_get_attachment_image($image_id, 'medium');
         ?>
         <li class="cell">
-          <div class="card card-lg">
-            <a href="<?php echo $term_link; ?>" class="img-w">
+          <a href="<?php echo $term_link; ?>"class="card card-lg">
+            <div class="img-w">
               <?php echo $image ? $image : ''; ?>
-            </a>
+            </div>
             <div class="card-copy">
-              <h3 class="card-title">
-                <a href="<?php echo $term_link; ?>"><?php echo $term->name; ?></a>
-                <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit ' . $term->name . ' category</a>' : ''; ?>
-              </h3>
+              <h3 class="card-title"><?php echo $term->name; ?></h3>
               <?php echo term_description($term_id) ? '<p>' . term_description($term_id) . '</p>' : ''; ?>
             </div>
-          </div>
+          </a>
+          <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit ' . $term->name . ' category</a>' : ''; ?>
         </li>
       <?php endforeach; ?>
     </ul>

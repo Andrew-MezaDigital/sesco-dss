@@ -39,32 +39,18 @@
       </div>
       <ul class="cards grid up-1 up-2-sm up-3-lg up-4-xl expand">
         <?php while ($products->have_posts()) : $products->the_post(); ?>
-        <?php $products_item_url = $products_page_url . '#equipment-' . get_the_ID(); ?>
+          <?php $products_item_url = $products_page_url . '#equipment-' . get_the_ID(); ?>
           <li id="equipment-<?php echo get_the_ID(); ?>" class="cell">
-            <div class="card">
-              <?php if ($link) : ?>
-                <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>" class="img-w">
-                  <?php the_post_thumbnail(); ?>
-                </a>
-              <?php else : ?>
-                <div class="img-w">
-                  <?php the_post_thumbnail(); ?>
-                </div>
-              <?php endif; ?>
+            <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>" class="card">
+              <div class="img-w">
+                <?php the_post_thumbnail(); ?>
+              </div>
               <div class="card-copy">
-                <h3 class="card-title">
-                  <?php if ($link) : ?>
-                    <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>">
-                      <?php the_title(); ?>
-                    </a>
-                  <?php else : ?>
-                    <?php the_title(); ?>
-                  <?php endif; ?>
-                    <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-                </h3>
+                <h3 class="card-title"><?php the_title(); ?></h3>
                 <p>$<?php the_field('product_price'); ?></p>
               </div>
-            </div>
+            </a>
+            <?php echo is_user_logged_in() ? edit_post_link('Edit this equipment') : ''; ?>
           </li>
         <?php endwhile; ?>
       </ul>
@@ -93,7 +79,6 @@
   $term_id = $term->term_id;
   $term_tax = get_term($term_id)->taxonomy;
   ?>
-
   <?php if ($products->have_posts()) : ?>
     <section id="latest-equipment-for-sale" class="bg-secondary">
       <div class="row expand mb ha-between va-center">
@@ -126,25 +111,22 @@
             <?php endforeach; ?>
           <?php endif; ?>
           <li id="equipment-<?php echo get_the_ID(); ?>" class="mix <?php echo $store_class; ?> cell">
-            <div class="card">
-              <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox img-w" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
+            <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="glightbox card" data-glightbox="<?php echo 'title: ' . get_the_title() . '; description: .custom-desc-' . get_the_ID() ?>">
+              <div class="img-w">
                 <?php // Setup srcset ?>
                 <?php the_post_thumbnail('medium'); ?>
-              </a>
-              <div class="card-copy">
-                <h3 class="card-title">
-                  <?php the_title(); ?>
-                  <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-                </h3>
-                <p>$<?php the_field('product_price'); ?></p>
-                <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
-                <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
-                  <p>$<?php the_field('product_price'); ?></p>
-                  <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
-                  <?php the_field('product_description'); ?>
-                </div>
               </div>
-            </div> 
+              <div class="card-copy">
+                <h3 class="card-title"><?php the_title(); ?></h3>
+                <p>$<?php the_field('product_price'); ?></p>
+              </div>
+            </a>
+            <div class="glightbox-desc custom-desc-<?php echo get_the_ID() ?>">
+              <p>$<?php the_field('product_price'); ?></p>
+              <p><a href="tel:<?php echo $store_phone; ?>" title="Call the <?php echo $store_name; ?> to purchase" class="has-icon"><span class="fas fa-phone-alt"></span><?php echo $store_name; ?></a></p>
+              <?php the_field('product_description'); ?>
+            </div>
+            <?php echo is_user_logged_in() ? edit_post_link('Edit this equipment') : ''; ?>
           </li>
         <?php endwhile; ?>
       </ul>

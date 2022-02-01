@@ -9,6 +9,10 @@
 	}
 }
 
+#menu-social-menu {
+	@include display(flex, row nowrap, null, center);
+}
+
 .main-navigation {
 	@include display(flex, row nowrap, null, center);
 	@include size(100%);
