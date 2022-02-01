@@ -1136,6 +1136,10 @@ textarea {
 	align-items: center;
 }
 
+#page {
+	position: relative;
+}
+
 #primary {
 	width: 100%;
 	padding-top: 100px;
@@ -1299,7 +1303,7 @@ body.home #primary > section.page-hero .bar {
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	position: fixed;
+	position: absolute;
 	z-index: 10;
 	left: 0;
 	right: 0;

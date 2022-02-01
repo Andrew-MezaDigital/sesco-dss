@@ -1,7 +1,7 @@
 .top-bar,
 .site-header {
   @include display(flex, column nowrap, flex-start, center);
-  @include position(fixed, 10, (left, right), (0, 0));
+  @include position(absolute, 10, (left, right), (0, 0));
   padding: 0 3.6rem;
 }
 
