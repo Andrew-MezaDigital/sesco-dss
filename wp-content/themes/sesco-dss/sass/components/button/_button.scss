@@ -1,24 +1,20 @@
-.btn,
-input[type="submit"].btn {
+a.btn,
+input[type="submit"].btn,
+.btn.menu-item > a {
   @include display(inline-flex, row nowrap, center, center);
   padding: 0.5em 1em;
   border-radius: 5px;
   background: $accent;
-  box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
   font-size: 21px;
   font-weight: 600;
   white-space: nowrap;
   color: $dark-10;
   cursor: pointer;
-  transition: all .2s ease-out;
+  transition: transform .2s ease-out, color .2s ease-out .3s;
 
-  &:not(.no-hover) {
-    @include hover {
-      transform: scale(1.1);
-      background: $accent-dark;
-      box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.1);
-      color: #fff;
-    }
+  @include hover {
+    transform: scale(1.1);
+    color: $accent-dark;
   }
 
   &.secondary {
@@ -30,25 +26,9 @@ input[type="submit"].btn {
       box-shadow: none;
     }
   }
+}
 
-  &.btn-sm {
-    font-size: 16px;
-  }
-
-  &.menu-item {
-    padding: 1rem 2rem;
-    box-shadow: none;
-
-    a {
-      font-size: 1.6rem;
-      color: $dark-10;
-      transition: all .2s ease-out;
-    }
-
-    @include hover {
-      a {
-        color: #fff;
-      }
-    }
-  }
+.btn-sm,
+.btn.menu-item.btn-sm > a {
+  font-size: 16px;
 }

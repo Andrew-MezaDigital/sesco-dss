@@ -69,7 +69,7 @@ $width: 100px;
       transition: all 0.2s ease-in 0.5s;
     }
 
-    .btn {
+    .btn-group {
       // Animation
       opacity: 0;
       transform: translateY(20px);
@@ -96,9 +96,16 @@ $width: 100px;
         animation: grow-move 5s linear 0s;
       }
       .copy,
-      .btn {
+      .btn-group {
         opacity: 1;
         transform: translate(0);
+
+        .btn {
+          transition: all .2s ease-in;
+          @include hover {
+            transform: translate(0) scale(1.1);
+          }
+        }
       }
     }
 

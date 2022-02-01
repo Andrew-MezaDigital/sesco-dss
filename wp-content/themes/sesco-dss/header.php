@@ -33,7 +33,7 @@
 				); 
 				$stores = new WP_Query($args); ?>
 				<?php if ($stores->have_posts()) : ?>
-					<div class="row expand ha-center ha-end-sm va-center">
+					<div class="row expand ha-center ha-end-sm va-stretch">
 						<?php while ($stores->have_posts()) : $stores->the_post() ?>
 							<div class="store cell auto">
 								<p><?php the_title(); ?></p>
@@ -61,9 +61,9 @@
 				<?php the_custom_logo(); ?>
 				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit logo</a>' : ''; ?>
 			</div>
-			<div class="nav cell auto">
+			<div class="nav cell fill">
 				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle has-icon" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'sesco-dss' ); ?><span class="fas fa-bars"></span></button>
+					<button class="menu-toggle btn has-icon" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'sesco-dss' ); ?><span class="fas fa-bars"></span></button>
 					<?php
 					wp_nav_menu(
 						array(

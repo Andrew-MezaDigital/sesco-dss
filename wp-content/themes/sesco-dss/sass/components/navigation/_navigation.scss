@@ -1,10 +1,134 @@
 .main-navigation {
-	display: block;
-	width: 100%;
+	@include display(flex, row nowrap, null, center);
+	@include size(100%);
+
+	.menu-primary-menu-container {
+		@include position(absolute, 0, (top, left), (70px, 0));
+		width: 100%;
+		background: $dark-10;
+		@media #{$lg-up} {
+			@include position(static);
+			height: 100%;
+			background: none;
+		}
+		width: 100%;
+
+		#primary-menu {
+			@include display(none, column nowrap, center, center);
+			padding: 0.6rem 0 1.2rem;
+			@media #{$sm-up} {
+				flex-flow: row nowrap;
+				padding: 0;
+			}
+			@media #{$lg-up} {
+				@include display(flex, null, flex-end, stretch);
+				height: 100%;
+
+				.menu-item {
+					@include display(flex, row nowrap, null, stretch);
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	.menu,
+	.sub-menu {
+		margin: 0;
+		padding-left: 0;
+		list-style: none;
+	}
+
+	.sub-menu {
+		padding: 0 1.2rem;
+	}
+
+	.menu-item {
+		@include position(relative);
+		width: auto;
+		text-align: center;
+		@media #{$sm-up} {
+			text-align: left;
+		}
+		font-weight: 700;
+
+		a {
+			@include display(inline-flex, row nowrap, null, center);
+			padding: 1.2rem;
+			text-decoration: none;
+			white-space: nowrap;
+			transition: all .2s ease-out;
+
+			@media #{$md-down} {
+				color: $light-0;
+				@include hover {
+					color: $accent;
+				}
+			}
+		}
+
+		&.menu-item-has-children {
+			
+			.sub-menu {
+				@include display(flex, column wrap, flex-start, flex-start);
+				background: $dark-10;
+				border-top: 2px solid $light-50;
+				border-bottom: 2px solid $light-50;
+				@media #{$sm-up} {
+					@include display(none);
+					@include position(absolute, 99999, top, 100%);
+				}
+				@media #{$md-up} {
+					border-bottom: 0;
+				}
+				@media #{$lg-up} {
+					background: $light-0;
+					border-color: $light-10;
+				}
+
+				.menu-item {
+					width: 100%;
+					white-space: nowrap;
+				}
+			}
+			@media #{$xs-only} {
+				> a {
+					cursor: default;
+					color: $light-25;
+				}
+			}
+			
+			@include hover {
+				> a {
+					color: $light-25;
+					@media #{$lg-up} {
+						color: lighten($accent-dark, 15%);
+					}
+				}
+				.sub-menu {
+					@include display(flex);
+				}
+			}
+			&.focus {
+				.sub-menu {
+					@include display(flex);
+				}
+			}
+		}
+		&.btn > a {
+			align-self: center;
+		}
+	}
 
 	.menu-toggle {
+		@include display(block);
+		@media #{$lg-up} {
+			@include display(none);
+		}
+		margin-left: auto;
 		background: none;
 		border: 0;
+		line-height: 1;
 		cursor: pointer;
 		transition: all .2s ease-out;
 
@@ -17,141 +141,17 @@
 		}
 	}
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
-
-	li {
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media #{$md-down} {
-	.menu-primary-menu-container {
-		@include position(absolute, 0, (top, left), (70px, 0));
-		width: 100%;
-		background: $dark-10;
-		box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 0.5);
-		color: $light-0;
+	&.toggled {
 
 		#primary-menu {
-			@include display(none, column nowrap, flex-start, center);
-			@media #{$md-up} {
-				flex-flow: row wrap;
-				justify-content: center;
-			}
-
-			li.menu-item:not(.btn) > a {
-				color: $light-0;
-				transition: all .2s ease-out;
-	
-				@include hover  {
-					color: $accent;
-				}
-			}
+			@include display(flex);
 		}
 
-		.main-navigation.toggled & #primary-menu {
-			@include display;
+		.menu-toggle {
+			background: $accent-dark;
+			color: $light-0;
 		}
 	}
+
 	
-
-}
-@media #{$lg-up} {
-	.menu-toggle {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 37.5em) {
-	.main-navigation ul {
-		display: flex;
-	}
-}
-
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-	}
-
-	.nav-links {
-		display: flex;
-	}
-
-	.nav-previous {
-		flex: 1 0 50%;
-	}
-
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
-	}
 }

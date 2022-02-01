@@ -46,7 +46,9 @@
                           <?php echo $subhead ? '<p>' . $subhead . '</p>' : ''; ?>
                         </div>
                         <?php if ($link_title) : ?>
-                          <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_html( $link_title ); ?>" class="btn no-hover"><?php echo $link_title; ?></a>
+                          <div class="btn-group">
+                            <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_html( $link_title ); ?>" class="btn"><?php echo $link_title; ?></a>
+                          </div>
                         <?php endif; ?>
                       </div>
                     </div>
