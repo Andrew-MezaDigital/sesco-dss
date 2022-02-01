@@ -59,7 +59,7 @@
 		<div class="row expand ha-between va-center no-pad">
 			<div class="logo cell fill">
 				<?php the_custom_logo(); ?>
-				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit this</a>' : ''; ?>
+				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit logo</a>' : ''; ?>
 			</div>
 			<div class="nav cell auto">
 				<nav id="site-navigation" class="main-navigation">
@@ -73,7 +73,7 @@
 					);
 					?>
 				</nav>
-				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=8" class="post-edit-link">Edit this</a>' : ''; ?>
+				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=8" class="post-edit-link">Edit menu</a>' : ''; ?>
 			</div>
 		</div>
 	</header>

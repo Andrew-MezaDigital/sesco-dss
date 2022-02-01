@@ -1,6 +1,8 @@
 <?php if (is_front_page()) : ?>
 
-  <?php $edit_homepage_link = get_edit_post_link($post->ID); ?>
+  <?php
+    $edit_page_link = get_edit_post_link(get_the_ID());
+  ?>
   <section class="page-hero no-pt no-pb">
     <h1 class="page-title screen-reader-text"><?php the_title(); ?></h1>
     <p class="page-excerpt screen-reader-text"><?php echo get_the_excerpt(); ?></p>
@@ -38,8 +40,8 @@
                         <div class="copy">
                           <h2>
                             <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo $title; ?></a>
-                            <?php echo is_user_logged_in() ? edit_post_link('Edit this content reference') : ''; ?>
-                            <?php echo is_user_logged_in() ? '<a href="' . $edit_homepage_link . '" class="post-edit-link">Edit this slider</a>' : ''; ?>
+                            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit homepage "Content Slider" section</a>' : ''; ?>
+                            <?php echo is_user_logged_in() ? '<a href="' . get_edit_post_link() . '" class="post-edit-link">Edit "' . get_the_title() . '" content</a>' : ''; ?>
                           </h2>
                           <?php echo $subhead ? '<p>' . $subhead . '</p>' : ''; ?>
                         </div>
@@ -72,9 +74,9 @@
       <div class="callout ta-center ta-left-md">
         <h1 class="page-title">
           <?php echo $term->name . '&nbsp;Services'; ?>
-          <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
+          <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit ' . get_the_archive_title($term) . ' category</a>' : ''; ?>
         </h1>
-        <?php echo $excerpt ? '<p class="subhead">' . $excerpt . '</p>' : '' ?>
+        <?php echo term_description($term_id) ? '<p class="subhead">' . term_description($term_id) . '</p>' : '' ?>
       </div>
       <div class="img-cnt">
         <div class="img-w slim square-md video-lg">
@@ -91,7 +93,7 @@
       <div class="callout ta-center ta-left-md">
         <h1 class="page-title">
           <?php the_title(); ?>
-          <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
+          <?php echo is_user_logged_in() ? edit_post_link('Edit this page') : ''; ?>
         </h1>
         <?php echo has_excerpt() ? '<p class="subhead">' . get_the_excerpt() . '</p>' : '' ?>
       </div>

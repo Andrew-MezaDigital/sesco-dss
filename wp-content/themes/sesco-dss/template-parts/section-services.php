@@ -24,7 +24,7 @@ $term_tax = get_term($term_id)->taxonomy;
       <div class="cell">
         <h2 class="alt">
           <?php echo $title ? $title : 'Our Services List'; ?>
-          <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
+          <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit ' . get_the_archive_title($term) . ' category</a>' : ''; ?>
         </h2>
       </div>
     </div>

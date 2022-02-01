@@ -71,7 +71,7 @@
   color: $txt-color;
 
   a:not(.btn):not(.img-w) {
-    @include display(inline-block);
+    //@include display(inline-block);
     padding: 0.1em 0;
     border-bottom: 0.1rem solid transparent;
     color: $link-color;

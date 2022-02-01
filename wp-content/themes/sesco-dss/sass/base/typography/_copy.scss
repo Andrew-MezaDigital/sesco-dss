@@ -55,9 +55,8 @@ big {
 }
 
 .post-edit-link {
-	@include display(inline-block);
-	vertical-align: middle;
-	padding: 0 0 0 .5em;
+	@include display(block);
+	padding: 0.5em 0;
 	border: 0 !important;
 	font-size: 12px;
 	font-weight: 600;
@@ -68,6 +67,10 @@ big {
 
 	@include hover {
 		text-decoration: underline;
+	}
+
+	.ba-center &{
+		text-align: center;
 	}
 }
 

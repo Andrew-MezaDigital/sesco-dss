@@ -12,6 +12,16 @@
       'posts_per_page' => 4
     ); 
     $products = new WP_Query($args);
+    $field_groups = acf_get_field_groups();
+    $title_field_group = get_field_object('section_work_headline')['parent'];
+    if ($field_groups) :
+      foreach ($field_groups as $field_group) :
+        if ($field_group['ID'] == $title_field_group) :
+          $edit_page_link = $edit_page_link . '#acf-' . $field_group['key'];
+          break;
+        endif;
+      endforeach;
+    endif;
   ?>
 
   <?php if ($products->have_posts()) : ?>
@@ -23,7 +33,7 @@
             <?php else : ?>
               <?php echo $title ? $title : 'Latest Equipment for Sale'; ?>
             <?php endif; ?>
-            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
+            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit homepage "Latest Equipment" section</a>' : ''; ?>
           </h2>
         </div>
       </div>
@@ -62,7 +72,7 @@
         <div class="row expand ha-end">
           <div class="cell auto">
             <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? esc_attr($link['target']) : '_self'; ?>"><?php echo $link['title'] ? $link['title'] : 'View more'; ?>&nbsp;&raquo;</a>
-            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit this</a>' : ''; ?>
+            <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit homepage "Latest Equipment" section</a>' : ''; ?>
           </div>
         </div>
       <?php endif; ?>
@@ -90,7 +100,7 @@
         <div class="cell auto">
           <h2>
             <?php echo $title ? $title : 'Latest Equipment for Sale'; ?>
-            <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit this</a>' : ''; ?>
+            <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit ' . get_the_archive_title() . ' category</a>' : ''; ?>
           </h2>
         </div>
         <?php if ($stores->have_posts()) : ?>
