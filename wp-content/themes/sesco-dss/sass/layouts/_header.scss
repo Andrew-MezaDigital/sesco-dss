@@ -1,6 +1,6 @@
 .top-bar,
 .site-header {
-  @include display(flex, column nowrap, flex-start, center);
+  @include display(flex, row wrap, flex-start, center);
   @include position(absolute, 10, (left, right), (0, 0));
   padding: 0 3.6rem;
 }
@@ -8,31 +8,36 @@
 .top-bar {
   top: 0;
   height: 60px;
-  @media #{$sm-up} {
-    height: 30px;
-  }
   background: #363636;
-  font-size: 1.2rem;
-  color: #fff;
+  font-size: 1.4rem;
+  color: $light-0;
 
   > .row {
     height: 100%;
   }
 
+  p {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: $accent;
+  }
+
   a {
-    color: #fff;
+    color: $light-0;
+    span {
+      font-family: $font__main;
+      color: $light-15;
+    }
   }
 
   .menu .menu-item {
-    margin: 5px;
+    margin: 0.25rem 0.5rem;
   }
 }
 
 .site-header {
   top: 60px;
-  @media #{$sm-up} {
-    top: 30px;
-  }
   height: 70px;
   background: $accent;
   background: linear-gradient(

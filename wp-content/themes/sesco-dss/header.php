@@ -25,35 +25,46 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'sesco-dss' ); ?></a>
-	<div class="top-bar">
-		<div class="row expand no-pad va-center">
-			<div class="cell fill">
-				<?php $args = array(
-					'post_type' => 'stores',
-				); 
-				$stores = new WP_Query($args); ?>
-				<?php if ($stores->have_posts()) : ?>
-					<div class="row expand ha-center ha-end-sm va-stretch">
-						<?php while ($stores->have_posts()) : $stores->the_post() ?>
-							<div class="store cell auto">
-								<p><?php the_title(); ?></p>
-								<nav>
-									<ul class="menu">
-										<li class="menu-item"><a href="tel:<?php urlencode(the_field('store_phone')); ?>" class="fas fa-phone-alt"></a><span class="screen-reader-text">Phone</span></li>
-										<li class="menu-item"><a href="mailto:<?php urlencode(the_field('store_email')); ?>" class="fas fa-envelope"></a><span class="screen-reader-text">Email</span></li>
-										<li class="menu-item"><a href="<?php urlencode(the_field('store_google_maps_url')); ?>" target="_blank" class="fas fa-map-marker-alt"></a><span class="screen-reader-text">Location</span></li>
-									</ul>
-								</nav>					
-							</div>
-						<?php endwhile; ?>
-						<div class="cell auto">
-							<a href="<?php echo site_url() . '/upload-files'; ?>" title="Submit a Project">Upload Files</a>
-						</div>
+	<?php
+	$args = array(
+		'post_type' => 'stores',
+	); 
+	$stores = new WP_Query($args);
+	?>
+	<?php if ($stores->have_posts()) : ?>
+		<div class="top-bar">
+			<div class="row expand ha-center va-center ac-center">
+				<?php while ($stores->have_posts()) : $stores->the_post() ?>
+					<div class="store cell auto">
+					
+						<p><?php the_title(); ?></p>
+						<nav>
+							<ul class="menu menu-x">
+								<li class="menu-item">
+									<a href="tel:<?php echo urlencode(the_field('store_phone')); ?>" class="fas fa-phone-alt">
+										<span class="screen-reader-text">Phone</span>
+										<span class="show-md"><?php the_field('store_phone'); ?></span>
+									</a>
+								</li>
+								<li class="menu-item">
+									<a href="mailto:<?php urlencode(the_field('store_email')); ?>" class="fas fa-envelope">
+										<span class="screen-reader-text">Email</span>
+										<span class="show-lg"><?php the_field('store_email'); ?></span>
+									</a>
+								</li>
+								<li class="menu-item">
+									<a href="<?php urlencode(the_field('store_google_maps_url')); ?>" target="_blank" class="fas fa-map-marker-alt">
+										<span class="screen-reader-text">Address</span>
+										<span class="show-lg"><?php the_field('store_address'); ?></span>
+									</a>
+								</li>
+							</ul>
+						</nav>					
 					</div>
-				<?php endif; wp_reset_postdata(); ?>
+				<?php endwhile; ?>
 			</div>
 		</div>
-	</div>
+	<?php endif; wp_reset_postdata(); ?>
 
 	<header id="masthead" class="site-header">
 		<div class="row expand ha-between va-center no-pad">

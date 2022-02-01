@@ -1,0 +1,11 @@
+@media #{$sm-down} {
+    .show-md {
+        display: none !important;
+    }
+}
+
+@media #{$md-down} {
+    .show-lg {
+        display: none !important;
+    }
+}

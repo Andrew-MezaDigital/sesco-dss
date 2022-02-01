@@ -911,6 +911,12 @@ textarea {
 	justify-content: space-around;
 }
 
+.row.ac-center,
+.col.ac-center,
+.grid.ac-center {
+	align-content: center;
+}
+
 @media screen and (min-width: 576.1px) {
 	.row.ha-end-sm,
 	.col.ha-end-sm,
@@ -1307,7 +1313,7 @@ body.home #primary > section.page-hero .bar {
 .top-bar,
 .site-header {
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: row wrap;
 	justify-content: flex-start;
 	align-items: center;
 	position: absolute;
@@ -1321,26 +1327,32 @@ body.home #primary > section.page-hero .bar {
 	top: 0;
 	height: 60px;
 	background: #363636;
-	font-size: 1.2rem;
-	color: #fff;
-}
-
-@media screen and (min-width: 576.1px) {
-	.top-bar {
-		height: 30px;
-	}
+	font-size: 1.4rem;
+	color: #fafafa;
 }
 
 .top-bar > .row {
 	height: 100%;
 }
 
+.top-bar p {
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+	color: #fab703;
+}
+
 .top-bar a {
-	color: #fff;
+	color: #fafafa;
+}
+
+.top-bar a span {
+	font-family: "Exo 2", Helvetica, Arial, sans-serif;
+	color: #d4d4d4;
 }
 
 .top-bar .menu .menu-item {
-	margin: 5px;
+	margin: 0.25rem 0.5rem;
 }
 
 .site-header {
@@ -1349,12 +1361,6 @@ body.home #primary > section.page-hero .bar {
 	background: #fab703;
 	background: linear-gradient(90deg, #fab703 0%, #fab703 40%, #f7f7f7 60%, #f7f7f7 100%);
 	box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.26);
-}
-
-@media screen and (min-width: 576.1px) {
-	.site-header {
-		top: 30px;
-	}
 }
 
 .site-header > .row {
@@ -1447,6 +1453,20 @@ body.home #primary > section.page-hero .bar {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+.menu,
+.sub-menu {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.menu.menu-x,
+.sub-menu.menu-x {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
 .main-navigation {
 	display: flex;
 	flex-flow: row nowrap;
@@ -1462,7 +1482,6 @@ body.home #primary > section.page-hero .bar {
 	left: 0;
 	width: 100%;
 	background: #393939;
-	width: 100%;
 }
 
 @media screen and (min-width: 1024.1px) {
@@ -1501,13 +1520,6 @@ body.home #primary > section.page-hero .bar {
 		align-items: stretch;
 		height: 100%;
 	}
-}
-
-.main-navigation .menu,
-.main-navigation .sub-menu {
-	margin: 0;
-	padding-left: 0;
-	list-style: none;
 }
 
 .main-navigation .sub-menu {
@@ -3572,6 +3584,20 @@ label .required {
 
 .mt {
 	margin-top: 2.4rem !important;
+}
+
+/* Visibility
+--------------------------------------------- */
+@media screen and (max-width: 768px) {
+	.show-md {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.show-lg {
+		display: none !important;
+	}
 }
 
 /* Background
