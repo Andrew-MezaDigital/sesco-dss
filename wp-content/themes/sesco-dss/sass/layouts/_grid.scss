@@ -303,3 +303,25 @@
     height: 70px;
   }
 }
+.error-404 {
+  @include display(flex, row wrap, flex-start, stretch);
+  @media #{$lg-up} {
+    height: 70vh;
+  }
+  
+  .not-found,
+  .return-home {
+    @include display(flex, column nowrap, center, center);
+    width: 100%;
+    @media #{$lg-up} {
+      width: 50%;
+    }
+    padding: 6rem 2.4rem;
+    text-align: center;
+  }
+
+  .not-found {
+    background: $accent-dark;
+    color: $light-0;
+  }
+}

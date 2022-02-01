@@ -80,3 +80,16 @@ big {
 	font-weight: 400;
 	font-style: italic;
 }
+
+.text-404 {
+	font-size: 7rem;
+	@media #{$md-up} {
+		font-size: 10rem;
+	}
+	line-height: 1;
+	margin-bottom: 3rem;
+}
+
+.text-error {
+	font-size: 2.8rem;
+}
