@@ -79,7 +79,8 @@
   ?>
 
   <?php if ($work->have_posts()) : ?>
-    <section id="latest-work" class="bg-secondary">
+    <section class="bg-secondary">
+      <div id="latest-work" class="anchor"></div>
       <div class="row expand mb ha-between va-center">
         <div class="cell auto">
           <h2>

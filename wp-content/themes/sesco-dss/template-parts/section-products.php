@@ -80,7 +80,8 @@
   $term_tax = get_term($term_id)->taxonomy;
   ?>
   <?php if ($products->have_posts()) : ?>
-    <section id="latest-equipment-for-sale" class="bg-secondary">
+    <section class="bg-secondary">
+      <div id="latest-equipment-for-sale" class="anchor"></div>
       <div class="row expand mb ha-between va-center">
         <div class="cell auto">
           <h2>
