@@ -34,9 +34,22 @@ img {
 
   &.square {
     padding-top: 100%;
-    @media #{$md-up} {
-      &-md {
+
+    img {
+      width: auto;
+      max-width: none;
+      max-height: 100%;
+    }
+
+    @media #{$md-only} {
+      &-md-only {
         padding-top: 100%;
+
+        img {
+          width: auto;
+          max-width: none;
+          max-height: 100%;
+        }
       }
     }
   }

@@ -1,8 +1,9 @@
 .splide__pagination {
   @include position(absolute, 1);
   @media #{$md-down} {
+    width: 2.4rem;
     top: 0;
-    left: 0;
+    right: 0;
   }
   @media #{$lg-up} {
     bottom: 0;
@@ -11,7 +12,7 @@
   padding: 3.6rem;
 
   &__page {
-    @include size(24px);
+    @include size(2.4rem);
     padding: 0;
     margin: 6px;
     border-radius: 50%;

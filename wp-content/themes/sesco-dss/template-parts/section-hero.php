@@ -81,7 +81,7 @@
         <?php echo term_description($term_id) ? '<p class="subhead">' . term_description($term_id) . '</p>' : '' ?>
       </div>
       <div class="img-cnt">
-        <div class="img-w slim square-md video-lg">
+        <div class="img-w slim square-md-only video-lg">
           <?php echo wp_get_attachment_image( $image, 'banner' ); ?>
         </div>
       </div>
