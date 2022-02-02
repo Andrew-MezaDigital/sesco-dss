@@ -3724,6 +3724,10 @@ label .required {
 	margin-bottom: 2.4rem !important;
 }
 
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+
 .mt {
 	margin-top: 2.4rem !important;
 }
