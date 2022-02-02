@@ -1104,6 +1104,12 @@ textarea {
 	}
 }
 
+@media screen and (min-width: 1200.1px) {
+	.cell.xl-50 {
+		flex: 0 0 50%;
+	}
+}
+
 @media screen and (min-width: 1440.1px) {
 	.cell.xxl-50 {
 		flex: 0 0 50%;
@@ -3318,6 +3324,27 @@ label .required {
 	padding-left: .25em;
 	font-weight: 600;
 	color: red;
+}
+
+.wpcf7-checkbox.multi-select {
+	display: flex;
+	flex-flow: column nowrap;
+	height: 7em;
+	overflow: auto;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.wpcf7-checkbox.multi-select .wpcf7-list-item > label {
+	display: block;
+	padding: 0 1rem;
+	font-weight: 400;
+	transition: all .2s ease;
+	cursor: pointer;
+}
+
+.wpcf7-checkbox.multi-select .wpcf7-list-item > label:hover, .wpcf7-checkbox.multi-select .wpcf7-list-item > label:focus {
+	background: #ededed;
 }
 
 .wpcf7 form.wpcf7-form .wpcf7-response-output {

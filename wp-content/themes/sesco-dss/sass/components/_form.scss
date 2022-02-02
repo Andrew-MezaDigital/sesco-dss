@@ -55,6 +55,26 @@ label {
     }
 }
 
+.wpcf7-checkbox.multi-select {
+    @include display(flex, column nowrap);
+    height: 7em;
+    overflow: auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+    .wpcf7-list-item > label {
+        @include display(block);
+        padding: 0 1rem;
+        font-weight: 400;
+        transition: all .2s ease;
+        cursor: pointer;
+        
+        @include hover {
+            background: $light-5;
+        }
+    }
+}
+
 .wpcf7 form.wpcf7-form {
     .wpcf7-response-output {
         padding: 0;
