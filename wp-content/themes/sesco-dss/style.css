@@ -1931,6 +1931,10 @@ img.custom-logo {
 	align-items: center;
 }
 
+.has-icon .fas {
+	padding-right: 0.5em;
+}
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
