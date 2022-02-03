@@ -1527,13 +1527,8 @@ body.home #primary > section.page-hero .bar {
 	font-size: 1.2rem;
 }
 
-.site-footer .site-info .credit a {
-	text-decoration: underline;
-}
-
 .site-footer .site-info .credit a:hover, .site-footer .site-info .credit a:focus {
 	color: #bababa;
-	text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
@@ -3423,6 +3418,7 @@ label .required {
 }
 
 .card.card-lg {
+	max-width: none;
 	border: 0.6rem solid #fab703;
 }
 
