@@ -8,7 +8,7 @@
 <?php if (!empty($term_query) && !is_wp_error($term_query)) : ?>
   <section id="services">
     <h2 class="screen-reader-text">Services</h2>
-    <ul class="cards grid up-1 up-2-md up-3-xl ha-center">
+    <ul class="cards grid expand up-1 up-2-md up-3-xl ha-center">
       <?php foreach ($term_query->terms as $term) : ?>
         <?php
           $term_id = $term->term_id;
