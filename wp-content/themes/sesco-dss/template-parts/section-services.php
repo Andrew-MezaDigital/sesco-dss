@@ -28,21 +28,23 @@ $term_tax = get_term($term_id)->taxonomy;
         </h2>
       </div>
     </div>
-    <ul class="grid expand up-1 up-2-sm up-3-xl">
+    <ul class="cards grid expand up-1 up-2-md up-3-xl">
       <?php while ($services->have_posts()) : $services->the_post(); ?>
         <?php $link = get_field('service_link'); ?>
         <li id="service-<?php echo get_the_ID(); ?>" class="cell">
-          <div class="img-w service">
-            <?php the_post_thumbnail('medium'); ?>
+          <div class="card card-service no-hover">
+            <div class="img-w">
+              <?php the_post_thumbnail('medium'); ?>
+            </div>
+            <h3 class="card-title"><?php the_title(); ?></h3>
+            <div class="card-copy">
+              <?php the_field('service_description'); ?>
+              <?php if ($link) : ?>
+                <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>"><?php echo esc_html($link['title']); ?></a>
+              <?php endif; ?>
+            </div>
           </div>
-          <h3 class="alt">
-            <?php the_title(); ?>
-            <?php echo is_user_logged_in() ? edit_post_link() : ''; ?>
-          </h3>
-          <?php the_field('service_description'); ?>
-          <?php if ($link) : ?>
-            <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>"><?php echo esc_html($link['title']); ?></a>
-          <?php endif; ?>
+          <?php echo is_user_logged_in() ? edit_post_link('Edit this service') : ''; ?>
         </li>
       <?php endwhile; ?>
     </ul>

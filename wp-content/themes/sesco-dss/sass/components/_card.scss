@@ -41,6 +41,35 @@
         }
     }
 
+    &.card-service {
+        max-width: none;
+
+        .card-title {
+            @include display(flex, row nowrap, center, center);
+            @include position(relative, 1);
+            height: 8rem;
+            margin: -8rem 0 0;
+            padding: 0 2.4rem;
+            text-align: center;
+            background: rgba($accent-dark, 0.85);
+            font-size: 2.4rem;
+            line-height: 1.2;
+            color: $light-0;
+        }
+
+        .card-copy {
+            padding: 2.4rem;
+        }
+
+        &:not(.no-hover) {
+            @include hover {
+                .card-title {
+                    color: $accent;
+                }
+            }
+        }
+    }
+
     &:not(.no-hover) {
         @include hover {
             transform: scale(1.05);
