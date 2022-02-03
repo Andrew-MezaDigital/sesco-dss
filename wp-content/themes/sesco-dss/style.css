@@ -1689,9 +1689,13 @@ body.home #primary > section.page-hero .bar {
 	white-space: nowrap;
 }
 
+.main-navigation .menu-item.menu-item-has-children > a {
+	cursor: default;
+	pointer-events: none;
+}
+
 @media screen and (max-width: 576px) {
 	.main-navigation .menu-item.menu-item-has-children > a {
-		cursor: default;
 		color: #bababa;
 	}
 }

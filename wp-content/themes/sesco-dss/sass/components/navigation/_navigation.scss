@@ -98,9 +98,12 @@
 					white-space: nowrap;
 				}
 			}
+			> a {
+				cursor: default;
+				pointer-events: none;
+			}
 			@media #{$xs-only} {
 				> a {
-					cursor: default;
 					color: $light-25;
 				}
 			}
