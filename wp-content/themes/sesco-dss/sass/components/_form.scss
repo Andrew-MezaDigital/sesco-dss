@@ -94,4 +94,8 @@ label {
     &.success .wpcf7-response-output {
         color: green;
     }
+    .wpcf7-not-valid-tip {
+        margin-top: 0.5rem;
+        line-height: 1.3;
+    }
 }
