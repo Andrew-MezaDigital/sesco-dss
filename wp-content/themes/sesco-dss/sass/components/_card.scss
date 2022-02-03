@@ -26,6 +26,7 @@
     }
 
     &.card-lg {
+        max-width: none;
         border: 0.6rem solid $accent;
 
         .card-copy {
