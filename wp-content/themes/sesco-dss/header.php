@@ -62,6 +62,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										<span class="show-lg"><?php the_field('store_email'); ?></span>
 									</a>
 								</li>
+								<li class="menu-item">
+									<a href="<?php the_field('store_google_maps_url'); ?>" target="_blank" class="fas fa-map-marker">
+										<span class="screen-reader-text">Address</span>
+										<span class="show-lg"><?php the_field('store_address'); ?></span>
+									</a>
+								</li>
 							</ul>
 						</nav>					
 					</div>
