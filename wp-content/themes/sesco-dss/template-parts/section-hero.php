@@ -100,7 +100,7 @@
         <?php echo has_excerpt() ? '<p class="subhead">' . get_the_excerpt() . '</p>' : '' ?>
       </div>
       <div class="img-cnt">
-        <div class="img-w slim square-md video-lg">
+        <div class="img-w slim square-md-only video-lg">
           <?php the_post_thumbnail('banner'); ?>
         </div>
       </div>
