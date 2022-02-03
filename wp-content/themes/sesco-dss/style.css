@@ -3374,6 +3374,27 @@ label .required {
 	line-height: 1.3;
 }
 
+#mfcf7_zl_multifilecontainer .wpcf7-form-control-wrap.file {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+#mfcf7_zl_multifilecontainer .mfcf7-zl-multifile-name,
+#mfcf7_zl_multifilecontainer .mfcf7_zl_delete_file,
+#mfcf7_zl_multifilecontainer #mfcf7_zl_add_file {
+	font-size: 1.4rem;
+}
+
+#mfcf7_zl_multifilecontainer #mfcf7_zl_add_file {
+	cursor: pointer;
+	transition: all .2s ease;
+}
+
+#mfcf7_zl_multifilecontainer #mfcf7_zl_add_file:hover, #mfcf7_zl_multifilecontainer #mfcf7_zl_add_file:focus {
+	border-color: #7b7b7b;
+}
+
 /* Cards
 --------------------------------------------- */
 .card {
