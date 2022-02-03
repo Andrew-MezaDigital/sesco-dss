@@ -54,11 +54,11 @@
 									</div>
 									<div class="cell fill">
 										<h4>Phone</h4>
-										<p class="line-break"><a href="tel:<?php the_field('store_phone'); ?>" title="Call the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-phone-alt"></span>Call us</a></p>
+										<p class="line-break"><a href="tel:<?php the_field('store_phone'); ?>" title="Call the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-phone-alt"></span><?php the_field('store_phone'); ?></a></p>
 									</div>
 									<div class="cell fill">
 										<h4>Email</h4>
-										<p class="line-break"><a href="mailto:<?php the_field('store_email'); ?>" title="Email the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-envelope"></span>Email us</a></p>
+										<p class="line-break"><a href="mailto:<?php the_field('store_email'); ?>" title="Email the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-envelope"></span><?php the_field('store_email'); ?></a></p>
 									</div>
 								</div>
 							</div>
