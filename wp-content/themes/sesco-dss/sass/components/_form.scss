@@ -104,16 +104,16 @@ label {
     .wpcf7-form-control-wrap.file {
         @include display(flex, row nowrap, null, center);
     }
-    .mfcf7-zl-multifile-name,
-    .mfcf7_zl_delete_file,
-    #mfcf7_zl_add_file {
-        font-size: 1.4rem;
-    }
-    #mfcf7_zl_add_file {
-        cursor: pointer;
-        transition: all .2s ease;
-        @include hover {
-            border-color: $light-50;
-        }
+}
+.mfcf7-zl-multifile-name,
+.mfcf7_zl_delete_file,
+#mfcf7_zl_add_file {
+    font-size: 1.4rem;
+}
+#mfcf7_zl_add_file {
+    cursor: pointer;
+    transition: all .2s ease;
+    @include hover {
+        border-color: $light-50;
     }
 }
