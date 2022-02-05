@@ -44,17 +44,17 @@
 				<?php endif; wp_reset_postdata(); ?>
 				<div class="cell">
 					<h2>
-						Connect with Us
-						<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=10" class="post-edit-link">Edit social media links</a>' : ''; ?>
-					</h2>
-					<?php wp_nav_menu( array( 'menu' => 'Social Menu' )); ?>
-				</div>
-				<div class="cell">
-					<h2>
 						About Us
 						<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit company description</a>' : ''; ?>
 					</h2>
 					<p class="site-description"><?php bloginfo('description', 'display'); ?></p>
+				</div>
+				<div class="cell">
+					<h2>
+						Connect with Us
+						<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=10" class="post-edit-link">Edit social media links</a>' : ''; ?>
+					</h2>
+					<?php wp_nav_menu( array( 'menu' => 'Social Menu' )); ?>
 				</div>
 			</div>
 		</div>
