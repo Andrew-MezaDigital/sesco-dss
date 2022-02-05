@@ -135,6 +135,10 @@
 		@media #{$lg-up} {
 			@include display(none);
 		}
+		padding-right: 0;
+		@media #{$xs-only} {
+			padding-left: 0;
+		}
 		margin-left: auto;
 		background: none;
 		border: 0;

@@ -43,19 +43,33 @@
     }
 
     &.card-service {
-        max-width: none;
+        @media #{$xs-only} {
+            width: calc(100% + 2.4rem);
+            margin: 0 -1.2rem;
+            max-width: none;
+        }
 
         .card-title {
             @include display(flex, row nowrap, center, center);
             @include position(relative, 1);
-            height: 8rem;
-            margin: -8rem 0 0;
-            padding: 0 2.4rem;
+            padding: 1.2rem;
             text-align: center;
             background: rgba($accent-dark, 0.85);
             font-size: 2.4rem;
             line-height: 1.2;
             color: $light-0;
+            @media #{$sm-up} {
+                height: 7rem;
+                margin: -7rem 0 0;
+                padding: 0 1.8rem;
+                font-size: 2rem;
+            }
+            @media #{$md-up} {
+                height: 8rem;
+                margin: -8rem 0 0;
+                padding: 0 2.4rem;
+                font-size: 2.4rem;
+            }
         }
 
         .card-copy {

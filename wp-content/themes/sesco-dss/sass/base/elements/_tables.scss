@@ -19,4 +19,8 @@ table {
   &.store-hours {
     width: auto;
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

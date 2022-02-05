@@ -20,7 +20,7 @@
           <?php echo is_user_logged_in() ? '<a href="' . get_edit_term_link($term_id, $term_tax) . '" class="post-edit-link">Edit ' . get_the_archive_title()  . ' category</a>' : ''; ?>
           <?php if (have_rows('section_logos_logos', $term)) : ?>
             <?php if( $logo_noslide ) : ?>
-              <ul class="grid expand up-5 ha-center">
+              <ul class="grid expand up-1 up-2-sm up-4-lg up-5-xxl ha-center">
                 <?php while( have_rows( 'section_logos_logos', $term )) : the_row(); ?>
                   <?php
                   $logo = get_sub_field( 'company_logo', $term );
@@ -28,11 +28,11 @@
                   ?>
                   <?php if( !empty( $logo )) : ?>
                     <li class="cell">
+                      <h3 class="screen-reader-text"><?php echo get_sub_field('company_name', $term); ?></h3>
                       <?php echo $link ? '<a href="' . $link['url'] . '" target="' . $link['target'] . '" title="' . $link['title'] . '">' : '' ?>
                         <div class="img-w has-logo">
                           <img src="<?php echo esc_url($logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo" />
                         </div>
-                        <h3 class="screen-reader-text"><?php echo get_sub_field('company_name', $term); ?></h3>
                       <?php echo $link ? '</a>' : '' ?>
                     </li>
                   <?php endif; ?>
@@ -46,10 +46,10 @@
                       <?php $logo = get_sub_field('company_logo', $term); ?>
                       <?php if (!empty($logo)) : ?>
                         <li class="splide__slide">
+                          <h3 class="screen-reader-text"><?php echo get_sub_field('company_name', $term); ?></h3>
                           <div class="img-w has-logo">
                             <img src="<?php echo esc_url($logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo" />
                           </div>
-                          <h3 class="screen-reader-text"><?php echo get_sub_field('company_name', $term); ?></h3>
                         </li>
                       <?php endif; ?>
                     <?php endwhile; ?>
@@ -91,7 +91,7 @@
           <?php echo is_user_logged_in() ? '<a href="' . $edit_page_link . '" class="post-edit-link">Edit homepage "Logo Slider" section</a>' : ''; ?>
           <?php if (have_rows('section_logos_logos')) : ?>
             <?php if( $logo_noslide ) : ?>
-              <ul class="grid expand up-5 ha-center">
+              <ul class="grid expand up-1 up-2-sm up-4-lg up-5-xxl ha-center">
                 <?php while( have_rows( 'section_logos_logos')) : the_row(); ?>
                   <?php
                   $logo = get_sub_field( 'company_logo' );
@@ -99,11 +99,11 @@
                   ?>
                   <?php if( !empty( $logo )) : ?>
                     <li class="cell">
+                      <h3 class="screen-reader-text"><?php echo get_sub_field('company_name'); ?></h3>
                       <?php echo $link ? '<a href="' . $link['url'] . '" target="' . $link['target'] . '" title="' . $link['title'] . '">' : '' ?>
                         <div class="img-w has-logo">
                           <img src="<?php echo esc_url($logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo" />
                         </div>
-                        <h3 class="screen-reader-text"><?php echo get_sub_field('company_name'); ?></h3>
                       <?php echo $link ? '</a>' : '' ?>
                     </li>
                   <?php endif; ?>
@@ -117,10 +117,10 @@
                       <?php $logo = get_sub_field('company_logo'); ?>
                       <?php if (!empty($logo)) : ?>
                         <li class="splide__slide">
+                          <h3 class="screen-reader-text"><?php echo get_sub_field('company_name'); ?></h3>
                           <div class="img-w has-logo">
                             <img src="<?php echo esc_url($logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo" />
                           </div>
-                          <h3 class="screen-reader-text"><?php echo get_sub_field('company_name'); ?></h3>
                         </li>
                       <?php endif; ?>
                     <?php endwhile; ?>

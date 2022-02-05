@@ -22,7 +22,7 @@
 
   &.pad-y {
     > .cell {
-      padding: 1.8rem 1.2rem;
+      padding: 1.2rem;
     }
   }
 
@@ -92,6 +92,7 @@
   &.up-1 {
     > .cell {
       flex: 0 0 100%;
+      max-width: 100%;
     }
   }
 
@@ -169,6 +170,14 @@
       flex: 0 0 (100% / 5);
       max-width: (100% / 5);
     }
+    @media #{$xl-up} {
+      &-xl {
+        > .cell {
+          flex: 0 0 (100% / 5);
+          max-width: (100% / 5);
+        }
+      }
+    }
     @media #{$xxl-up} {
       &-xxl {
         > .cell {
@@ -182,14 +191,6 @@
 
 .cell {
 
-  &.auto {
-    flex: 0 0 auto;
-  }
-  
-  &.fill {
-    flex: 1;
-  }
-
   &.stretch {
     align-self: stretch;
   }
@@ -199,8 +200,21 @@
     max-width: 100%;
   }
 
-  &.lg-25 {
-    flex: 0 0 (100% / 4);
+  &.auto {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+  
+  &.fill {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  @media #{$sm-up} {
+    &.sm-fill {
+      flex: 1;
+      max-width: 100%;
+    }
   }
 
   @media #{$sm-up} {
@@ -234,18 +248,28 @@
   @media #{$lg-up} {
     &.lg-33 {
       flex: 0 0 (100% / 3);
+      max-width: (100% / 3);
+    }
+  }
+
+  @media #{$lg-up} {
+    &.lg-25 {
+      flex: 0 0 (100% / 4);
+      max-width: (100% / 4);
     }
   }
 
   @media #{$xl-up} {
     &.xl-33 {
       flex: 0 0 (100% / 3);
+      max-width: (100% / 3);
     }
   }
 
   @media #{$xl-up} {
     &.xl-50 {
       flex: 0 0 (100% / 2);
+      max-width: (100% / 2);
     }
   }
 
@@ -256,12 +280,19 @@
     }
   }
   
+  @media #{$xxl-up} {
+    &.xxl-100 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
   &.pad-y {
-    padding: 1.8rem 1.2rem;
+    padding: 1.2rem;
   }
 
   &.store {
-    @include display(inline-flex, row nowrap, flex-start, center);
+    @include display(inline-flex, row nowrap, center, center);
 
     p,
     nav {

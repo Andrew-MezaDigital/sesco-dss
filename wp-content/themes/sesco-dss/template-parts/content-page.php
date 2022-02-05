@@ -36,7 +36,7 @@
 										<?php the_post_thumbnail(); ?>
 									</div>
 								<?php endif; ?>
-								<div class="row expand">
+								<div class="row expand pad-y">
 									<div class="cell xs-100">
 										<?php if (have_rows('store_hours')) : ?>
 											<h4>Business Hours</h4>
@@ -52,11 +52,11 @@
 											</table>
 										<?php endif; ?>
 									</div>
-									<div class="cell fill">
+									<div class="cell xs-100 sm-50 xxl-100">
 										<h4>Phone</h4>
 										<p class="line-break"><a href="tel:<?php the_field('store_phone'); ?>" title="Call the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-phone-alt"></span><?php the_field('store_phone'); ?></a></p>
 									</div>
-									<div class="cell fill">
+									<div class="cell xs-100 sm-50 xxl-100">
 										<h4>Email</h4>
 										<p class="line-break"><a href="mailto:<?php the_field('store_email'); ?>" title="Email the <?php echo get_the_title(); ?>" class="has-icon"><span class="fas fa-envelope"></span><?php the_field('store_email'); ?></a></p>
 									</div>

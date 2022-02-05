@@ -8,7 +8,10 @@
 
   & > section {
     @include display(flex, column nowrap, flex-start, center);
-    padding: 4.5rem 3.6rem;
+    padding: 2.25rem 1.8rem;
+    @media #{$md-up} {
+      padding: 4.5rem 3.6rem;
+    }
     overflow: hidden;
     background-color: #fff;
 

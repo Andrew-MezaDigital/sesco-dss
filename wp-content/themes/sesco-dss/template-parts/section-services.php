@@ -28,7 +28,7 @@ $term_tax = get_term($term_id)->taxonomy;
         </h2>
       </div>
     </div>
-    <ul class="cards grid expand up-1 up-2-md up-3-xl">
+    <ul class="cards grid expand up-1 up-2-sm up-3-lg up-4-xxl">
       <?php while ($services->have_posts()) : $services->the_post(); ?>
         <?php $link = get_field('service_link'); ?>
         <li id="service-<?php echo get_the_ID(); ?>" class="cell">

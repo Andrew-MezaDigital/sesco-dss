@@ -28,11 +28,11 @@
                         <?php $src = $custom_img['sizes']['banner']; ?>
                         <?php $alt = $custom_img['alt']; ?>
                         <?php // Need to generate srcset for custom images ?>
-                        <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" class="img-w slim video-lg">
+                        <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" class="img-w square-xs-only slim-sm video-lg">
                           <img src="<?php echo esc_url($src); ?>" class="attachment-banner size-banner wp-post-image" alt="<?php echo esc_attr($alt); ?>" loading="lazy" srcset="" sizes="" />
                         </a>
                       <?php else : ?>
-                        <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" class="img-w slim video-lg">
+                        <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" class="img-w square-xs-only slim-sm video-lg">
                           <?php the_post_thumbnail('banner'); ?>
                         </a>
                       <?php endif; ?>

@@ -16,13 +16,15 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PCV5TWK');</script>
-	<!-- End Google Tag Manager -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-D49Y7KRY3M"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-D49Y7KRY3M');
+	</script>
 	<?php wp_head(); ?>
 	<script src="https://kit.fontawesome.com/c6c193bd70.js" crossorigin="anonymous"></script>
 </head>
@@ -82,7 +84,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<?php the_custom_logo(); ?>
 				<?php echo is_user_logged_in() ? '<a href="' . site_url() . '/wp-admin/customize.php" class="post-edit-link">Edit logo</a>' : ''; ?>
 			</div>
-			<div class="nav cell fill">
+			<div class="nav cell auto sm-fill">
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle btn has-icon" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'sesco-dss' ); ?><span class="fas fa-bars"></span></button>
 					<?php
