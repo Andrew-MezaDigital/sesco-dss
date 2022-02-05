@@ -869,6 +869,7 @@ textarea:focus {
 
 select {
 	border: 1px solid #ccc;
+	background: #fafafa;
 }
 
 textarea {
