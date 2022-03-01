@@ -10,5 +10,28 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+ul.work-services {
+	@include display(flex, row wrap);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	> li {
+
+		&:after {
+			content: ', ';
+		}
+		&:last-child:after {
+			content: none;
+		}
+	}
+}
+
+.gslide-desc ul {
+	margin: 0;
+	padding: 0 1em;
+}
+
+
 @import "headings";
 @import "copy";

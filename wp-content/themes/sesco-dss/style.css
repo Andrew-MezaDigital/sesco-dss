@@ -406,6 +406,27 @@ textarea {
 	line-height: 1.5;
 }
 
+ul.work-services {
+	display: flex;
+	flex-flow: row wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.work-services > li:after {
+	content: ', ';
+}
+
+ul.work-services > li:last-child:after {
+	content: none;
+}
+
+.gslide-desc ul {
+	margin: 0;
+	padding: 0 1em;
+}
+
 h1,
 h2,
 h3,
